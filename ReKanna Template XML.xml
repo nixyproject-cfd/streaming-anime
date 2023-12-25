@@ -1,0 +1,2254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html class='ltr no-js rwd index' dir='ltr' lang='id' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+&lt;head&gt;
+
+<script type='text/javascript'>
+//<![CDATA[
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }loadCSS("https://fonts.googleapis.com/css?family=Nunito:400,500,600,700&display=swap");loadCSS("https://fonts.googleapis.com/css?family=Quicksand&display=swap");loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");loadCSS("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css");
+//]]>
+</script>
+
+<!--Schema Website-->
+<link href='//www.blogger.com/openid-server.g' rel='openid.server'/>
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' rel='stylesheet'/>
+  
+   <b:if cond='data:view.isMultipleItems'>
+    <b:if cond='data:view.isHomepage'>
+      <!--[ Homepage title ]-->
+      <title><data:blog.title.escaped/></title>
+      <b:elseif cond='data:view.search.query'/>
+      <!--[ Search title ]-->
+      <title><data:messages.search/>: <data:view.search.query/></title>
+      <b:elseif cond='data:view.search.label'/>
+      <!--[ Label title ]-->
+      <title><data:blog.pageName.escaped/> - <data:blog.title.escaped/></title>
+      <b:elseif cond='data:view.isArchive'/>
+      <!--[ Archive title ]-->
+      <title>Blog archive in: <data:blog.pageName.escaped/></title>
+      <b:else/>
+      <title>Blog: <data:blog.title.escaped/></title>
+    </b:if>
+    <b:elseif cond='data:view.isError'/>
+    <!--[ Error title ]-->
+    <title>Error 404: Not Found</title>
+    <b:else/>
+    <!--[ SingleItem title ]-->
+    <title><data:blog.pageName.escaped/> - <data:blog.title.escaped/></title>
+  </b:if>
+
+  <!--[ Meta for browser ]-->
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  <meta content='max-image-preview:large' name='robots'/>
+
+  <!-- Link Canonical -->
+  <link expr:href='data:blog.url.canonical' rel='canonical'/>
+  <!--<b:if cond='data:view.url == data:view.url params { amp: &quot;1&quot; }'>
+    <link expr:href='data:view.url' rel='alternate'/>
+    <b:else/>
+    <link expr:href='data:view.url + &quot;?m=1&quot;' rel='alternate'/>
+    <link expr:href='data:view.url params { amp: &quot;1&quot; }' rel='amphtml'/>
+  </b:if>-->
+
+  <b:if cond='!data:view.isError'>
+    <!--[ Browser data, description and keyword ]-->
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription.escaped' name='description'/>
+      <b:elseif cond='data:view.isSingleItem'/>
+      <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='description'/>
+      <b:else/>
+      <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='description'/>
+    </b:if>
+    <meta expr:content='data:blog.title.escaped + &quot;, &quot; + data:blog.pageName.escaped + &quot;, protemplates.in, protemplates, Pro Templates, Premium blogger templates,premium blogger templates free download, free blogger templates download, premium blogger templates for free download, blogger templates, premium templates,seo friendly blogger templates, adsense friendly blogger templates, responsive blogeer templates, @protemplates &quot;' name='keywords'/>
+    <b:tag cond='data:view.isPost' expr:href='resizeImage(data:blog.postImageUrl, 0)' name='link' rel='image_src'/>
+  
+    <!--[ Generator and rrs ]-->
+    <meta content='blogger' name='generator'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - Feed&quot;' rel='alternate' type='application/rss+xml'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/comments/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - Comments Feed&quot;' rel='alternate' type='application/rss+xml'/>
+  
+    <!--[ Theme Color ]-->
+    <meta expr:content='data:skin.vars.themeColor' name='theme-color'/>
+    <meta expr:content='data:skin.vars.themeColor' name='msapplication-navbutton-color'/>
+    <meta expr:content='data:skin.vars.themeColor' name='apple-mobile-web-app-status-bar-style'/>
+    <meta expr:content='yes' name='apple-mobile-web-app-capable'/>
+  
+    <!--[ Favicon ]-->
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='120x120'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='152x152'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='shortcut icon' type='image/x-icon'/>
+    
+    <!--[ Open graph ]-->
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:title'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+    <b:if cond='data:view.isMultipleItems'>
+      <meta content='website' property='og:type'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>         
+        <b:else/>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' property='og:description'/>
+      </b:if>
+      <b:else/>
+      <meta content='article' property='og:type'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>            
+        <b:else/>
+        <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' property='og:description'/>
+      </b:if>
+    </b:if>
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:image:alt'/>
+    <b:if cond='data:blog.postImageUrl'>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' property='og:image'/>
+      <b:else/>
+      <meta content='https://blogger.googleusercontent.com/img/a/AVvXsEiRJn7JpXgkA59G7g_UD25kaZG3vPIbXFhtDlEvZfUReY-2GpVmWUFKutDChrbhQM_8pafJzWlbcI2eFHSNXOuwM3Y-G4eob_v2nq0GfT5ORjMewsXkqLSq13F0enucPZSatao6djfrpuLF-9bOtGwH1tp6Ejj0M8IHiMPn_uzJWBw55IGqOmHRrcHveQ' property='og:image'/>
+    </b:if>
+    
+    <!--[ Twitter Card ]-->
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:title'/>
+    <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
+    <b:if cond='data:view.isMultipleItems'>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>         
+        <b:else/>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='twitter:description'/>
+      </b:if>
+      <b:else/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>            
+        <b:else/>
+        <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='twitter:description'/>
+      </b:if>
+    </b:if>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:image:alt'/>
+    <b:if cond='data:blog.postImageUrl'>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' name='twitter:image:src'/>
+      <b:else/>
+      <meta content='https://blogger.googleusercontent.com/img/a/AVvXsEiRJn7JpXgkA59G7g_UD25kaZG3vPIbXFhtDlEvZfUReY-2GpVmWUFKutDChrbhQM_8pafJzWlbcI2eFHSNXOuwM3Y-G4eob_v2nq0GfT5ORjMewsXkqLSq13F0enucPZSatao6djfrpuLF-9bOtGwH1tp6Ejj0M8IHiMPn_uzJWBw55IGqOmHRrcHveQ' name='twitter:image:src'/>
+    </b:if>
+  
+    <!--[ Site Verification ]-->
+    <meta content='' name='msvalidate.01'/>
+    
+    <!--[ Preconnect and DNS Prefetch ]-->
+    <link href='//1.bp.blogspot.com' rel='preconnect dns-prefetch'/><link href='//2.bp.blogspot.com' rel='preconnect dns-prefetch'/><link href='//3.bp.blogspot.com' rel='preconnect dns-prefetch'/><link href='//4.bp.blogspot.com' rel='preconnect dns-prefetch'/><link href='//blogger.googleusercontent.com' rel='preconnect dns-prefetch'/><link href='//lh3.googleusercontent.com' rel='preconnect dns-prefetch'/><link href='//www.blogger.com' rel='preconnect dns-prefetch'/><link href='//feeds.feedburner.com' rel='preconnect dns-prefetch'/><link expr:href='data:blog.homepageUrl.canonical path &quot;feeds/posts/default&quot;' rel='preconnect dns-prefetch'/><link expr:href='data:blog.homepageUrl.canonical path &quot;feeds/comments/default&quot;' rel='preconnect dns-prefetch'/><link href='//cdn.widgetpack.com' rel='preconnect dns-prefetch'/><link href='//translate.google.com' rel='preconnect dns-prefetch'/><link href='//maxcdn.bootstrapcdn.com' rel='preconnect dns-prefetch'/><link href='//fonts.googleapis.com' rel='preconnect dns-prefetch'/><link href='//use.fontawesome.com' rel='preconnect dns-prefetch'/><link href='//ajax.googleapis.com' rel='preconnect dns-prefetch'/><link href='//resources.blogblog.com' rel='preconnect dns-prefetch'/><link href='//ajax.microsoft.com ' rel='preconnect dns-prefetch'/><link href='//ajax.aspnetcdn.com ' rel='preconnect dns-prefetch'/><link href='//github.com' rel='preconnect dns-prefetch'/><link href='//cdn.rawgit.com' rel='preconnect dns-prefetch'/><link href='//cdnjs.cloudflare.com' rel='preconnect dns-prefetch'/><link href='//www.google-analytics.com' rel='preconnect dns-prefetch'/><link href='//themes.googleusercontent.com ' rel='preconnect dns-prefetch'/><link href='//pagead2.googlesyndication.com' rel='preconnect dns-prefetch'/><link href='//googleads.g.doubleclick.net' rel='preconnect dns-prefetch'/><link href='//www.gstatic.com' rel='preconnect dns-prefetch'/><link href='//www.googletagservices.com' rel='preconnect dns-prefetch'/><link href='//static.xx.fbcdn.net' rel='preconnect dns-prefetch'/><link href='//tpc.googlesyndication.com' rel='preconnect dns-prefetch'/><link href='//apis.google.com' rel='preconnect dns-prefetch'/><link href='//www.w3.org' rel='preconnect dns-prefetch'/><link href='//www.facebook.com' rel='preconnect dns-prefetch'/><link href='//connect.facebook.net' rel='preconnect dns-prefetch'/><link href='//disqus.com' rel='preconnect dns-prefetch'/><link href='//plus.google.com' rel='preconnect dns-prefetch'/><link href='//twitter.com' rel='preconnect dns-prefetch'/><link href='//platform.twitter.com' rel='preconnect dns-prefetch'/><link href='//syndication.twitter.com' rel='preconnect dns-prefetch'/><link href='//r.twimg.com ' rel='preconnect dns-prefetch'/><link href='//p.twitter.com ' rel='preconnect dns-prefetch'/><link href='//cdn.api.twitter.com ' rel='preconnect dns-prefetch'/><link href='//www.youtube.com' rel='preconnect dns-prefetch'/><link href='//img.youtube.com' rel='preconnect dns-prefetch'/><link href='//www.pinterest.com' rel='preconnect dns-prefetch'/><link href='//statically.io/' rel='preconnect dns-prefetch'/><link href='//www.linkedin.com' rel='preconnect dns-prefetch'/><link href='//player.vimeo.com' rel='preconnect dns-prefetch'/><link href='//s3.amazonaws.com ' rel='preconnect dns-prefetch'/><link href='//s3.buysellads.com ' rel='preconnect dns-prefetch'/><link href='//stats.buysellads.com ' rel='preconnect dns-prefetch'/><link href='//cdn.adpacks ' rel='preconnect dns-prefetch'/>
+    
+    <!--[ Preload Fonts]-->
+    <link as='font' crossorigin='' href='https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2' rel='preload' type='font/woff2'/>
+    <link as='font' crossorigin='' href='https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2' rel='preload' type='font/woff2'/>
+    <link as='font' crossorigin='' href='https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2' rel='preload' type='font/woff2'/>
+    
+  </b:if>
+
+<style id='template-skin-1' type='text/css'>
+body#layout .draggable-widget .widget-wrap2 {background: #3c97ef url(https://1.bp.blogspot.com/-yTAuT5aZ1EY/Wy1eEeo4SbI/AAAAAAAACGM/FxOTPwL-Ch0_lyZxLRzhv2EWHINOmCjWACK4BGAYYCw/s22/draggable.png) no-repeat 4px 50% !important;border-radius: 4px;}
+body#layout .visibility .editlink {background: #3c97ef url(https://1.bp.blogspot.com/-iQoCOwqjB-w/Wy1bDznOM4I/AAAAAAAACGA/8BUOPStr0sk5oud9hWpHBQTrmkeJDoAvACK4BGAYYCw/s18-c/mode_edit_w600_24dp.png) no-repeat center !important;}
+body#layout .visibility .layout-widget-state.visible {background-image: url(https://4.bp.blogspot.com/-qicweZaCb7I/XR_IGBqqGfI/AAAAAAAABS0/MIpI_COKj6MBkeN9FEJhqL96WYnYfGjngCK4BGAYYCw/s1600/visibility_c3_600_24dp.png) !important;}
+body#layout .add_widget a {color: black!important;}
+body#layout:before{content:&#39;ReKanna Protemplates&#39;;font-family:&#39;Open sans&#39;,sans-serif;padding:5px 6px;font-size:20px;color:#fff;background:#404e7e;position:absolute;top:2%;right:12px;box-shadow:0 1px 5px 0 rgba(0,0,0,0.16),0 1px 2px 0 rgba(0,0,0,0.26);border-radius:20px}
+body#layout .section h4{font-size:18px;text-transform:capitalize;margin:-7px 0 0 0!important;line-height:35px!important;border-left:5px solid #2196F3;color:#0f0e0e;text-align:left!important;padding-left:10px}
+body#layout div.section{background-color:#fffcfc!important;border:none!important;color:black;border-radius:4px;max-width:800px!important;box-shadow:0 0 10px rgba(0,0,0,0.15)!important}
+body#layout #sidebar-wrapper {overflow: visible;float: right;width: 32%;}
+body#layout .widget-content a{border-radius:2px;border:2px solid #2196F3;padding:1px 8px}
+body#layout #outer-wrapper {max-width: 850px;}body#layout {width: 850px;}body#layout #main-wrapper {overflow: visible;width: 65%;float: left;}</style>
+&lt;style type=&quot;text/css&quot;&gt;&lt;!-- /* <b:skin><![CDATA[
+/*
+-----------------------------------------------
+Blogger Template Style
+Theme Name          : Re:Kanna Template
+Theme Designer      : PROTEMPLATES
+Licence				: Premium
+Developer Url 		: https://protemplates.org
+-----------------------------------------------
+*/
+/* CSS RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font-family:'Nunito', sans-serif;vertical-align:baseline;}ul{list-style:none;}
+body{background-image:url(https://2.bp.blogspot.com/-XPazSNgM1HQ/Wpo6QLyhlpI/AAAAAAAAGlM/yQt72f6f-IMFBk7WdmwWt6_4o5lP2bXzACLcBGAs/s1600/kiri2.png), url(https://1.bp.blogspot.com/-3bvY-xFgRG0/Wpo6P5UU1_I/AAAAAAAAGlI/X7Dusa260eY7tCXeDCeg11oMqMyoxdWyQCLcBGAs/s1600/kanan2.png)!important;background-repeat:no-repeat!important;background-attachment:fixed!important;background-position:top left,top right!important;background-size:auto auto,auto auto!important}
+/* CONTENT */
+a:focus {color:#2288bb;outline:thin dotted;}
+a:link,a:visited{color:#888888;transition:color 0.4s ease-in;-webkit-transition:color 0.4s ease-in;-moz-transition:color 0.4s ease-in;outline:none;color:#262626;text-decoration:none;}
+a:active, a:hover {color:#33aaff;text-decoration:none;outline:none;}
+.widget ul,.section,.widget{padding:0;margin:0;}
+#clear,.clear{clear:both;display:block;}
+#navbar-iframe,.post-feeds,.feed-links,.quickedit{display:none;}
+img{max-width:100%;height:auto;border:0;vertical-align:middle;color:transparent;}
+body *{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;transition: all 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95);}
+a *{transition:all 0.4s ease-in;-webkit-transition:all 0.4s ease-in;-moz-transition:all 0.4s ease-in;}
+body{line-height: normal;font: 14px; font-family:"Quicksand",sans-serif; !important;background:#d6d6d657;}
+abbr {text-decoration:none;outline:none}
+#layout nav{display:none;}
+#layout ul{display:none;}
+#layout .foot{float:left;width:300px;}
+#layout .cnanim:before{content: "Random Post Anime";padding: 7px 0;display: block;}
+#layout #sidebar-wrapper2 {width:100%;}
+#layout #sidebar2:after{content:"Note - Slot Iklan Diatas Post Bisa Gunakan Widget Gambar, Untuk Versi Dibawah  Artikel Harus di Edit Lewat Themes";padding:7px 0;display:block;margin-top: 13px;padding-left: 7px;box-shadow: 0 0 10px rgba(27, 90, 150, 0.15);border-left: 5px solid #3c97ef;}
+#layout #sidebar:after{content:"ReKanna v4 by Pro  Templates";padding:7px 0;display:block;;margin-top: 13px;padding-left: 7px;box-shadow: 0 0 10px rgba(27, 90, 150, 0.15);border-left: 5px solid #3c97ef;}
+/*Back To Top*/
+#backtop{padding:9px 15px;background:#6d87db!important;overflow:visible;position:fixed;border-top-left-radius:5px;border-top-right-radius:5px;bottom:0;right:30px;transform:rotate(0deg)}
+#backtop a{color:white;font-size:18px;;text-decoration:none;cursor:pointer}
+#backtop:hover{background:#2196f3b0}
+span.fa.fa-rocket:hover{transform:rotate(-45deg);color:black}
+html{scroll-behavior: smooth }
+/*Blog Pager*/
+#blog-pagerx{position:relative}
+#blog-pager-older-link{position:relative;margin-bottom:20px;display:block}
+.blog-pager-older-link{background-color:#673ab7}
+.blog-pager-older-link:before{content:'\f021';font-family:FontAwesome;font-weight:400;font-size:19px;left:0;top:0;margin:0 5px 0 0}a.home-link{display:none}
+.isihalaman-kanan a.blog-pager-older-link:before{display: none;}
+.isihalaman-kanan a.blog-pager-older-link{background:none}
+/*Loader*/
+#blog-pagerx {text-align: center;}
+.loader,.loader:after{height:35px;width:100%;text-align-center;}
+.loader{position:relative;display:block;text-align:center}
+.loader:after{height:35px;width:35px;position:absolute;top:0;left:50%;content:'';border-top:5px solid #ddd;border-right:5px solid #ddd;border-bottom:5px solid #ddd;border-left:5px solid #651fff;border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-animation:load 1s linear infinite;animation:load 1s linear infinite;display:block;}
+@-webkit-keyframes load{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}
+/* Header Wrap */
+#header{margin:0 auto 0;overflow:hidden;height:155px;background: #34495e url(https://1.bp.blogspot.com/-NsCsokSmPi4/XWZ76u4vokI/AAAAAAAAOCo/NskwcKqEXAk8zNffoafhnTM3kso9BXUKQCLcBGAs/s1600/otaku.png);}
+.header h1.title a,.header h2.title a{color:white}
+.header h1.title,.header h2.title{text-transform:capitalize;background: none!Important;border: none;color:#333;margin:0;padding:0;font:normal 400 27px "Open Sans",Arial,sans-serif;position:relative;margin-top:34px;margin-left:10%;left:0;width:50%;text-align:left;color:#fff;font-size:2.5em;font-weight:600;text-shadow:1px 1px 1px rgba(0,0,0,0.5)}
+#header-inner{background:none;background-position:left;width:1270px;min-height:789px;_height:789px;background-repeat:no-repeat;margin: 0 auto}
+.header .description{position:relative;margin-top:17px;margin-left:10%;width:100%;text-align:left;color:#fff;font-size:1em;font-weight:500;text-shadow:1px 1px 1px rgba(0,0,0,0.5)}
+#header-inner:hover img{opacity:.8;filter:alpha(opacity=80);}
+#header-inner img {width: 524px;margin-left: 13%;height: auto;}
+.titlewrapper{position:relative;margin-top:34px;margin-left:10%;left:0;width:50%;text-align:left;color:#fff;font-size:2.5em;font-weight:600;text-shadow:1px 1px 1px rgba(0,0,0,0.5)}
+/*Featured Resources*/
+.kolor{color:#363232;font-weight:500;font-size:14px;line-height:22px;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.titlewrapper a{color:#fff}
+/*Dark Mode*/
+.dark-mode #LinkList3,.dark-mode .kotak-pinned,.dark-mode .sidebar .widget h3{background:#15202b;color:white}
+.dark-mode #LinkList3:before,.dark-mode #LinkList3:after{color:white}
+.dark-mode #LinkList3 h2{color:white;border-bottom:2px solid #f1f1f1}
+.dark-mode .isihalaman-kiri,.dark-mode .isihalaman-kanan,.dark-mode a.blog-pager-newer-link,.dark-mode a.blog-pager-older-link,.dark-mode span.prev-post{color:white!Important;background:#15202b}
+.dark-mode #menu,.dark-mode #menu .menu li a{background:#15202b;color:white}
+.dark-mode .aktif{border:none}
+.dark-mode #sitemap5 a,.dark-mode #sitemap5 .isi ol li:nth-child(odd){color:white!important;background:none}
+.dark-mode .kategorilist li{color:white}
+.dark-mode body{background:#222222;color:#fff}
+.dark-mode article.post.hentry{background:#15202b;color:#fff;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);border-bottom:3px solid #6d87db;border-left:thin solid #7c8086;border-top:thin solid #7c8086;border-right:thin solid #7c8086}
+.dark-mode .widget-content.recent{background:#15202b}
+.dark-mode .recent-by-tag li{border:1px solid rgba(255,255,255,0.2)}
+.dark-mode #sidebar-wrapper h2{color:white!important;background:#15202b}
+.dark-mode #kolor li{background:none}
+.dark-mode .article{background: #15202b;}
+.dark-mode h2.entry-title a {color: white;}
+.dark-mode .post-header abbr, .post-header a {color: #9aa0a6;}
+.dark-mode .kolor {color: #9aa0a6;}
+.dark-mode .post-header{border-left: 3px solid rgba(255, 255, 255, 0.69);}
+.dark-mode #LinkList1 ul li{background: #15202b;}
+.dark-mode #LinkList1 ul li:nth-child(even){background: #303d4abf!important;}
+.dark-mode .sidebar .widget{background: #15202b;color:white;border:thin solid #7c8086}
+.dark-mode .widget-content ul li{background: #15202b!important;color: white!important;}
+.dark-mode .widget-content.cloud-label-widget-content {background: #15202b;}
+.dark-mode span.label-size.label-size{background:#34495e;box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)}
+.dark-mode #kolor {background: #15202b;border: thin solid rgba(222, 222, 222, 0.54);}
+.dark-mode .smokeddl{background: #34495e;}
+.dark-mode .smokeddl .smokeurl{background: #34495e;border-radius: 5px;box-shadow: 0 2px 3px rgba(41, 0, 0, 0.43);border: none;}
+.dark-mode .smokeurl a {color: white!important;}
+.dark-mode span.bapaq{color: white!important;}
+.dark-mode .smokeurl strong{background: #6d87db;}
+.dark-mode .PopularPosts ul li{border-bottom: 1px dotted rgba(255, 255, 255, 0.56)}
+.dark-mode .widget-content.list-label-widget-content{background: #15202b;}
+.dark-mode .widget-content ul {background: #15202b;}
+.dark-mode .widget-content .item-title a {color: white!important;}
+.dark-mode .datanime{border: thin solid rgba(221, 221, 221, 0.24);background: #15202b}
+.dark-mode .datanime li:nth-child(odd) {background: rgba(52, 73, 94, 0.51);}
+.dark-mode .widget-content a {color: #ccc!important;}
+.dark-mode #header-wrapper{background:#232323;color:#fff}
+.dark-mode #tag-div{background:#232323;color:#fff}
+.dark-mode .tag-div{background:#232323;color:#fff}
+/* Dark Mode Button Re Kanna */
+a.mydark{color:black!important}
+.mydark{background:#ffffff;height:35px;line-height:18px;border-radius:3px;font-weight:700;animation:anim 2s ease-in infinite;padding:2px 7px}
+a.mydark:before {font-family: FontAwesome;content: "\f186";}
+#dark-myar{padding:0}
+/* Content Wrap */
+#outer-wrapper{background:none;max-width:1070px;margin:0 auto 10px}
+#content-wrapper{overflow:hidden;padding:10px;margin-top:10px;background:transparent}
+#main-wrapper{overflow:hidden;float:left;width:69%}
+#sticky-sidebar{position:relative}
+#sidebar-wrapper{float:right;width:30%;margin-bottom:16px;line-height:21px}
+/*Komentar Tab*/
+button.komentar-button.cikcuk{font-size:16px;margin:10px 0;background:#2c3e50;color:#fff;padding:10px;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.25);border:none;width:100%;position:relative;text-align:center}
+button.komentar-button.cikcuk:before{content:"\f075";font-family:FontAwesome;font-size:30px;color:white;top:5px;right:7px;position:absolute;text-shadow:none}
+.komentar-tabs-button{display:flex;border-radius:10px}
+#sidebar-wrapper2{float: left;width: 100%;margin-right: 5px;}
+/* WIDGET *//* Popular Post */
+.PopularPosts ul{background:#fff;list-style:none;margin:0;padding:5px 5px 0;overflow:hidden;border-top:none}
+.PopularPosts li,.PopularPosts li img,.PopularPosts li a,.PopularPosts li a img{margin:0;padding:0;list-style:none;border:none;background:none;outline:none}
+.PopularPosts ul{margin:0;list-style:none;color:#64707a}
+.PopularPosts ul li img{background:#fafafa;display:block;margin:0 10px 0 0;border-radius:5px;width:95px;height:100px;overflow:hidden;float:left}
+.PopularPosts ul li{position:relative;background-color:#fff;margin:0;padding:.7em 0!important;border:0;position:relative;border-bottom:1px dotted rgba(0,0,0,0.2)}
+.PopularPosts ul li:before{font-family:fontawesome;content:'\f005\f005';display:inline-block;position:absolute;color:#f39c12;text-align:center;bottom:0;right:0;margin:9px 0;font-size:11px;padding:0;font-weight:normal;line-height:normal;transition:all .3s}
+.PopularPosts ul li:nth-child(1):before{font-family:fontawesome;content:'\f005\f005\f005\f005\f005';}
+.PopularPosts ul li:nth-child(2):before{font-family:fontawesome;content:'\f005\f005\f005\f005';opacity:.9}
+.PopularPosts ul li:nth-child(3):before{font-family:fontawesome;content:'\f005\f005\f005';opacity:.85}
+.PopularPosts ul li:nth-child(4):before{font-family:fontawesome;content:'\f005\f005';opacity:.8}
+.PopularPosts ul li:nth-child(5):before{font-family:fontawesome;content:'\f005';opacity:.75}
+.PopularPosts ul li:hover:before{opacity:1}
+.PopularPosts ul li:first-child{border-top:none}
+.PopularPosts ul li:last-child{border-bottom:none}
+.PopularPosts ul li .item-title a, .PopularPosts ul li a {color: #333;font-size: 15px;}
+.PopularPosts ul li a:hover{color:#2476e0;}
+.PopularPosts .item-thumbnail{margin:0;}
+.PopularPosts .item-snippet{display:none}
+.PopularPosts .item-title{font-weight:700;padding-bottom:.2em;padding-top:13px}
+.Label .widget-content li{padding-right:14px;display:block;position:relative;padding-left:17px;margin-bottom:7px;margin-left:14px;overflow:hidden}
+.Label .widget-content li:before{position:absolute;width:5px;height:5px;background:#673AB7;left:0;top:8px;content:''}
+.widget-content.list-label-widget-content{list-style:none;overflow:auto;background:#fff;border-radius:3px;padding:4px 0;max-height:200px}
+.Label .widget-content a{color:black;font-weight:600;font-size:14px;text-transform:capitalize}
+.hierarchy{list-style:none;padding:0}
+.profile-name-link.g-profile{background:no-repeat;padding-left:20px}
+.profile-img{margin:5px;float:left}
+.sidebar .widget{margin-bottom:12px;margin-bottom:25px;line-height:21px;background:#fff;border-radius:3px;-webkit-border-radius:5px;-moz-border-radius:3px;box-shadow:1px 3px 8px #0000001a}
+.sidebar .widget h2 .fa,.sidebar .widget h3 .fa{float:right;padding-top:3px}
+/* Jadwal Rilis Otomatis*/
+.grup-judul{border-bottom:solid 4px #6d87db;font-size:17px;font-family:inherit;padding-bottom:8px;font-weight:500;padding:4px 13px;border-top-left-radius:3px;border-top-right-radius:3px;margin-top:1rem!important;color:#333}
+.grup-judul a:before{font-family:fontawesome;content:"\f073";color:#E91E63;margin-right:10px;font-weight:bolder}
+.grup ul{max-height:150px;overflow-y:scroll;list-style:none;padding:0;margin:0;display:block;width:100%}
+.grup ul li{list-style-type:square;font-size:15px;padding:2px 0;margin-left:7px;margin-bottom:3px;margin-top:3px;float:left;width:47%;border-right:2px solid #ddd;white-space:nowrap;overflow:hidden;padding-right:5px;text-overflow:ellipsis}
+/*Skor*/
+span.sscore{position:absolute;top:19px;right:12px;background:#673ab7;color:#fff;box-shadow:0 0 10px rgba(0,0,0,0.29);text-align:center;font-size:18px;border-radius:20px;font-weight:700;padding:5px 11px}
+span.sscore:before{font-family:fontawesome;content:"\f005";color:#ffd600;padding-right:3px}
+/*Kategori List*/
+.kategorilist{margin:10px;margin-bottom:15px;padding:10px;overflow:hidden;color:#607d8b;list-style:disc;margin-top:10px;border:1px solid #f1f1f1;border-radius:5px;box-shadow:0 -3px 5px -5px rgba(0,0,0,0.14),0px 2px 2px 0 rgba(0,0,0,0.12),0px 2px 4px -5px rgba(0,0,0,0.2)}
+.kategorilist li{width:20%;margin-left:25px;line-height:24px;float:left;list-style:decimal;color:#555}
+/*Episode List*/
+.episodelist{padding:0;width:95%;margin:0 auto 21px auto;box-shadow:0 1px 16px 2px rgba(0,0,0,0.2)}
+.episodelist ol::-webkit-scrollbar{width:5px;height:1px;background:#ececec}
+.episodelist ol::-webkit-scrollbar-thumb{background:#6d87db;}
+.episodelist h2{background:#651fff!important;color:white!important}
+.episodelist ol{max-height:400px;overflow-y:auto;padding:5px}
+.episodelist li{text-overflow:ellipsis;line-height:30px;box-shadow:0 -3px 5px -5px rgba(0,0,0,0.14),0px 2px 2px 0 rgba(0,0,0,0.12),0px 2px 4px -5px rgba(0,0,0,0.2);list-style:none;padding:3px 6px;margin:3px 2px;font-weight:700;border-radius:4px;background:#ffffff;border-right:2px solid #fff;font-size:14px}
+.episodelist li:before{content:'\f138';font-family:fontawesome;margin-right:5px;color:#607D8B;font-size:14.5px}
+.episodelist li:after{content:'';float:right;background:#6d87db;border-radius:4px;color:white;font-weight:700;font-size:12px;padding:0 8px}
+.episodelist li a{text-decoration:none;border:none;color:black;font-size:14px;font-weight:700;cursor:pointer}
+/*Next Page Older Page*/
+.halaman{display:block;padding:15px 0}
+.isihalaman-kiri{width:47%;margin-right:9px;background:white;display:inline-block;float:left;border-radius:2px;padding:5px 9px;box-shadow:0 8px 9px 0 rgba(0,0,0,0.06),0px -1px 9px -3px rgba(0,0,0,0.08);border-left:black;margin-bottom:14px}
+.isihalaman-kanan{width:47%;background:white;display:inline-block;float:left;border-radius:2px;padding:5px 9px;box-shadow:0 8px 9px 0 rgba(0,0,0,0.06),0px -1px 9px -3px rgba(0,0,0,0.08);border-left:black}
+.isihalaman-kiri, .isihalaman-kanan {height: 75px;padding-top: 8px;overflow-y:scroll;}
+.isihalaman-kiri::-webkit-scrollbar{width:0px;height:0px;background:none}
+.isihalaman-kiri::-webkit-scrollbar-thumb{background:none;}
+.isihalaman-kanan::-webkit-scrollbar{width:0px;height:0px;background:none}
+.isihalaman-kanan::-webkit-scrollbar-thumb{background:none;}
+span.prev-post{font-weight:700;margin-bottom:10px;color:#0a1138!Important;position:relative;display:block}
+a.blog-pager-newer-link,a.blog-pager-older-link{overflow: hidden;display:block;font-size:16px;font-weight:700;position:relative;padding-left:5px;border-left:10px solid #673ab7;margin:10px 0;transition:.3s ease}
+/*A-Z List Homepage*/
+#LinkList3 h2{position:relative;width:100%;font-size:17px;padding:5px 0;margin-bottom:8px;margin-top:0;text-align:center;color:#504f4f;border-bottom:2px solid #484848}
+#LinkList3:before{font-family:Fontawesome;line-height:normal;font-weight:normal;content:"\f0c9";font-size:25px;color:#292929;top:10px;left:10px;position:absolute;text-shadow:none}
+#LinkList3:after{font-family:Fontawesome;line-height:normal;font-weight:normal;content:"\f0c9";font-size:25px;color:#2b2b2b;top:10px;right:10px;position:absolute;text-shadow:none}
+#LinkList3{background:white;padding-top:8px;padding-bottom:0;border-radius:10px;position:relative;box-shadow:0 0 20px rgba(0,0,0,.05);padding-left:10px;padding-right:10px}
+#LinkList3 ul{font-size:0;margin:0 -5px 15px;text-align:center}
+#LinkList3 ul li{display:inline-block;vertical-align:top;width:3.7%;position:relative;margin-bottom:5px}
+#LinkList3 ul li a{display:block;color:#000000;line-height:30px;border-radius:15px;font-weight:700;font-size:.75rem;text-transform:uppercase;position:relative;z-index:2;min-width:35px}
+#LinkList3 ul li a:before{content:'';position:absolute;left:0;top:0;border-radius:15px;z-index:1;height:30px;right:0;opacity:.2;margin:0 .2rem;transition:.2s;background-color:#3F51B5}
+#LinkList3 ul li a:hover:before {opacity: 0.8;}
+@media screen and (max-width:640px){#LinkList3 .widget-content{overflow:scroll;margin:13px 0}#LinkList3 ul{width: 1000px;}}
+/*Pinned Post*/
+.kotak-pinned{padding:10px 10px 15px 10px;background:white;border-bottom-right-radius:15px;border-bottom-left-radius:15px}img.image {width: 100%;}
+.post-summary{box-sizing:border-box;display:block;box-shadow: 0 11px 14px -2px rgba(34, 36, 39, 0.32);;overflow:hidden;max-height:300px;position:relative;background:#ffffff;border-radius:13px}
+.kotak-kiri{position:absolute;left:0;background:rgba(0, 0, 0, 0.35);top:0;width:50%;color:white;height:370px;box-shadow:none;padding:1.25rem 1.25rem 0;border-radius:10px 0 0 10px;z-index:2;overflow:auto}
+.kotak-kiri a{color:white}
+a.pinned-button{cursor:pointer;padding:0 1rem 3px;width:auto;display:inline-block;text-align:center;font-weight:700;margin-top:15px;line-height:37px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2);border-radius:25px;background:#E91E63}
+.kotak-kanan:before{border-radius:10px;content:'';background-color:rgba(0,0,0,.4);color:#fff;position:absolute;left:0;top:0;width:100%;height:100%;z-index:1}
+.owl-controls{position:absolute;right:1.25rem;z-index:9;bottom:30px;font-size:0}
+.owl-page.active{background:#E91E63}
+.owl-page{width:10px;height:10px;display:inline-block;background:#f4f4f4;vertical-align:top;border-radius:5px;opacity:.8;margin-left:10px;cursor:pointer}
+@media screen and (max-width:640px){
+.post-summary{max-height:100%;box-shadow:none}
+#blog-pagerx .blog-pager-older-link{line-height: 25px!important;}
+.kotak-kiri{padding-top:50%;padding-bottom:10px;border-bottom:3px solid #ddd;height:100%;width:100%;display:block;background:#f4f6fa;overflow:unset;position:relative;color:black}
+.kotak-kiri h3{font-size:16px;margin:1em 0;margin-bottom:5px;color:black}
+.kotak-kiri a{color:#0f0d0d}
+.kotak-kiri p{font-size:11px;text-align:justify;color:black}
+a.pinned-button{cursor:pointer;padding:0 0.6rem 3px;width:auto;display:inline-block;text-align:center;font-size:15px;color:white;font-weight:700;margin-top:15px;line-height:32px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2);border-radius:25px;background:#E91E63}.kotak-kanan img.image {width: 100%;}
+.kotak-kanan{margin-bottom: 10px;overflow:hidden;max-height: 175px;display:block;position:absolute;z-index:9;width:100%;top:0}
+.kotak-kanan:before{backgound:none}.owl-controls{display:none}
+}
+/* Genre List Otomatis Di Static Pages */
+#labelshort{height:100%px;overflow:auto}
+#labelshort ul{list-style:none;padding:0;margin:auto}
+#labelshort ul li{display:inline-block;padding:0 5px;width:33.3%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+#labelshort ul li a{display:block;border-radius:4px;font-weight:800;border-left:4px solid #8398dd;border-right:4px solid #8398dd;padding:6px 5px;text-align:center;background:#f4f4f4;color:#020202;text-decoration:none;text-overflow:ellipsis}
+#labelshort ul li a:hover{background:#a4b5eb9c;color:white;box-shadow:0 1px 8px 0 rgba(0,0,0,0.2),0 1px 3px 0 rgba(0,0,0,0.36)}
+/*A-Z List Perlabel*/
+.nav-anime-list ul{list-style-type:none;height:100%;margin:0 0 15px;padding:0;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center}
+.nav-anime-list ul li{background-color:#3F51B5;color:#fff;padding:6px 0;cursor:pointer;margin:0 5px 5px 0;text-transform:uppercase;width:37px;border-radius:5px;float:left;text-align:center}
+.nav-anime-list ul li a{color:#fff;display:inline-block;height:100%;width:37px;font-weight:bold}
+.anime-list-ex10 .anime-list-ttl{padding-top:5px;clear:both}
+.anime-list-ex10 b:first-child{margin-top:0}
+.anime-list-ex10 b{display:block;width:100%;margin:5px 0;border-bottom:2px solid #6d87db;color:#666;font-size:16px;clear:both}
+.anime-list-ex10 li.it{list-style-type:square;font-size:12px;padding:2px 0;margin-bottom:3px;float:left;width:50%;white-space:nowrap;overflow:hidden;padding-right:5px;text-overflow:ellipsis}
+li.it:nth-child(odd) {background: rgba(221, 221, 221, 0.25);}
+.anime-list-ex10 a{text-decoration:none;font-size:14px;font-weight:600}
+li.it:nth-child(odd) {background: rgba(221, 221, 221, 0.25);}
+.anime-list-ex10 b span{padding:3px 10px;background-color:#6d87db;color:white}
+@media screen and (max-width:640px){.anime-list-ex10 li.it{width: 100%;}}
+/*Anime List Otomatis*/
+#sitemap5{font-size:14px;font-weight:400}span#top{display:none}
+#sitemap5 .judul{display:none}
+#sitemap5 a{transition:all .3s ease;line-height:24px;font-size:15px;font-weight:600;color:#444!important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-decoration:none}
+#sitemap5 a:hover{color:#000}
+#sitemap5 .isi .abjad{color:#444;padding:10px 15px;font-size:110%;font-weight:600;text-transform:uppercase;position:relative;max-width:90%}
+#sitemap5 .isi ol{column-count: 2;}
+#sitemap5 ol,#sitemap5 ol li{list-style-type:none}
+#sitemap5 .nav ol{margin:0 0 15px;padding:0;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;align-items:center;justify-content:center}
+#sitemap5 .nav ol li{background-color:#6d87db;color:#fff;padding:7px;cursor:pointer;border-radius:50%;margin:0 5px 5px 0;text-align:center;text-transform:uppercase;width:40px}
+.abjad span{padding:7px 15px;background:#6d87db;color:white;border-bottom:5px solid #6d87db;z-index:9999}
+#sitemap5 .nav ol li:last-child{margin-right:0}
+#sitemap5 .isi ol{max-width:100%;column-count:2;margin-left:5%;padding:0;border-top:0}
+#sitemap5 .isi ol li {
+list-style: disc;
+overflow: hidden;
+margin: 3px 2px;
+color: #666;
+padding: 8px 8px;
+line-height: 1.5em;
+-webkit-margin-start: 0!important;
+}
+#sitemap5 .nav ol li:hover{background:#E91E63;transition:.5s}
+.abjad:after{border-top:5px solid #6d87db;position:absolute;bottom:0;width:100%;content:""}
+@media screen and (max-width:480px){#sitemap5 .isi ol{column-count: 1;}#sitemap5{font-size:13px}#sitemap5 .judul{padding:10px}#sitemap5 .isi .abjad{padding:7px 15px;margin-right: 0px;padding-left: 0px;}}
+@media screen and (max-width:360px){#sitemap5 .isi ol{column-count: 1;}#sitemap5{font-size:12px}#sitemap5 .judul{padding:10px}#sitemap5 .isi .abjad{padding:7px 12px}#sitemap5 .isi ol li{padding:7px 12px}}
+/* Streaming Anime Re:Kanna */
+i.fa.fa-lightbulb-o{color:#fff;font-size:18px;margin-right:10px}
+#--tabs{overflow:hidden;width:50%;display:inline-block;margin:0;padding:0;list-style:none}
+#--tabs li{float:left;margin:0;margin-right:0.5%}
+.alert.alert-danger{position:relative;padding:.75rem 1.25rem;margin-bottom:.5rem;border:1px solid transparent;border-radius:.25rem;color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}
+#--tabs a{display:block;height:34px;color:black;padding:0 7px;border-radius:3px;border:2px solid #6578b9;line-height:30px;background:#ffff;font-size:smaller}
+#--tabs a:hover,#--tabs a:focus{border-bottom-color:#2e51a2;opacity:1;color:white;background:#5e72b4;filter:alpha(opacity=100)}
+#--tabs a:focus{outline:0}#content{padding:0}
+#--tabs #current{z-index:3;border-bottom-color:#3d3d3d;opacity:1;filter:alpha(opacity=100);margin-bottom:5px}
+#lightsVideo{position:relative;box-shadow:0 1px 16px 2px rgba(0,0,0,0.13);background:#FAFAFA;border-bottom-right-radius:10px;border-bottom-left-radius:10px;margin:0;border-bottom:3px solid #5d70b3}
+.lightSwitcher a:hover{text-decoration:none;color:#eee}
+.lightSwitcher{position:relative;z-index:600;cursor:pointer;color:#fff;height:35px;padding:0 5px;border-radius:4px;line-height:35px;background:#6677b9;font-size:smaller;float:right}
+.lightSwitcher:hover{cursor:pointer;color:black;border:2px solid #6c84c9;background:white}
+.lightSwitcher a{color:#FFF;text-decoration:none}
+.turnedOff{color:#eee}
+#lightsoff{background:rgba(0,0,0,0.90);opacity:0.99;position:fixed;left:0;top:0;width:100%;z-index:100}
+/* Frame video responsive */
+.post-body iframe{width:100%!important}
+@media screen and (max-width:960px){.post-body iframe{max-height:90%}}
+@media screen and (max-width:768px){.post-body iframe{max-height:75%}}
+@media screen and (max-width:600px){.post-body iframe{max-height:60%}}
+@media screen and (max-width:480px){.post-body iframe{height:auto!important;max-height:auto!important}}
+/* Accordion Show Hide Kanna Template */
+.tab{width:100%;color:white;overflow:hidden}
+.tab-label{display:flex;justify-content:space-between;padding:8px 14px;border-radius:3px;background:#5e72b3;font-weight:bold;cursor:pointer}
+.tab-label:hover{background:#1a252f}
+.tab-label::after{content:"\f055";font-size:22px;width:1em;font-family:fontawesome;height:1em;text-align:center;transition:all .35s}
+.tab-content{max-height:0;padding:0 1em;color:#2c3e50;background:white;transition:all .35s}
+.tab-close{display:flex;justify-content:flex-end;padding:1em;font-size:0.75em;background:#2c3e50;cursor:pointer}
+.tab-close:hover{background:#1a252f}
+input:checked + .tab-label{background:#5e72b3}
+input:checked + .tab-label::after{-webkit-transform:rotate(90deg);transform:rotate(90deg);content:'\f056'}
+input#chck1{-webkit-appearance:inherit}
+input:checked ~ .tab-content{max-height:100%;padding:0;background:#eee;border-bottom-left-radius:10px;border-bottom-right-radius:10px;content:"\f056";font-family:fontawesome;padding-top: 10px;}
+/* Box Download Anime Kanna Template */
+.smokeddl .smokettl h2,h3,h4{background:none;box-shadow:none;padding:0;margin:0;font-size:14px;text-align:unset}
+.smokeddl .smokettl h2:before{content:none}
+.smokeddl{box-shadow: 0 8px 9px 0 rgba(0,0,0,0.14), 0px -1px 9px -3px rgba(0,0,0,0.19);font-size:12px;font-weight:600;background:#f1f1f1;padding:6px;border-radius:6px}
+.smokeddl .smokettl{padding:10px 10px;color:#FFF;font-size:14px;background:repeating-linear-gradient(-45deg,#333 0,#333 76%,#3f51b5 0,#3f51b5 100%)}
+.smokeddl .smokeurl{margin-top:3px;padding:8px 10px;color:#555;background:#fff;border-bottom:1px solid #ddd}
+.smokeddl .smokeurl a{color:#555;font-size:13px;border-left:2px solid rgba(238,238,238,0.6);border-bottom:2px solid rgba(238,238,238,0.6);padding:7px 6px}
+.smokeddl .smokeurl a:hover{text-decoration:underline;background:#5e72b3;color:white;transition:.6s}
+.smokeurl strong{background:#5e72b3;padding:7px 10px;border-radius:2px;color:#fff;margin-right:5px}
+/* Heading */
+h1,h2,h3,h4,h5{font-weight:700;}h1{font-size:2em;margin:.67em 0;}h2{font-size:1.5em;margin:.83em 0;}h3{font-size:1.17em;margin:1em 0;}h4{font-size:1em;margin:1.33em 0;}h5{font-size:.83em;margin:1.67em 0;}h6{font-size:.75em;margin:2.33em 0;}
+/*Navigasi Kecil*/
+#menu-kecil{display:none}
+label.tombol-menu{float: right;width:46px;overflow:hidden;border-radius:50%;padding:12px;display:inline-block;cursor:pointer}
+label.tombol-menu:hover{background-color:rgba(60,64,67,0.08);outline:none}
+label.tombol-menu span{width:50px;height:10px;display:block;margin:0 auto;margin-bottom:5px;background:#ffffff}
+ul.link-bawah{position:absolute;top:100%;right:4%;-webkit-transform:translateX(-50%) scaleY(.5);transform:translateX(-50%) scaleY(.5);-webkit-transform-origin:top center;transform-origin:top center;text-align:left;white-space:no-wrap;background:#000;padding:10px 0 15px;border:1px solid #333;visibility:hidden;opacity:0;transition:all .3s ease}
+#menu-kecil:checked ~ ul{visibility:visible;opacity:1;border:1px solid #dadce0;transform:scale(1) translateZ(0);box-shadow:0 2px 10px rgba(0,0,0,.2);border-radius:6px}ul.link-bawah {background: white;}
+ul.link-bawah a{color:black;display:block;padding:10px 20px;font-size:16px;text-transform:capitalize;transition:all .5s ease;text-decoration:none}
+ul.link-bawah a:hover{color:#2196F3}
+li.link-bawah{list-style:none}
+/*Tombol Pencarian*/
+form.search-form{width:100%;position:relative;display:block;overflow:hidden}
+input.search-input{padding:10px 15px;border:none;border-bottom:2px solid #2196F3;display:inline-block}
+button.search-button{display:inline-block;position:absolute;right:6px;color:white;background:none;border-radius:50%;border:none;padding:5px 8px}
+button.search-button:hover{transform:scale(1.2);cursor:pointer}
+input.search-input:hover{outline: none;background:rgba(0,0,250,0.1);border-radius:9px;border-bottom:1px solid #BBDEFB;transition:.5s;opacity:1}
+/* Navigation */
+#menu{margin:auto auto 0 auto;transition:.0s linear;position:relative;z-index:99999;background:#34495E;overflow:hidden;border-bottom:4px solid #6d87db;top:0;color:white;height:57px}
+#menu .menu .current-menu-item a{background:#6d87db;color:#fff}
+.menu{overflow:hidden;margin-left:13%}
+#menu .menu li{float:left;list-style:none}
+#menu .menu li a{display:block;color:white;height:100%;padding:0 15px;margin:0 0;line-height:53px;font-weight:500;font-size:13px;text-transform:uppercase}
+#menu .menu li a:hover {background:#6d87db;color:#fff;text-decoration:none;}
+#menu ul li ul{position: absolute;display: none;z-index: 200;background:#333;}
+#menu ul li:hover ul{display:block}
+#menu ul li ul li {float:none !important; }
+#menu ul li:hover ul li ul {display: none;}
+#menu ul li ul li a{display: block;min-width: 150px;font-size: 12px;font-weight: 400;line-height:30px !important;text-transform: none;padding: 7px 8px;text-align: left;color: #999;}
+#menu ul li ul li a:hover{text-decoration:}
+li.icon{display:none;}
+#form{float:right;position:relative;margin:-45px 15px;background:none;border-radius:5px}
+#form #q{color:#333;font-family:"Open sans",sans-serif;padding:10px 10px;border:none;font-size:14px;border-radius:9px;width:188px;color:#333}
+#pilih{padding:5px 0;background:#fff;color:#333;border:none}
+li.icon{display:none}
+#cari{padding:10px 12px;color:white;background:none;border:none;border-left:1px solid #ddd;cursor:pointer;font-size:16px}
+span.judulmobil{display:none}
+.anon{font-size:15px;margin:0 auto;margin-bottom:12px;position:relative;margin-top:15px;padding:10px 35px;border-radius:5px;max-width:990px;color:#FFF;background:#ffaa51;line-height:18px;text-align:center;overflow:hidden;text-shadow:1px 1px 1px #999}
+.anon::before{font-family:Fontawesome;line-height:normal;font-weight:normal;content:"\f0a2";font-size:25px;color:#ffd5c5;top:5px;left:5px;position:absolute;text-shadow:none}
+.anon::after{font-family:Fontawesome;line-height:normal;font-weight:normal;content:"\f0a2";color:#ffd5c5;font-size:25px;right:5px;top:5px;position:absolute;transform:scale(-1,1);text-shadow:none}
+/*News Ticker*/
+#-batazx{margin-bottom:10px;margin-top:10px;display:block;padding:0 6px!important;background: #6d87db;color:white;max-height: 37px;overflow:hidden;box-shadow: 1px 3px 8px #0000001a;border-radius: 5px;}
+#-batazx h3{display:inline;margin-top:7px;float:left;padding: 5px 18px;text-align: left;font-size:11px;background:#2c2c2c!important;border-radius:20px;}
+#-batazx h3:before{content:"\f087";font-family:FontAwesome;color:white;margin-right:3px;}
+div#rec-post{color:white;margin-top: 3px;}
+li.last-post-item a{color:white;font-size:12px}
+/* featured Anime*/
+#rekomendednim {background:#f6f6f6;padding: 0px 0px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;margin:auto auto 8px;color:#000}
+#rekomendednim h2{margin: 0;background: #0980d4;float: left;font-size: 11px;font-weight: 600;line-height: 13px;padding: 7px;color: #fff;border-radius: 5px;}
+#rekomendednim a {margin-top: 0;font-size: 12px;color: #555;padding: 0px 7px;font-weight: 500;line-height: 27px;}
+#rekomendednim a:hover{text-decoration:underline;}
+#wiburekomended ul {margin-left: 80px;}
+#wiburekomended {background: #fff;padding: 6px 5px;height: 35px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;    box-shadow: 1px 1px 1px rgba(204, 204, 204, 0.82);}
+#wiburekomended h2{margin: 0;background: #444;float: left;font-size: 12px;font-weight: 600;line-height: 13px;padding: 14px 0;margin-right: 15px;color: #eee;}
+#wiburekomended li {list-style:none;display:inline-block}
+#wiburekomended li a {color: #555;padding: 6px 8px;float: left;line-height: 11px;font-size: 11px;margin-right: 5px;border-radius: 3px;}
+#wiburekomended li a:hover {text-decoration: none;background:#0980d4;color: #fff;}
+.allf{background:#0980d4;color:#fff !important}
+/*Ongoing List Kanna*/
+#LinkList1 ul li:nth-child(even){background:white}
+#LinkList1 ul li a {color: black;}#LinkList1 ul li{color:black;font-weight:700;background:#f4f4f4;width:99%;font-size:13px;padding:5px!important;border-bottom:0 solid #ededed!important;overflow:hidden}
+#LinkList1 ul li:before{line-height:normal;content:"New Eps";float:right;right:5px;top:5px;background:#6d87db;width:50px;padding:5px;text-align:center;color:#fff;font-size:11px;font-weight:700;border-radius:2px}
+/* Genres */
+.genres {overflow: hidden;line-height: 21px;}
+.genres li {list-style:none;}
+.genres li a {color: #333;width: 165px;padding: 7px 10px;white-space: nowrap;float: left;display: inline;border: 1px solid #ddd;margin-bottom: 2px;margin-right: 2px;}
+.genres li a:hover {text-decoration: none;background: #eee;transition: 0.3s all ease;}
+/* Anime List */
+.daftarkartun{overflow:hidden;}
+.abjtext{padding:0;text-align:center;margin:0;margin-top:3px;margin-bottom:10px}
+.abjtext a {display: block;font-weight: 700;padding: 4px 0;width: 3.39%;color: #DCDCDC;font-size: 11px;float: left;margin: 1px;background:#333;}
+.abjtext a:hover {text-decoration: none;color:#dcdcdc}
+#abtext{overflow:hidden}.bariskelom{position: relative;margin-bottom: 10px;padding-right: 5px;}
+.barispenz {font-weight: 700;font-size: 12px;border-bottom:3px solid #eee;margin-bottom: 5px;padding: 5px;text-transform: uppercase;position: relative;}
+.barispenz a{color:#666;text-decoration:none}
+.penzbar{lcolor: #ccc;float: left;width: 50%;}
+.jdlbar{line-height: 23px;font-weight: 700;}
+.jdlbar ul{list-style-type: disc;}
+.jdlbar ul li{color:#444 !important;margin-left:20px;}
+.jdlbar a{font-size: 13px;color: #444;font-weight: 500;  }
+.jdlbar a:hover{}
+.post.hentry{width:675px;border-radius:10px;float:left;padding:10px;overflow:hidden;background:#fff;color:#000;box-shadow:0 1px 5px rgba(0,0,0,.25)}
+/* Post */
+.post-body pre{padding:21px 15px 20px;margin:15px 0;display:block;line-height:21px!important;background:#f7f7f7;overflow:auto;border:1px solid #dadce0;border-radius:8px;color:#03A9F4;font-size:12px;white-space:pre-wrap}
+.post-body a{color:#6d87db;font-weight:600}
+.post-body a:hover{border-bottom:1px dotted black;transition:.5s}
+.post-body{margin-top:40px;line-height:25px;position:relative;font-size:15.5px;font-weight:500}
+.breadcrumbs span{background:#2980b9;padding:5px 9px;font-size:11px;display:inline-block;color:#fff;font-weight:700;}
+.breadcrumbs a{color:#fff;}
+.post-body img{display:block;margin:7px auto;}
+h1.entry-title{font-size: 17px;padding-bottom: 5px;color: #444;margin-bottom: 3px;border-bottom: 2px solid #eaeaea;}
+.post-body blockquote{border-left:4px solid;padding:5px 5px 5px 15px;margin:8px 0;}
+.post-body p{padding:5px 0;}
+.post-header{margin:7px 1px 10px;font-family:Open Sans,sans-serif;font-size:13px;line-height:inherit;}
+.post-footer,.post-header{font-size:12px;color:#555;}
+.dte-1 li a{padding:8px;border-bottom:1px solid #ededed;margin-bottom:1px;display:block;font-size:13px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dte-1 li a .fa{padding-right:9px;}
+.dte-rlh{margin:0;font-size:13px;padding:8px 10px;}
+/*Penulis*/
+.postauthor{background:url(https://www.mikunime.com/wp-content/themes/aaaaaanime/img/bg2.jpg);position:relative}
+.authorava{height:97px;width:auto;overflow:hidden;float:left}
+.authorava img{margin:5px;height:85px;border:3px solid #2196F3;border-radius:99px;width:85px}
+.authorright{position:absolute;top:0;right:0;width:150px;height:0;float:left;padding-right:15px;border-bottom:100px solid #3f51b5;border-left:50px solid transparent}
+.authorright h2{color:#fff!important;text-align:right;float:right;font-size:13px!important;padding-top:0px!important;width:100%;border-bottom:none!Important;border-top:none!Important}
+.authorright h2:before {display: none;}
+.authorright h2, h4 {background: none!important;}
+.authorright h4{line-height:8px;color:#eee;margin-top:13px!Important;margin:0;font-weight:600}
+.authorright h2{color:#fff!important;float:right;text-transform:unset!important;font-size:14px!important;padding-bottom:3px!important;padding-top:11px!important;width:100%;border-bottom:none!Important;border-top:none!Important}
+.authorright h3{line-height:29px;color:#fff;text-align:right;border-radius:3px;font-size:14px;width:165px;background:#3F51B5;float:right;margin-top:0!important;border:none}
+.area{overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.25);border-radius:3px;margin-bottom:15px}
+/*Meta Box Anime*/
+.datanime{display:block;overflow:hidden;background:#fff;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.25)}
+.datanime li:nth-child(odd){background:rgb(238,238,238)}
+.datanime li:nth-child(odd){background:rgba(238,238,238,0.51)}
+.datanime li{font-size:14px;line-height:21px;display:block;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:5px 10px;list-style:none}
+.datanime li b{display:block;float:left;width:110px}
+.datanime li:hover{white-space:normal;background:#34495ec4;color:#fff}
+span.bapaq:before{font-family:FontAwesome;content:"\f084";margin-right:5px;color:#6d87db}
+span.bapaq{font-size:16px;border-bottom:3px solid #6d87db;padding-bottom:5px;margin-top:15px;display:block;font-weight:600;color:#333;position:relative}
+.tagser{border:3px solid #ddd;font-size:11px;height:40px;overflow:scroll;overflow-wrap:break-word;padding:5px;text-align:justify;border-radius:2px}
+#pesan-penutup{padding:10px;background:#e9ecef;color:#007bff;border-right:4px solid #687bbc;border-radius:4px;border-left:4px solid #6f84c7;margin: 15px 0;}
+#pesan-penutup p{font-size:12.5px}
+.iklanatas , .iklan728{width:100%;height:90px;margin-bottom:10px;box-shadow:1px 1px 5px rgba(0,0,0,.25);border-radius:2px;overflow:hidden;margin-top:10px}
+.iklanatas img{height:100%;width:100%}
+/*Foot Menu*/
+.foot-menu{text-align:center;width:100%;overflow:hidden;padding:0 1px;display:block;background:#6d87db;margin:0 auto;color:white}
+ul#menu-menu-2{overflow:hidden;list-style:none;margin:0;padding:0}
+li.menu-bawah{display:inline-block!important;font-size:13px;padding:8px;line-height:15px;font-weight:700;font-size:13px;transition:.3s;color:white}
+.menu-bawah a{color:white}
+/*Warna Variabel*/
+.widget-content.recent::-webkit-scrollbar{width:1px;height:4px;background:#ddd;}
+.widget-content.recent::-webkit-scrollbar-thumb{background:#6d87db;}
+.post{margin-bottom:10px!important;border-bottom:4px solid #673ab7;font-size:15px;overflow:hidden;height:auto;background:white;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,.25)}
+.rvad h1{font-size:13px;padding:12px;margin-bottom:0;font-weight:700;border-top-left-radius:10px;border-top-right-radius:11px;background:#6d87db url(https://1.bp.blogspot.com/-NsCsokSmPi4/XWZ76u4vokI/AAAAAAAAOCo/NskwcKqEXAk8zNffoafhnTM3kso9BXUKQCLcBGAs/s1600/otaku.png);text-transform:uppercase;text-align:left;color:white}
+#menu {border-bottom: 4px solid #6d87db;}
+.showpageOf{text-decoration:none;background:#6d87db;color:#fff;font-weight:600;padding:11px 17px;text-transform:uppercase;margin:2px;font-size:11px;border-radius:2px}
+.showpageNum a{text-decoration:none;background:#6d87db;color:#eceaf1;padding:7px 14px;text-transform:uppercase;font-size:11px;font-weight:600;border-radius:3px;transition:all .3s}
+/*Genre*/
+.foot-menu{text-align:center;width:100%;overflow:hidden;padding:0 1px;display:block;background:#6d87db;margin:0 auto}
+.widget-content.list-label-widget-content::-webkit-scrollbar{width:5px;height:1px;background:#ececec}
+.widget-content.list-label-widget-content::-webkit-scrollbar-thumb{background:#6d87db;}
+.widget-content.cloud-label-widget-content::-webkit-scrollbar{width:5px;height:1px;background:#ececec}
+.widget-content.cloud-label-widget-content::-webkit-scrollbar-thumb{background:#6d87db;}
+.widget-content.list-label-widget-content ul li span{display:inline-block;vertical-align:top;margin-bottom:5px;padding:0 .3rem;font-weight:700;text-transform:uppercase;color:#571845;line-height:1.25rem;background-color:#e9e3e8;font-size:.75rem;border-radius:10px 0 10px 0;float:right}
+.widget-content.list-label-widget-content ul li:hover{box-shadow:inset 0 -1px 0 rgba(79,131,170,.2),0 0 30px rgba(0,0,0,.07);background-color:#fff;border-radius:3px;padding:5px;cursor:pointer}
+span.label-size.label-size{font-size:13px;text-align:center;font-weight:bold;width:46%;float:left;text-transform:capitalize;margin:3px 4px;border-radius:3px;background:#fff;color:#333;padding:9px;box-shadow:1px 1px 3px 2px rgba(0,0,0,0.11);border-left:3px #673ab7 solid;transition:all 0.3s ease 0s}
+.Label .widget-content a{color:black;font-weight: 700;font-size:14.5px}
+.widget-content.cloud-label-widget-content{list-style:none;overflow:auto;background:#fff;border-radius:3px;padding:4px 0;max-height:197px}
+ul.recent-by-tag{overflow:hidden;padding:0 6px;display:flex;background:white;float:none;margin:0 auto;margin-bottom:9px;width:1000px}
+.recent-by-tag img{width:100%;height:150px;margin-right:10px;margin-bottom:5px;border-top-left-radius:10px;border-top-right-radius:10px}
+.recent-by-tag li{width:160px;border-radius:10px;margin-top:10px;margin-bottom:6px;margin-right:6px;text-align:center;list-style:none;padding:0;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);background:white;line-height:1.3em!important;display:inline-block}
+.recent-by-tag li:before{-webkit-transition:all .1s ease-in-out 0s;-khtml-transition:all .1s ease-in-out 0s;-moz-transition:all .1s ease-in-out 0s;-ms-transition:all .1s ease-in-out 0s;-o-transition:all .1s ease-in-out 0s;transition:all .1s ease-in-out 0s;content:"";position:absolute;display:block;width:50px;height:50px;top:50%;left:50%;margin-top:-25px;margin-left:-25px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9BAMAAAB9rnEWAAAAJ1BMV &#162; &#8218;&#172; &#166;8m8g9O4V8XQ8WDl3XXdi63h8MHceP69vnZQcxdWLvN0/8Dpj1ulfDcMG0AAAAASUVORK5CYII=) no-repeat;background-size:cover;z-index:3;opacity:0;-webkit-transition:opacity .5s ease-out;-khtml-transition:opacity .5s ease-out;-moz-transition:opacity .5s ease-out;-ms-transition:opacity .5s ease-out;-o-transition:opacity .5s ease-out;transition:opacity .5s ease-out}
+.recent-by-tag li a{list-style:none;color:#555;font-weight:700;font-size:13px!important;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;position:relative}
+span.skor-rate{position:absolute;border-radius:3px;margin:5px;padding:5px;font-size:14px;background:#6666ff;color:#FFF;z-index:999}
+.sl-rate{position:absolute;top:1px;right:3px;overflow:hidden;z-index:9;font-size:12px;font-weight:500;background:#FFA000;padding:2px 7px;border-radius:50%;transition:.3s;color:white}
+a.skor{display:none}
+a.skor:nth-child(2) {display:inline-block}
+.recent-by-tag li a:hover,.recent-by-tag li:hover a{color:#f35858!important}
+.recent-by-tag .btndown{display:none}
+/*Versi Mobile*/
+@media screen and (max-width:640px) {
+.dark-mode .center{color:white;background:#323338}.dark-mode i.fa.fa-ellipsis-v{color:white}i.fa.fa-ellipsis-v{color:rgba(0,0,0,0.49);font-weight:100;font-size:22px;text-align:center;display:block}label.tombol-menu{float:right;height:53px;width:50px;overflow:hidden;border-radius:50%;padding:17px;display:inline-block;cursor:pointer}.dark-mode .judulmobil a{color:white}
+.dark-mode .menu li a{color:white}
+.dark-mode .menu a{color:white!Important}
+.post-body{margin-top:10px}
+#PopularPosts1{width:100%}
+.showpageOf{display:none}
+.smokeddl{font-size:12px;font-weight:600;background:#f1f1f1;padding:0 3px 5px;text-align:center;border-radius:6px}
+.smokeddl .smokettl{padding:6px 8px;color:#FFF;font-size:14px;text-align:center;background:repeating-linear-gradient(-45deg,#333 0,#333 76%,#3f51b5 0,#3f51b5 100%)}
+.smokeurl strong{background:#3f51b5;padding:2px 3px;border-radius:4px;color:#fff;text-align:center;display:block;margin-right:5px}
+.smokeddl .smokeurl a{display:inline-block;padding:3px 8px;color:white;font-size:12px;margin-right:5px;margin-top:4px;background:#5e72b3;font-weight:700;border-radius:2px;margin-bottom:5px;border-left:2px solid #ddd;border-bottom:2px solid #ddd;transition:.02s;text-align:center}
+.smokeurl a:hover{background:#42A5F5;color:white;border-bottom:2px solid #eee;border-left:2px solid #eee} .datanime li:nth-child(odd){background:#eeeeee}
+.datanime li{font-size:13px;line-height:21px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:5px 10px;list-style:none}
+ul.recent-by-tag{padding:0;margin-left:10px}}
+@media screen and (max-width:480px) {ul.recent-by-tag{margin-left:0}}
+/*Komentar Disqus*/
+.disqus-title:hover{color:black;cursor:pointer;background:white;transition:.4s}
+.disqus-title{margin:0;text-align:left;background:#6d87db;padding:10px;border:solid 3px #6d87db;color:white;font-size:100%;font-weight:600}
+.disqus-loader,#disqus-showhide{float:right;cursor:pointer}
+#disqus-showhide{display:none}
+/* Related Post Grid by igniel.com */
+#ignielRelated::-webkit-scrollbar{width:1px;height:4px;background:#ddd;}
+#ignielRelated::-webkit-scrollbar-thumb{background:#6d87db;}
+#ignielRelated{display:block;margin:20px 0;line-height:1.5em;overflow:auto}
+h3.title{font-size:17px;font-weight:600;text-transform:capitalize;line-height:initial;text-align:left;background:#6d87db;border-top-left-radius:10px;border-top-right-radius:10px;padding:10px}
+h3.title span{padding:0 10px;color:white;position:relative;z-index:1}
+h3.title:before{font-family:FontAwesome;content:"\f06d";margin-left:7px;background:white;color:#3e3939;padding:7px 10px;border-radius:50%}
+#ignielRelated ul{margin-left:15px;width:1014px;display:flex;flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap}
+#ignielRelated ul li{list-style:none;width:155px;border-radius:3px;clear:both;height:185px;text-align:center;margin-right:5.5pt;margin-bottom:9px;padding:0;-webkit-margin-start:0!important;position:relative;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);overflow:hidden}
+#ignielRelated ul li .thumb{overflow:hidden;line-height:0;border-radius:3px;position:relative}
+#ignielRelated ul li a{display:block;position:relative}
+#ignielRelated ul li a.judul{font-size:13px;position:absolute;text-align:center;width:100%;bottom:-23px;height:55px;padding:6px;font-weight:700;background:url(https://lh4.googleusercontent.com/proxy/dWdlMCQwl6YCeYqc0l3O_ZePvejLH5jlUOGzBNTKIw3mWwoArh69JKNNcB3iJc3C9ronyaBWWfjgpIqXaVWI8B0SA19IwM4wbbddl7frYrH6zdD6B9PhBQ=s0-d);color:black;overflow:hidden}
+#ignielRelated ul li a.judul:hover,#ignielRelated ul li:hover a.judul{color:black;bottom:0;transition:0.5s;cursor:pointer}
+#ignielRelated ul li a img{width:100%;height:185px;transition:all .3s ease;object-fit:fill;border:0;margin:0;position:relative;overflow:hidden}
+#ignielRelated ul li a img:hover,#ignielRelated ul li:hover img{transform:scale(1.1) rotate(-5deg);filter:brightness(75%);-webkit-filter:brightness(75%)}
+#ignielRelated .norelated{text-align:center;font-weight:600}
+@media screen and (max-width:480px){#ignielRelated ul li{margin-right: 8px!important;margin-bottom: 16px;}#ignielRelated ul li:nth-of-type(3n){margin-right:15px}#ignielRelated ul li:nth-of-type(2n){margin-right:0}}
+.related-post h4{display:none}
+.at-dlbox{display:block;margin:10px auto}
+.post img.firstimage{width:100%;height:auto;max-width:100%;margin:auto;display:block}
+.post-body .separator:nth-child(1){display:none}
+/* RECOMENDED ANIME */
+.hitsdah{overflow:hidden;float:left;background:#FFF;border:1px solid #DDD;padding:4px;border-left:0;width:830px;font-size:14px}
+#rslides-container{margin-bottom:15px}
+#hits{margin:0;padding:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+#hits li{float:left;margin:0;line-height:33px;margin-right:5px}
+#hits a{line-height:33px;font-family:"Open Sans";margin-top:0;font-size:12px;color:#555;padding:0 7px;font-weight:500}
+#hits a:hover{text-decoration:underline}
+#hits a:last-child{border:0}
+#animeterhits{margin:0 10px 15px 0;background:#F5F5F5;border-left:-0;max-height:30px}
+#hits h3{margin:0;background:#0980d4;float:left;font-size:11px;font-weight:600;line-height:16px;padding:7px;color:#fff;border-radius:5px}
+.rslides{position:relative;list-style:none;overflow:hidden;width:100%;padding:0;margin:0}
+.rslides li{margin:0;position:relative;display:block;-webkit-backface-visibility:hidden;position:absolute;display:none;width:100%;left:0;top:0}
+.rslides li:first-child{position:relative;display:block;float:left}
+/* Comments */
+.comment_h4{font-size:13px;padding:9px 13px;margin:5px 0 0;color:#fff}
+#comment_block{padding:15px;border:1px solid #ddd;border-top:0;line-height:23px}
+.comment_avatar{border-radius:100%;overflow:hidden;float:left;width:45px;height:45px;margin-right:15px;background:url(//1.bp.blogspot.com/-DEoQ6Q9sgPc/VchjxASQzxI/AAAAAAAAEY0/_C_Rk0uxxPc/s1600/avatar.jpg)no-repeat center center;background-size:100%}
+.comment_child .comment_avatar{border-radius:2px;height:38px;width:38px}
+.cm_user{color:#333!important;padding-right:7px;font-weight:700;font-size:12px}
+.comment_date{color:#999;padding-left:5px;display:inline-block}
+.cm_head{overflow:hidden}
+.comment_opsi{display:none}
+#comment-editor{height:290px}
+#comment_block > div > .comment_child{padding:0;margin:8px auto;margin-left:60px}
+#comment_block > div{border-bottom:1px solid #ddd;padding-bottom:15px;margin-bottom:16px}
+.comment_body p{overflow:hidden;font-size:12px}
+.comment_child > div{margin:15px 0 17px}
+.comment_child > div > .comment_child > div{padding-top:6px}
+#comment_block > div > .comment_child > .comment_wrap:first-child{border-top:1px solid #ddd;padding-top:15px;margin-bottom:5px}
+#comment_block > div > div > .comment_opsi{display:block;margin-top:5px;margin-bottom:-6px;margin-left:60px;color:#999}
+.comment_opsi a{color:#999}
+.comment_form{background-color:#FAFAFA;border-top:0;border:1px solid #dedede}
+.comment_form iframe,.comment-form iframe{width:100%;max-height:250px}
+.comment-form p{padding:11px 14px;margin:10px;background-color:#FFFFE5;color:#333;font-size:12px;line-height:22px;border:1px solid #EDEDB1}
+.comment_reply_form > div{padding:10px;background-color:#FAFAFA;border:1px solid #F0F0F0}
+.comment_reply_form > div > p{margin:6px auto 15px}
+.comment_form > a:first-child{padding:10px;border-radius:4px;margin:10px;display:block;text-align:center;color:#fff;text-transform:uppercase;font-weight:700;font-size:14px}
+.at-dlttle{padding:7px;display:block;color:#fff;font-weight:700;font-size:13px;padding-left:12px;position:relative}
+.at-dlttle:before{content:"\f07c";font-family:Fontawesome;position:absolute;right:15px;color:#fff;font-size:16px}
+.at-dlar{display:block;padding:10px;background:#FAFCFF}
+.at-dlar a{border-right:1px solid #ddd;padding-right:14px;padding-left:14px}
+.at-dlar a:last-child{border:0}
+.at-dlar a:first-child{padding-left:7px}
+.nav_comtab{margin:10px 0 7px;display:none}
+.nav_comtab li{cursor:pointer;float:left;text-align:center;width:50%;padding:7px 10px 10px;color:#FFF;text-transform:uppercase;font-size:13px;-webkit-user-select:none}
+.nav_comtab li:nth-child(1){background:#F2802A}
+.nav_comtab li:nth-child(2){background:#1E89E4}
+.nav_comtab li .fa{display:inline-block;font-size:15px}
+.nav_comtab li h4{margin:0}
+/* Featured Random Post */
+#kolor{background:white;display:block;width:100%;border-top:2px solid #673ab7;height:250px;padding:11px;padding-left:20px;box-shadow:1px 3px 8px #0000001a;border-bottom-right-radius:10px;border-bottom-left-radius:10px;margin-bottom:25px}
+#kolor li{list-style:none;margin-right:0;background:white;border-radius:15px;margin-bottom:10px;float:left;margin:7px 4px;max-height:220px;overflow:inherit;position:relative}
+#kolor a.title-article{overflow:hidden;font-size:13px;position:absolute;text-align:left;bottom:0;width:100%;height:87.6px;padding:6px;padding-top:30px;font-weight:700;color:white;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.33) 30%,rgba(0, 0, 0, 0.73) 70%,rgba(6, 6, 6, 0.9) 100%);border-bottom-left-radius:10px;border-bottom-right-radius:10px}
+.zeeb{overflow:hidden;width:160px;position:relative;box-shadow:0 5px 20px rgba(0,0,0,0.38);border-radius:10px}
+.zeeb:hover:before {opacity: 1;}
+.zeeb:before{content:"";position:absolute;display:block;width:50px;height:50px;top:50%;left:50%;margin-top:-25px;margin-left:-25px;background:url(https://1.bp.blogspot.com/-zHsYA9gT4co/XeHcA7PyyyI/AAAAAAAABQA/00yeiYs-UQgEyJ5gQ742rKNh33fKncGuQCLcBGAsYHQ/s1600/play.png) no-repeat;background-size:cover;z-index:9999999999;opacity:0;-webkit-transition:opacity .5s ease-out;-khtml-transition:opacity .5s ease-out;-moz-transition:opacity .5s ease-out;-ms-transition:opacity .5s ease-out;-o-transition:opacity .5s ease-out;transition:opacity .5s ease-out}
+.zeeb img:hover{transform:scale(1.1) rotate(-5deg);filter:brightness(75%);-webkit-filter:brightness(75%)}
+.zeeb img{width:100%;height:210px;object-fit:cover}
+a.genred:nth-child(1), .JK-Category a:nth-child(1) {
+display: none;
+}
+a.genred {text-transform: capitalize;display: inline-block;text-transform: capitalize;padding-right: 7px;color: #6d87db!important;}
+/*Genre*/
+.foot-menu{text-align:center;width:100%;overflow:hidden;padding:0 1px;display:block;background:#6d87db;margin:0 auto}
+.widget-content.list-label-widget-content::-webkit-scrollbar{width:5px;height:1px;background:#ececec}
+.widget-content.list-label-widget-content::-webkit-scrollbar-thumb{background:#6d87db;}
+.widget-content.cloud-label-widget-content::-webkit-scrollbar{width:5px;height:1px;background:#ececec}
+.widget-content.cloud-label-widget-content::-webkit-scrollbar-thumb{background:#6d87db;}
+.widget-content.list-label-widget-content ul li span{display:inline-block;vertical-align:top;margin-bottom:5px;padding:0 .3rem;font-weight:700;text-transform:uppercase;color:#571845;line-height:1.25rem;background-color:#e9e3e8;font-size:.75rem;border-radius:10px 0 10px 0;float:right}
+.widget-content.list-label-widget-content ul li:hover{box-shadow:inset 0 -1px 0 rgba(79,131,170,.2),0 0 30px rgba(0,0,0,.07);background-color:#fff;border-radius:3px;padding:5px;cursor:pointer}
+span.label-size.label-size{font-size:13px;text-align:center;font-weight:bold;width:46%;float:left;text-transform:capitalize;margin:3px 4px;border-radius:3px;background:#fff;color:#333;padding:9px;box-shadow:1px 1px 3px 2px rgba(0,0,0,0.11);border-left:3px #673ab7 solid;transition:all 0.3s ease 0s}
+.Label .widget-content a{color:black;font-weight: 700;font-size:14.5px}
+.widget-content.cloud-label-widget-content{list-style:none;overflow:auto;background:#fff;border-radius:3px;padding:4px 0;max-height:197px}
+ul.recent-by-tag{overflow:hidden;padding:0 6px;display:flex;background:white;float:none;margin:0 auto;margin-bottom:9px;width:1000px}
+.recent-by-tag img{width:100%;height:150px;margin-right:10px;margin-bottom:5px;border-top-left-radius:10px;border-top-right-radius:10px}
+.recent-by-tag li{width:160px;border-radius:10px;margin-top:10px;margin-bottom:6px;margin-right:6px;text-align:center;list-style:none;padding:0;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);background:white;line-height:1.3em!important;display:inline-block}
+.recent-by-tag li:before{-webkit-transition:all .1s ease-in-out 0s;-khtml-transition:all .1s ease-in-out 0s;-moz-transition:all .1s ease-in-out 0s;-ms-transition:all .1s ease-in-out 0s;-o-transition:all .1s ease-in-out 0s;transition:all .1s ease-in-out 0s;content:"";position:absolute;display:block;width:50px;height:50px;top:50%;left:50%;margin-top:-25px;margin-left:-25px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9BAMAAAB9rnEWAAAAJ1BMV &#162; &#8218;&#172; &#166;8m8g9O4V8XQ8WDl3XXdi63h8MHceP69vnZQcxdWLvN0/8Dpj1ulfDcMG0AAAAASUVORK5CYII=) no-repeat;background-size:cover;z-index:3;opacity:0;-webkit-transition:opacity .5s ease-out;-khtml-transition:opacity .5s ease-out;-moz-transition:opacity .5s ease-out;-ms-transition:opacity .5s ease-out;-o-transition:opacity .5s ease-out;transition:opacity .5s ease-out}
+.recent-by-tag li a{list-style:none;color:#555;font-weight:700;font-size:13px!important;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;position:relative}
+span.skor-rate{position:absolute;border-radius:3px;margin:5px;padding:5px;font-size:14px;background:#6666ff;color:#FFF;z-index:999}
+.sl-rate{position:absolute;top:1px;right:3px;overflow:hidden;z-index:9;font-size:12px;font-weight:500;background:#FFA000;padding:2px 7px;border-radius:50%;transition:.3s;color:white}
+a.skor{display:none}
+a.skor:nth-child(2) {display:inline-block}
+.recent-by-tag li a:hover,.recent-by-tag li:hover a{color:#f35858!important}
+.recent-by-tag .btndown{display:none}
+/* Share */
+.socialshare h3{float:left;margin-right:10px;line-height:30px;font-size:15px;font-weight:500}
+.socialshare a{padding:9px;margin-top:10px;margin-right:5px;line-height:20px;font-size:12px;border-radius:2px;font-weight:600;transition:.2s linear;text-align:center;color:white;text-decoration:none;display:inline-block;width:32%}
+.socialshare span{font-size:16px!important;line-height:18px;margin-right:9px;width:15px}
+.socialshare a:hover{text-decoration:none;color:#fff;}
+.socialshare{margin:auto;text-align:centerl;}
+.socialshare .sfb:hover{background:#1D459A;opacity:1;}
+.socialshare .stw:hover{background:#006dde;opacity:1;}
+.socialshare .sgp:hover{background:#7CB342;opacity:1}
+.socialshare .sfb{background:#2d467b;}
+.socialshare .stw{background:#2380e0;}
+.socialshare .sgp{background:#7CB342;}
+.icons,.icons-before:before{display:inline-block;width:20px;height:20px;font-size:20px;line-height:1;font-family:Fontawesome;text-decoration:inherit;font-weight:400;font-style:normal;vertical-align:top;text-align:center;-webkit-transition:color .1s ease-in 0;transition:color .1s ease-in 0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.icons-facebook-alt:before{content:"\f09a";}
+.icons-twitter:before{content:"\f099";}
+.icons-googleplus:before{content:"\f0d5";}
+.tags{font-size:11px;}
+.moekyun2{background:#262626;height:60px}
+.credit2{display:block;clear:both;padding:10px;color:#fff;text-align:center;}
+.sembrul2{opacity:0}
+.sembrul2 a{color:black}
+#sidebar-wrapper h2{background: white;font-size:14px;color:black;padding:12px;font-weight:600;margin-top:0;margin-bottom:0;text-transform:uppercase;border-bottom:2px solid #673ab7;text-align:left;position:relative}
+#sidebar-wrapper h2:before{content:"\f1d9";font-family:FontAwesome;font-size:22px;color:#673ab7;top:13px;font-weight:400;right:7px;position:absolute;text-shadow:none}
+h2.title{font-size:14px;color:white;padding:12px;margin-bottom:0;font-weight:700;border-top-left-radius:10px;position:relative;border-top-right-radius:11px;background:#6d87db url(https://1.bp.blogspot.com/-NsCsokSmPi4/XWZ76u4vokI/AAAAAAAAOCo/NskwcKqEXAk8zNffoafhnTM3kso9BXUKQCLcBGAs/s1600/otaku.png);text-transform:uppercase;border-bottom:3px solid #673ab7;text-align:left}
+.sidebar .widget h3{background:white;font-size:14px;color:black;padding:12px;font-weight:600;margin-top:0;margin-bottom:0;text-transform:uppercase;border-bottom:2px solid #673ab7;text-align:left;position:relative}
+.sidebar .widget h3:before{content:"\f1d9";font-family:FontAwesome;font-size:22px;color:#673ab7;top:13px;background:none;margin-left:0;padding:0;font-weight:400;border-radius:0;right:7px;position:absolute;text-shadow:none}
+.post.hentry {padding: 8px;width: 99.5%!important;}
+.judulnya h1 {font-size: 19px!important;}
+.bottomnav{width:100%;margin-bottom:15px;display:block}
+.l{float:left;max-width:50%;margin-left:173px}
+.logites a:hover {background: white;color: black;text-shadow: none;}
+span.typ,span.ssn{display:block;margin-top:5px;float:left;overflow:hidden;white-space:nowrap}
+span.typ a{background:#55abf6;transition:.3s;margin-right:5px;display:inline-block;padding:3px 12px;color:#fff;border-radius:3px}
+span.ssn a{display:inline-block;padding:3px 12px;color:#fff;border-radius:3px;background:#8BC34A}
+.coverx{position:absolute;bottom:-37px;border:2px solid white;left:10px;width:150px;border-radius:10px;height:188px;overflow:hidden;box-shadow:0 0 5px 0 #00000061}
+.cover-kecil{margin-left:24%;width:75%!important}
+.post img.firstimage{width:100%;object-fit:cover;height:100%;max-width:100%;margin:auto;display:block}
+.JK-Category a:nth-child(n+8) {display: none;}
+/* Responsive */
+@media screen and (max-width:680px) {
+@media screen and (max-width:680px) {
+.blanter-wrap{overflow:hidden;overflow-x:scroll;position:relative;display:block;width:100%;height:250px;box-shadow:0 8px 9px 0 rgba(0,0,0,0.14),0px -1px 9px -3px rgba(0,0,0,0.19)}
+.slide-wrap ul li a img{height:230px!important;width:100%}
+.isihalaman-kiri, .isihalaman-kanan {height: 90px;padding-top: 8px;overflow:scroll;}
+span.prev-post{margin:0px}
+a.blog-pager-newer-link,a.blog-pager-older-link{font-size:14px;font-weight:700;display:block;margin:0px;position:relative;padding:5px 0.3em;border-left:4px solid #673ab7}
+.JK-Category a:nth-child(n+4) {display: none;}
+.bottomnav{display:none}
+.dark-mode .article {background: #22313a;}
+.dark-mode article.post.hentry { background: #22313a;}
+.coverx{display:none}
+.cover-kecil{margin:0px!important;width:100%!Important}
+.moekyun2{background:#262626;height: 105px;}
+body{background: #f1f1f1;}
+.recent-by-tag li{margin-left:4px}
+/*Anime List Page Version*/
+.abjad span{padding: 8px;background:#3F51B5;}
+span#top {display: none;}
+#sitemap5 .isi ol{max-width: 95%;margin-left:0px;}
+#sitemap5 .isi ol li{overflow: hidden!important;padding-left: 0px!important;}
+#sitemap5 .isi ol li:nth-child(even) {background: #9e9e9e57;width: 100%;}
+#sitemap5 a {font-size:14px;}
+.abjad:after{border-top: 3px solid #3F51B5;bottom: 3px;}
+/* content */
+#outer-wrapper{width:100%;}
+#main-wrapper{float:none!important;width:100%!important;border-right:none!important;margin:0!important;}
+#sidebar-wrapper{width:100%;margin-top:10px;}
+#content-wrap {width: 100%;}
+body{background-image:none!important;}
+.Label .widget-content li{padding:3% 5%;margin-bottom:2px;font-size:11px;}
+.PopularPosts .item-thumbnail{width:95px;margin-right:10px;}
+.thumbnail{width:120px;height:80px;}
+h1.entry-title{font-size:17px;padding-bottom:5px;color:#444;margin-bottom:3px;border-bottom:2px solid #eaeaea;}
+.Label .widget-content li{padding:1.5% 5%;margin-bottom:2px;font-size:12px}
+.fmenu{margin:0 auto;display:block;padding:5px;background:#4E4F7E;float:none}
+#kolor{padding:2px;margin-bottom:20px;height:650px}
+#kolor ul{max-height:height:650px}
+#kolor ul li{width:48%!important;padding-left:5px}
+.thumbnail{width:100%!important;height:185px!important;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);}
+h2.entry-title{color:#444;font-size:15px!important;text-align: center;margin:0;line-height:20px;font-weight:700;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.post.hentry{margin-bottom:15px!important;padding:8px;width:100%!important}
+.article{width:100%;margin:0}
+/*Ad Block*/
+.WgD-position{width: 350px!important;}
+.WgD-container{max-width: 350px!important;height: 340px!important;}
+.WgD-container img{max-width: 95px!important;}
+.WgD-title{font-size: 16px!important;}
+.WgD-text{font-size: 12px!important;}
+.WgD-reload{margin: 0px!important;}
+/* featured */
+#kolor ul li{float:left;width:165px;margin:0 2px;overflow:hidden;padding-bottom:5px;margin-bottom:5px;border-radius:10px;}
+.zeeb{width: 100%;box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);}
+#kolor ul li img{float:left;width:100%;height:200px;}
+#kolor a.title-article{width: 100%;bottom: 4px;}
+/* credit */
+.credit span:nth-child(1){display:block;padding:top:3px;text-align:center;}
+.credit span:nth-child(2){float:none!important;display:block;text-align:center;margin-top:6px;margin-bottom:2px;}
+/* menu */
+ul.menu li:not(:first-child){display:none;}
+ul.menu li.icon{float:left!important;display:inline-block;margin:0 0;}
+ul.menu.responsive li.icon{position:absolute;left:0;top:0;margin:0 0;}
+ul.menu.responsive li{float:none!important;display:inline;}
+.socialshare a, .socialshare {width: 100%;display: flex;}
+.judulnya h1 {font-size: 15px!important;}
+.jj-cover {box-shadow: 0 11px 14px -2px rgba(34, 36, 39, 0.32);border-radius: 9px;}
+.JK-cover:before {border-radius: 10px;}
+.jj-cover {height: 200px;}
+.post img.firstimage {width: 100%;height: 200px;}
+#ignielRelated ul{margin:0px;}
+#menu{box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2)}
+#menu,.center{background: white;width:100%!important;position:relative;overflow:visible;height:auto}
+span.judulmobil{display:inline-block;font-size:24px;padding:11px;font-weight:700;color:white}
+span.judulmobil img{max-width: 150px;max-height: 54px;}
+ul.menu.responsive span.judulmobil {margin-left: 50px;}
+span.judulmobil a{color:black}
+li.menu-item.menu-item-614.menu-judul {display: none;}
+#halaman404{height:385px!important}#error-text span{font-size:90px!important}input.search-404{width:100%}
+#menu .menu li a{color:black}
+.menu{margin-left:0px;box-shadow: none!Important;border: none!important;}
+#menu .menu .current-menu-item a{display:none;}
+/* nav */
+#blog-pager{overflow:hidden;line-height:35px;display:block!important;border-radius:0!important;margin:5px 0!important;float:left;}
+.showpage a,.showpageNum a,.showpagePoint,.showpageOf{margin:0 2px 2px 0;box-shadow:0 1px 2px 1px rgba(0,0,0,0.1);}
+/* tag hilang */
+.titlewrapper, .header .description{display:none}}
+@media screen and (max-width:568px){
+#header{height:0;}
+.hider-inner,.titlewrapper,.header .description{display:none;}
+.info img,.adlef,.fb-like,.morec,.ftime,#form,#wiburekomended,.blackmenu,#streamads,.gud,.asique,.gsd,.post-thumb:before{display:none!important;}
+.search,.search #form #s{position:relative;float:none;right:0;bottom:2px;width:100%;text-transform:uppercase;font-weight:600;color:#999;background:#181e23;}
+.blogdesc{top:36px;width:inherit;left:15px;text-align:justify;color:#fff;font-size:8px;}
+.blogname{top:10px;left:15px;width:inherit;text-align:justify;font-size:20px;}
+.thumbz{width:120px;height:80px;}
+h2.episodeye{font-size:12px;}
+.recomx ul li{margin-right:5px;}
+.zeeb{width:100%;border-radius:7px;}
+.zeeb img{width:100%;height:200px;}
+.zeeb h2{width:165px;}
+.venser,.xfloat{float:none!important;width:100%!important;}}
+@media screen and (max-width:500px) {
+#header{height:0;}
+.logo{display:none;}
+.info img,.adlef,.fb-like,.morec,.ftime,#form,#wiburekomended,.blackmenu,#streamads,.gud,.asique,.gsd,.post-thumb:before{display:none!important;}
+.search,.search #form #s{position:relative;float:none;right:0;bottom:2px;width:100%;text-transform:uppercase;font-weight:600;color:#999;background:#181e23;}
+.blogdesc{top:36px;width:inherit;left:15px;text-align:justify;color:#fff;font-size:8px;}
+.blogname{top:10px;left:15px;width:inherit;text-align:justify;font-size:20px;}
+.thumbz{width:120px;height:80px;}
+h2.episodeye{font-size:12px;}
+.recomx ul li{margin-right:5px;}
+.venser,.xfloat{float:none!important;width:100%!important;}}
+@media screen and (max-width:480px){
+#contentanime{display:none;}
+.thumbnail{margin-right:7px;width:80px;height:50px;}
+.post-share{display:none;}
+h2.entry-title{font-weight:400;}
+.page-older,.page-newer,.home-link{display:block;float:none!important;margin-bottom:2px;font-size:11px;}
+.foot h2{font-size:13px;}}
+@media screen and (max-width:320px) {
+.showpage a,.showpageNum a,.showpagePoint,.showpageOf{padding:3px 6px}}
+embed, iframe, object, video {max-width: 100%;position: relative;}
+.js-plyr,.post,.post-content{max-width:100%}
+.js-plyr,.plyr__control--overlaid svg,article pre{display:block}
+.plyr__control--overlaid{padding:1.5rem;background-color:rgba(156,136,255,.75)}
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {background-color: rgba(156,136,255,.9);}
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {background: #aab74d;}
+.plyr--video .plyr__control.plyr__tab-focus {box-shadow: 0 0 0 2px rgba(156,136,255,.5);outline: 0;}
+.plyr__control.plyr__tab-focus {box-shadow: 0 0 0 2px rgba(156,136,255,.5);outline: 0;}
+.plyr--video .plyr__controls{background:linear-gradient(transparent,rgba(0,0,0,.5))}
+.plyr--audio .plyr__control.plyr__tab-focus,.plyr--audio .plyr__control:hover,.plyr--audio .plyr__control[aria-expanded=true],.plyr--video .plyr__controls .plyr__control.plyr__tab-focus,.plyr--video .plyr__controls .plyr__control:hover,.plyr--video .plyr__controls .plyr__control[aria-expanded=true],.plyr__menu__container label.plyr__control input[type=radio]:checked+span{background-color:rgba(156,136,255,.75)}
+.plyr--full-ui input[type=range]{color:#9c88ff}
+.plyr__poster{background-size:cover}
+.plyr__control--overlaid:focus, .plyr__control--overlaid:hover {background: #9c88ff;}
+.plyr-ratio .plyr__video-wrapper{padding-bottom:56.25%;height:0}
+.plyr-ratio .plyr__video-wrapper video{width:100%;height:100%;position:absolute;top:0;bottom:0;left:0;margin:auto}
+.plyr__menu__container .plyr__control{font-size:14px;font-family:Google Sans,sans-serif;font-weight:500;line-height:1.5}
+.plyr__menu__container ul,.plyr__menu__container ul li{margin:0;list-style:none}
+.plyr--audio .plyr__controls{border:1px solid #dbe3e8}
+/*custom label*/
+.tags a{color:#fff;font-size:10px;background:#4b93d1;padding:4px 7px;margin-right:4px;border-radius:4px}.tags a:nth-child(1){display:none}.tags a:nth-child(n+2){background:#48bf83}.tags a:nth-child(n+3){background:#ef564f}
+.completed.pagecuk a{margin:-7px 1px 1px 10px;text-decoration:none}.completed.pagecuk a:hover{background:#333}
+]]></b:skin>
+<style>
+/* OBFUSCATED BY CSSOBFUSCATOR.COM at 2019/08/22 16:28:23 */
+@font-face{font-family:wgd;src:url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAAckAAsAAAAACkAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAACzAAABA8AAAWtT5L7h0ZGVE0AAAb4AAAAGgAAAByIS3GpR0RFRgAABtwAAAAbAAAAHgAnAAtPUy8yAAABWAAAAEcAAABgUB1et2NtYXAAAAJ4AAAAQgAAAUoC2gZXaGVhZAAAAQgAAAArAAAANhOCbO1oaGVhAAABNAAAABsAAAAkA98CA2htdHgAAAcUAAAADgAAAA4ExADTbWF4cAAAAVAAAAAGAAAABgAFUABuYW1lAAABoAAAANgAAAFWa7pqr3Bvc3QAAAK8AAAAEAAAACAAAwABeJxjYGRgYADiz60qwvH8Nl8ZuJkYQOCmvugPOB0GVLIBLM7BAKYABHYImwB4nGNgZGBgYgACPTDJwLiBgZEBFTABABLMAOgAAABQAAAFAAB4nGNgZmJgnMDAysDB6MOYxsDA4A6lvzJIMrQwMDAxsHIywAAjAxIISHNNYXBgSGRIYXzw/wGDHhOSGsa3QEIBCBkB2FwKegB4nFWOMW7CQBBFn7ExiYgoU0XKFrS2vC4QUKTkACnokbKykJAtLSAuQElBxRk4ACWHy7e9RbKrmXkzOzN/gTduRLQnIuYl8IARH4FjPvkJnCi7BB4y5h44Vf0pi5JXVdJuquUBEyn0HPPFNHCinnPgIe9cA6e6D05UUuRUyX3jlB3ZscErddVxtxGsaKg5dNGrw2EoySkUl7J+R8+WORkzWal3y0LjTX1YNb5ypswLszTSkrfzbJaVhVXD3z+std2zZ9tptvtaHdbO77dNbWxe/Ov/BfYdKxt4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZiArJT//8EqEkH0/wVQ9UDAyMaA4NAKMDIxs9DaDgoAAOHTBzQAAHicY2BmQAaMDGgAAACOAAV4nFVUS2hcZRS+k8y98xOGVoODtgSj627cBTdCLV3qxkVxIVU7QWOoj0xChpDHvO7/Ov/r3jvPhAxJW6XSUjAo6sKde5G6lSBu3c9AFnr+m1T0Hv7HPfdwvu+8biEoFoNCoVDc/KgaFGaCQnB9ujgzfWV2+lJRlQtQnoVy8eW54Mo7838D/Hspl/6A6c1pN1wIti4vBMFzC0H7+QU8wsP5IPJuikEpmAsuB/NBZaNWXd5Y+3D9zvrK3eUaAnmsICiwAi+IggxCbz9T+Hb21eJOWL40vTK5XoGe7PJMdHnKEp7QpJPESeyojU3HtlzLdmysCdVt07QtExuqmcJP+DE2XDPDDbO4W2GJdNKCg6HrD7J+tm8PIYNMdkUmUo6uheMJI45briWxLNTCgAENRitD7n0XGiMtN1ILJZVAz7HNSeDZNg3TNE3d0OSnEpybaK4EkGokQEiBj8QLuVW6S2u79c36ZmsdvoC26uiOX8gamTvvkVqG4I4lLMXdCYvUUp7hjiHIBG89lnIniEPWKcvQyCJlw9AHClDYjvf22o32DtsG0vEYqubWBxtjIiNpOAjgwIWU5NNqyBkwgzHT0AjLEpqylGa4emzA+mzAh4K8WwKB4XqRGshJhAlRSmtcYDDcr92D4fhofNR9AA+Jr9hiRaIlxxwgliQIJ0OE82nAa44uLxYw3BnUYCOtD0l9uHPYPCaTWYTQCgEQQmmSPgqxDCangC7J2YuRHEJPpWSyGDkwRjlvo4z8j83VqHc8OhgPx4Pj5D4QX+dMJtgAoQYsHxAV+XBMHgeCDH4MsdI6d6GE2rJ1XYf3YXlvpfbJ2vrq7h3yWeTDwUDyOMhqCbDAeWKkATKOZAuaqkHq3gx8uZ+ZISHshnOzr6LBB/dWHq89rp3s/gCkH1nleyzf86V9xym/LnIAyNUf4A8kr71We66Y7GuT3ytiyPtxN+62s5ZrJg27h724o7cVeXr75se/3r7xeent9x5FI+h29C553ZXoWSmSzZi2gKxC69bPcAD7AG9+D/D0CcANPH8LD9RIDTSK7aN0kzTNkqTreq5nBmqkv2RHjRFpjLZ6G+7h/uA+f0LeOnutAlRSwSTlnDPBGaeC4gUVgso4FyoJgxhiSbZhBxoAf43gEEIHqa8PpFghFJFiZ/sxtH5yqYlVDB2yOVmoiBJiMIGO0L1AEMHwkiuegctYYdMz31kSsRRVDCSQP0s+q6ki+5GFBJFScDIXkaDkE4QzpKmhiiLapekbk6sVyPwPhyydnp6GzpnU88w11W9C/BHpNnSgI2hMlpaWTnMNztu5proc0pjH/tV0HCWnaPJ/zUk1dBQnG52mxjmCIEu5BkHONScnF6hIp/sCVACm134BiLLy3D8oUqiGAHicY2BkYGDgAWIxIGZiYARCFjAG8RgAA8oAMwB4nGNgYGBkAIKrb113gOib+qI/YDQATlAG6wAAAgAAAAIAAHoAbgBZAFYAAA==) format(&quot;woff&quot;);font-weight:400;font-style:normal}
+[class*=&quot; wgd-&quot;]:before,[class^=wgd-]:before{font-family:wgd!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.wgd-usd:before{content:&quot;\61&quot;}
+.wgd-eur:before{content:&quot;\62&quot;}
+.wgd-btc:before{content:&quot;\63&quot;}
+.wgd-times:before{content:&quot;\64&quot;}
+@-webkit-keyframes square{0%{-webkit-transform:translateY(0) scale(1.5) rotate(0);transform:translateY(0) scale(1.5) rotate(0);opacity:1}100%{-webkit-transform:translateY(-600px) scale(1) rotate(-200deg);transform:translateY(-600px) scale(1) rotate(-200deg);opacity:0}}
+@keyframes square{0%{-webkit-transform:translateY(0) scale(1.5) rotate(0);transform:translateY(0) scale(1.5) rotate(0);opacity:1}100%{-webkit-transform:translateY(-600px) scale(1) rotate(-200deg);transform:translateY(-600px) scale(1) rotate(-200deg);opacity:0}}
+.WgD-particles i{font-size:4em;font-weight:400;position:absolute;bottom:-100px;-webkit-animation:square 10s infinite;animation:square 10s infinite;-webkit-animation-duration:16s;animation-duration:16s}
+.WgD-particles i:nth-child(11),.WgD-particles i:nth-child(4),.WgD-particles i:nth-child(6),.WgD-particles i:nth-child(8){font-size:3em}
+.WgD-particles i:nth-child(10),.WgD-particles i:nth-child(2),.WgD-particles i:nth-child(3){font-size:2em}
+.WgD-particles i:nth-child(1){left:15%}
+.WgD-particles i:nth-child(2){left:24%;-webkit-animation-duration:8s;animation-duration:8s}
+.WgD-particles i:nth-child(3){left:50%;-webkit-animation-delay:5s;animation-delay:5s}
+.WgD-particles i:nth-child(4){left:40%;-webkit-animation-delay:7s;animation-delay:7s;-webkit-animation-duration:15s;animation-duration:15s}
+.WgD-particles i:nth-child(5){left:36%;-webkit-animation-delay:6s;animation-delay:6s}
+.WgD-particles i:nth-child(6){left:44%;-webkit-animation-delay:10s;animation-delay:10s;-webkit-animation-duration:20s;animation-duration:20s}
+.WgD-particles i:nth-child(7){left:58%;-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-duration:18s;animation-duration:18s}
+.WgD-particles i:nth-child(8){left:45%;-webkit-animation-duration:14s;animation-duration:14s}
+.WgD-particles i:nth-child(9){left:66%;-webkit-animation-delay:3s;animation-delay:3s;-webkit-animation-duration:12s;animation-duration:12s}
+.WgD-particles i:nth-child(10){left:74%;-webkit-animation-duration:25s;animation-duration:25s}
+.WgD-particles i:nth-child(11){left:80%;-webkit-animation-delay:4s;animation-delay:4s}
+body.ab-is-detected{overflow:hidden!important}
+#WgD{display:none;position:fixed;top:0;left:0;right:0;bottom:0;font-size:14px;-webkit-animation:wgdfade .3s;animation:wgdfade .3s;z-index:99999}
+#WgD.is-detected{display:block}
+@-webkit-keyframes wgdfade{from{opacity:0}to{opacity:1}}
+@keyframes wgdfade{from{opacity:0}to{opacity:1}}
+.WgD-position{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:900}
+.WgD-title{margin:0 0 .5em}
+.WgD-text{margin:0;font-weight:400}
+.WgD-reload{text-decoration:none;display:inline-block;margin-top:2em;font-weight:500;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s}
+.WgD-reload:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}
+.WgD-close{position:absolute;top:0;right:0;text-decoration:none;font-size:20px;color:#999;padding:1rem;line-height:1;display:block}
+.WgD-container img{max-width:100%;margin-bottom:1em;-o-object-fit:cover;object-fit:cover}
+.WgD-container{-webkit-animation:bounceIn 1s;animation:bounceIn 1s}
+#WgD{font-family:&#39;Roboto&#39;,sans-serif;}
+.WgD-particles i{color:rgba(0,0,0,0.2)}
+.WgD-container{-webkit-animation:bounceIn 1s;animation:bounceIn 1s}
+.WgD-container{padding:3.2em;max-width:450px;background-color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.2),0 10px 20px rgba(0,0,0,0.1);text-align:center;line-height:1.5;border-radius:10px;color:#37474F}
+.WgD-title{font-size:1.6em}
+.WgD-text{font-size:1.2em}
+.WgD-reload{box-shadow:rgba(0,0,0,.12) 0 3px 13px 1px;color:#fff!important;padding:1em 1.5em;background:#3c1053;border-radius:3px}
+.WgD-container img{max-height:200px}</style>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style>
+@media screen and (max-width:680px) {
+.post.hentry {padding: 8px;width: 100%!important;}}
+</style>
+<style type='text/css'>
+#blog-pagerx .blog-pager-older-link{margin:0px;border:none;position:relative;text-align:center;color:#fff!important;transition:.2s;display:inline-block;height:38px;font-size:14px;font-weight:700;text-transform:uppercase;line-height:38px;padding-right:27px;padding-left:27px;border-radius:3px}
+#content-wrap {float: none;width: 100%;}
+@media screen and (max-width:680px){#content-wrap{width:100%}}
+/* Page Navigation */
+#blog-pager{clear:both;width:auto;line-height:normal;display:block;text-align:left;overflow:visible;margin:20px 0 5px 0;overflow:hidden;line-height:35px;display:block!important;border-radius:0!important;margin:5px 0!important;}
+.showpageOf{text-decoration:none;background:#6d87db;color:#fff;font-weight:600;padding:11px 17px;text-transform:uppercase;margin:2px;font-size:11px;border-radius:2px}
+.showpagePoint{background:#333;color:#fff;padding:8px 14px;font-size:11px;border-radius:2px;text-decoration:none;}
+.showpageNum{text-decoration:none;color:#333;padding:6px 9px;font-size:11px;border-radius:2px;padding:1px;}
+.showpageNum a{text-decoration:none;background:#6d87db;color:#eceaf1;padding:7px 14px;text-transform:uppercase;font-size:11px;font-weight:600;border-radius:3px;transition:all .3s}
+.showpageNum a:hover{background:#333;text-decoration:none;color:#fff;}
+.rvad{padding:0 0;margin:0 0 0;}
+.rvad h1{font-size:14px;padding:12px;margin-bottom:0;font-weight:600;border-top-left-radius:10px;border-top-right-radius:11px;background:#6d87db url(https://1.bp.blogspot.com/-NsCsokSmPi4/XWZ76u4vokI/AAAAAAAAOCo/NskwcKqEXAk8zNffoafhnTM3kso9BXUKQCLcBGAs/s1600/otaku.png);text-transform:uppercase;text-align:left;color:white}
+.iconf{float:right;margin:-38px 19px;color:white;font-size:25px}
+.post:first-child{margin-top:-1px;border-top-left-radius:0!important;border-top-right-radius:0!important}
+.iconf h2{float:left;margin-right:5px;font-size:15px;margin:2px 5px;font-weight:700;text-transform:uppercase;}
+h3.rdtitle{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:Arial,sans-serif;padding:7px 6px;background-color:rgba(0,0,0,0.6);color:#fff;width:100%;display:inline-block;margin:0;position:absolute;bottom:0;}
+h3.rdtitle a{color:#fff;}
+.rdthumbs{display:block;}
+.rdpost li{float:left;width:120px;overflow:hidden;position:relative;margin:0 4px 4px 0;}
+.rdpost li:last-child{margin-right:0;}
+.rdsum p{display:none;}
+.thumbnail{position:relative;float:left;margin-right:7px;width:180px;overflow:hidden;height:120px;border-radius:
+</style>
+  </b:if>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style>
+Featured Image Pepeqayam */
+#comments,[class~=post-mpsh]{background:#fff;}[class~=JK-Category] a{margin-right:.052083333in;}[class~=JK-Category] a{border-left-width:.0625pc;}[class~=JK-Category] a{border-bottom-width:.0625pc;}[class~=JK-Category] a{border-right-width:.0625pc;}div#breadcrumbs{background:#0084ef;}[class~=JK-Category] a{border-top-width:.0625pc;}[class~=JK-Category] a{border-left-style:solid;}[class~=post-mpsh]{border-radius:0px 11px 0 0;}[class~=JK-Category] a{border-bottom-style:solid;}[class~=post-mpsh]{overflow:hidden;}[class~=JK-Category] a{border-right-style:solid;}[class~=JK-Category] a{border-top-style:solid;}[class~=JK-Category],[class~=judulnya]{margin-top:.125in;}#post-wrapper{word-wrap:break-word;}[class~=JK-Category] a{border-left-color:#fff;}[class~=JK-Category]{font-size:9pt;}[class~=JK-Category] a{border-bottom-color:#fff;}[class~=judulnya]{font-size:20px;}[class~=judulnya],div#breadcrumbs,[class~=JK-Category] a{color:#fff;}[class~=JK-Category] a{border-right-color:#fff;}#post-wrapper{float:left;}[class~=comment_body] p a,[class~=judulnya]{font-weight:normal;}[class~=judulnya]{text-shadow:0 0 5px #000;}[class~=comment_admin] [class~=comment_name],h4{font-size:.135416667in;}[class~=comment_admin] [class~=comment_name]{font-weight:bold;}[class~=judulnya]{line-height:normal;font-size:20px!important;}#post-wrapper{width:70%;}#comments [class~=avatar-image-container] img{width:2.625pc;}[class~=comment_admin] [class~=comment_name]{padding-left:0;}[class~=cover-kecil],.ttl,#comments{width:100%;}.ttl{padding-left:1rem;}.ttl{padding-bottom:1rem;}[class~=comment_admin] [class~=comment_name]{padding-bottom:0;}[class~=JK-Category] a{border-top-color:#fff;}.ttl{padding-right:1rem;}.ttl{padding-top:1rem;}[class~=infonya]{display:block;}[class~=ca-post],div#breadcrumbs{padding-left:.625pc;}[class~=comment_admin] [class~=comment_name]{padding-right:0;}[class~=JK-Category] a{border-image:none;}[class~=cover-kecil] img,[class~=JK-Category] a{padding-left:.3125pc;}[class~=JK-Category] a{padding-bottom:.125pc;}[class~=ca-post],div#breadcrumbs{padding-bottom:.625pc;}[class~=JK-Category] a,[class~=cover-kecil] img{padding-right:.3125pc;}h4{font-family:&quot;Quicksand&quot;,sans-serif;}div#breadcrumbs{border-radius:5px;}[class~=JK-Category] a{padding-top:.125pc;}[class~=ca-post],div#breadcrumbs{padding-right:.625pc;}[class~=JK-Category] a{border-radius:.1875pc;}h4{font-weight:100;}[class~=ca-post],div#breadcrumbs{padding-top:.625pc;}[class~=jj-cover]{position:relative;}[class~=comment_admin] [class~=comment_name]{padding-top:0;}[class~=comment_name] a:hover,[class~=comment_body] p a{color:#4285f4;}.infonya,[class~=cover-kecil]{position:absolute;}#comments [class~=avatar-image-container] img{height:.4375in;}.infonya,[class~=cover-kecil]{bottom:0;}[class~=post-mpsh] img{max-width:100%;}[class~=post-mpsh] img{height:auto;}[class~=comment_body] p a,[class~=comment_admin] [class~=comment_name]{text-decoration:none;}[class~=comment_admin] [class~=comment_date]{font-weight:normal;}.ca-post{margin-top:45pt;}#comments [class~=avatar-image-container] img{max-width:42px;}[class~=cover-kecil] img{height:177px;}[class~=cover-kecil] img{width:101.25pt;}.ca-post{border-top-width:.0625pc;}#comments [class~=avatar-image-container],.infonya,[class~=cover-kecil] img,div#jk-author{float:left;}.ca-post{border-top-style:solid;}#comments{clear:both;}[class~=cover-kecil] img{padding-bottom:.052083333in;}.ca-post{border-top-color:#ddd;}.ca-post{border-image:none;}[class~=JK-cover]{border-top-right-radius:8.25pt;}[class~=cover-kecil] img{padding-top:.052083333in;}[class~=comment_admin] [class~=comment_date]{font-size:8.25pt;}[class~=JK-cover]{border-top-left-radius:11px;}[class~=cover-kecil] img{background:#13182b;}[class~=comment_child] [class~=comment_wrap]{padding-left:7%;}[class~=cover-kecil] img{border-radius:0px;}[class~=gambarnya]{background:#333;}[class~=gambarnya]{border-radius:0px;}h2{font-size:14px;}div#breadcrumbs,#comments [class~=avatar-image-container],#comments{margin-left:0;}.JK-cover:before{content:&quot;&quot;;}div#breadcrumbs{margin-bottom:.104166667in;}div#breadcrumbs,#comments{margin-right:0;}.infonya{color:white;}[class~=comment_reply]:hover{color:#000 !important;}.infonya{height:80px;}.JK-cover:before{background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5))}.infonya{text-shadow:1px 1px .010416667in black;}h2{font-family:&quot;Quicksand&quot;,sans-serif;}.JK-cover:before{position:absolute;}.infonya{font-weight:600;}#comments{padding-left:.208333333in;}.infonya{width:max-content;}div#breadcrumbs a{color:#fff;}#comments{padding-bottom:0;}.infonya,.JK-cover:before{top:0;}.JK-cover,.infonya{overflow:hidden;}.JK-cover:before{left:0;}#comments{padding-right:.208333333in;}.JK-cover:before{right:0;}.JK-cover:before{bottom:0;}div#breadcrumbs{margin-top:.104166667in;}.infonya{font-size:.145833333in;}.infonya{margin-left:auto;}.infonya{margin-bottom:auto;}[class~=coverImage] img{width:100%;}[class~=coverImage]
+  </style>
+<style>
+.breadcrumbs{display:none}
+.post-body h2{padding:6px 10px;font-size:16px;margin:0 0 5px;text-align:left;background:#34495e;color:#fff;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.25);position:relative}
+.post-body h2:before{content:&quot;\f02d&quot;;font-family:FontAwesome;font-size:22px;color:#f1f1f1;top:5px;right:7px;position:absolute;text-shadow:none}
+</style>
+</b:if>
+<b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+<style type='text/css'>
+#content-wrap {overflow:hidden;padding:10px;margin-top:10px;background:transparent};}
+@media screen and (max-width:680px){#content-wrap{width:100%}}
+/* Page Navigation */
+#blog-pager{clear:both;width:auto;line-height:normal;display:block;text-align:left;overflow:visible;margin:20px 0 5px 0;overflow:hidden;line-height:35px;display:block!important;border-radius:0!important;margin:5px 0!important;}
+.showpagePoint{background:#333;color:#fff;padding:8px 14px;font-size:11px;border-radius:2px;text-decoration:none;}
+.showpageNum{text-decoration:none;color:#333;padding:6px 9px;font-size:11px;border-radius:2px;padding:1px;}
+.showpageNum a:hover{background:#333;text-decoration:none;color:#fff;}
+.rvad{padding:0 0;margin:0 0 0;}
+.iconf{float:right;margin:-38px 19px;color:white;font-size:25px}
+.post:first-child{margin-top:-1px;border-top-left-radius:0!important;border-top-right-radius:0!important}
+.iconf h2{float:left;margin-right:5px;font-size:15px;margin:2px 5px;font-weight:700;text-transform:uppercase;}
+h3.rdtitle{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:Arial,sans-serif;padding:7px 6px;background-color:rgba(0,0,0,0.6);color:#fff;width:100%;display:inline-block;margin:0;position:absolute;bottom:0;}
+h3.rdtitle a{color:#fff;}
+.rdthumbs{display:block;}
+.rdpost li{float:left;width:120px;overflow:hidden;position:relative;margin:0 4px 4px 0;}
+.rdpost li:last-child{margin-right:0;}
+.rdsum p{display:none;}
+.thumbnail{position:relative;box-shadow:0 15px 35px rgba(50,50,93,0.1),0 5px 15px rgba(0,0,0,0.07);float:left;margin-right:7px;width:200px;overflow:hidden;height:125px;border-radius:8px}
+.thumbnail a{text-decoration:none;}
+.thumbnail a:hover,.rdthumb img:hover,.rdpost li:hover img{opacity:.8;filter:alpha(opacity=80);}
+.thumbnail img{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);min-height:100%;min-width:100%;width:auto;height:auto;transition:.3s ease-in-out;}
+h2.entry-title{color:#444;font-size:16.5px;margin:0;line-height:20px;font-weight:700;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.article{margin-top:9px;overflow:hidden;background:#fafafa;padding:3px 7px}
+.post-header{font-size:12px;padding-bottom:6px;display:block;margin:0;border-left:2.5px solid #231d1d;margin-top:7px;padding-left:8px}
+.sl-rate2{position:absolute;top:6px;width:90%;left:7px;overflow:hidden;z-index:9;font-size:13px;font-weight:700;border-bottom:1px solid #ffffff;padding:3px 7px;border-radius:0 10px 0 0;transition:.3s;color:white;}
+i.fa.fa-star.rating{padding:4px;background:#673AB7;border-radius:50%;margin-right:5px}
+span.type.TV{position:absolute;left:0;top:0;color:#fff;text-align:center;padding:2px 7px;font-size:11px;font-weight:800;border-radius:7px 0 0;background:#3F51B5;transition:.3s}
+.status-msg-wrap{background:#ddd;border:1px solid #34495e;font-weight:700;padding:10px;text-align:center;color:black;margin:7px 0}
+.post-header b{font-weight:400;}
+.post-header abbr,.post-header a{color:#777;}
+.post-header .fn{padding-right:7px;}
+.post-body{margin:5px auto;font-size:14px;}
+.post-share{margin-top:2px;display:block;max-height:21px;}
+</style></b:if>
+<style>
+/*Genre*/
+span.label-size.label-size{font-size:13px;text-align:center;font-weight:bold;width:46%;float:left;text-transform:capitalize;margin:3px 4px;border-radius:3px;background:#fff;color:#333;padding:9px;box-shadow:1px 1px 3px 2px rgba(0,0,0,0.11);border-left:3px #673AB7 solid;transition:all 0.3s ease 0s}
+.Label .widget-content a{color:black;font-weight:600;font-size:14px}
+.widget-content.cloud-label-widget-content{list-style:none;overflow:auto;background:#fff;border-radius:3px;padding:4px 0;max-height:197px}
+</style>
+<script>//<![CDATA[
+if (typeof(jQuery) == 'undefined') {document.write("<scr" + "ipt type=\"text/javascript\" src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></scr" + "ipt>");}//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }loadCSS("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");loadCSS("//fonts.googleapis.com/css?family=Open+Sans:400,700")
+//]]>
+</script>
+<!--Mau Malengg Ya Kau-->
+<script type='text/javascript'>
+//<![CDATA[
+function rcentbytag(e){document.write('<ul class="recent-by-tag">');for(var t=0;t<numposts;t++){var n=e.feed.entry[t];var r=n.title.$t;var i;if(t==e.feed.entry.length)break;for(var o=0;o<n.link.length;o++){if(n.link[o].rel=="replies"&&n.link[o].type=="text/html"){var u=n.link[o].title;var f=n.link[o].href}if(n.link[o].rel=="alternate"){i=n.link[o].href;break}}var l;try{l=n.media$thumbnail.url}catch(h){s=n.content.$t;a=s.indexOf("<img");b=s.indexOf('src="',a);c=s.indexOf('"',b+5);d=s.substr(b+5,c-b-5);if(a!=-1&&b!=-1&&c!=-1&&d!=""){l=d}else l="http://2.bp.blogspot.com/-giova1ZCh-A/Uzq6L8QTJNI/AAAAAAAAAJc/USXictTq_xs/s70-c/KM+Icon.png"}var p=n.published.$t;var v=p.substring(0,4);var m=p.substring(5,7);var g=p.substring(8,10);var y=new Array;y[1]="Januari";y[2]="Februari";y[3]="Maret";y[4]="April";y[5]="Mei";y[6]="Juni";y[7]="Juli";y[8]="Agustus";y[9]="September";y[10]="Oktober";y[11]="November";y[12]="Desember";document.write('<li class="recentlist">');if(showpostthumbnails==true)document.write('<a href="'+i+'" target ="_blank" title="'+r+'"><span class="type TV">'+labelnya+'</span><div class="sl-rate"><i class="fa fa-star"></i></div><img class="rct-thumb" alt="'+r+'" src="'+l+'"/></a>');document.write('<strong><a href="'+i+'" target ="_blank" title="'+r+'" rel="nofollow">'+r+'</a></strong>');document.write('<br>');document.write('<a class="btndown" href="'+i+'" target ="_blank">Download</a>');var x="";var T=0;if(showpostdate==true){x='<span class="showdates">'+x+g+" "+y[parseInt(m,10)]+" "+v+"</span>";T=1}document.write(x);document.write("</li>");if(t!=numposts-1)document.write("")}document.write("</ul>")}
+//]]>
+</script>
+
+&lt;/style&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;//platform-api.sharethis.com/js/sharethis.js#property=5bf232a5d741e40011ae95ff&amp;product=inline-reaction-buttons&#39; async=&#39;async&#39;&gt;&lt;/script&gt;
+
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: transparent;
+  border: none;
+  padding: 0px 0px;
+  font-size: 20px;
+  cursor: pointer;
+position: relative;
+z-index: 150;
+top: 0px;
+right:100%;
+}
+.openBtn:hover {
+  background: #bbb;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed; 
+  z-index: 150;
+  top: 0;
+  left: 10;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 43px;
+  right: 11%;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+z-index: 110;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: #c0c0c0;
+}
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #c0c0c0;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.overlay button:hover {
+  background: #bbb;
+}
+</style>
+ &lt;/style&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;//platform-api.sharethis.com/js/sharethis.js#property=5bf232a5d741e40011ae95ff&amp;product=inline-reaction-buttons&#39; async=&#39;async&#39;&gt;&lt;/script&gt;
+
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: transparent;
+  border: none;
+  padding: 0px 0px;
+  font-size: 20px;
+  cursor: pointer;
+position: relative;
+z-index: 150;
+right:0%;
+}
+.openBtn:hover {
+  background: #bbb;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed; 
+  z-index: 150;
+  top: 0;
+  left: 10;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 43px;
+  right: 11%;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+z-index: 110;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: #c0c0c0;
+}
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #c0c0c0;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.overlay button:hover {
+  background: #bbb;
+}
+</style>
+<script>//<![CDATA[
+if (typeof(jQuery) == 'undefined') {document.write("<scr" + "ipt type=\"text/javascript\" src=\"//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></scr" + "ipt>");}//]]>
+</script>
+<!--Widget Recent Post By Label-->
+<script type='text/javascript'>
+var numposts = 6; //Ganti Jumlah post yang akan tampil sesukamu biar responsive maximal 6
+var showpostthumbnails = true;
+var showpostdate = false;
+var labelnya = &quot;Movie&quot;; //Ganti Nama Labelnya sesukamu
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
+loadCSS("https://cdn.plyr.io/3.4.7/plyr.css");
+//]]>
+</script>
+&lt;/head&gt;&lt;!--<head/>--&gt;
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<style>
+#sidebar-wrapper {display: none;}
+#main-wrapper {width: 100%;}
+article.post.hentry {border-top: 4px solid #6d87db;}
+</style>
+</b:if>
+<body>
+<header id='header'>
+<b:section class='header' id='header_widget' maxwidgets='1' showaddelement='no'>
+  <b:widget id='Header1' locked='true' title='ReKanna (Header)' type='Header' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'/>
+      <b:widget-setting name='displayHeight'>0</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+      <b:widget-setting name='useImage'>false</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>0</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:useImage'>
+<b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+<!--
+      Show image as background to text. You can't really calculate the width
+      reliably in JS because margins are not taken into account by any of
+      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+      width if the user is using shrink to fit.
+      This results in a margin-width's worth of pixels being cropped. If the
+      user is not using shrink to fit then we expand the header.
+-->
+<b:if cond='data:mobile'>
+<div id='header-inner'><div class='titlewrapper' style='background: transparent'><b:include name='title'/></div>
+<b:include name='description'/></div>
+<b:else/>
+<div expr:style='&quot;background:none; &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
+<div class='titlewrapper' style='background: transparent'>
+<b:include name='title'/>
+</div>
+<b:include name='description'/>
+</div>
+</b:if>
+<b:else/>
+<!--Show the image only-->
+<div id='header-inner'><a expr:href='data:blog.homepageUrl' style='display: block'><img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/></a>
+<!--Show the description-->
+<b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'><b:include name='description'/></b:if>
+</div>
+</b:if>
+<b:else/>
+<!--No header image -->
+<div id='header-inner' style='background:none; background-position: left; width: 1600px; min-height: 789px; _height: 789px; background-repeat: no-repeat;'>
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<div class='titlewrapper' style='background: transparent'>
+<b:include name='title'/></div>
+<b:else/>
+<div class='titlewrapper' style='background: transparent'>
+<b:include name='title'/></div>
+</b:if>
+<b:else/>
+<div class='titlewrapper' style='background: transparent'>
+<b:include name='title'/></div>
+</b:if>
+<b:include name='description'/>
+</div>
+</b:if>
+</b:includable>
+    <b:includable id='description'><p class='description'><span><data:description/></span></p></b:includable>
+    <b:includable id='title'><a expr:href='data:blog.homepageUrl' expr:title='data:blog.title' itemprop='url'><span itemprop='name'><data:title/></span></a></b:includable>
+  </b:widget>
+</b:section>
+<div class='clear'/>
+</header>
+<div id='menu'>
+<div class='center'>
+<!--Widget Menu-->
+<ul class='menu' id='menu-menu'><span class='judulmobil'><a href='#' id='title' itemprop='url'>PROTEMPLATES</a></span>
+<li class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-613' id='menu-item-613'><a href='/'>Home</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-614' id='menu-item-614'><a href='https://protemplates.in'>A-Z List</a></li>
+<li class='menu-item menu-item-type-custom menu-item-object-custom menu-item-1475' id='menu-item-1475'><a href='#'>Ongoing</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-720' id='menu-item-720'><a href='#'>Genres</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-724' id='menu-item-724'><a href='/p/about.html'>About</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-725' id='menu-item-725'><a href='https://protemplates.in'>Credit</a></li>
+<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-1024' id='menu-item-1024'><a href='/p/privacy-policy.html'>Privacy Policy</a></li>
+<li class='menu-item menu-item-type-custom menu-item-object-custom menu-item-658' id='menu-item-658'><a href='#'/></li><li class='icon'><a href='javascript:void(0);' onclick='myFunction()' style='font-size: 28px;'>&#9776;</a></li>
+</ul>
+</div></div>
+<div id='outer-wrapper'>
+<div id='content-wrapper'>
+<style>
+#search-box {position: relative;width: 100%;margin: 0;}
+#search-form {height: 40px;border: 1px solid #999;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;border-radius: 5px;background-color: #fff;overflow: hidden;}
+#search-text {font-size: 14px;color: #ddd; border-width: 0;background: transparent;}
+#search-box input[type=&quot;text&quot;]
+{width: 90%; padding: 11px 0 12px 1em; color: #333; outline: none;}
+#search-button {position: absolute;top: 0;right: 0;height: 42px;
+width: 80px;font-size: 14px;color: #fff;text-align: center;
+line-height: 42px;border-width: 0;background-color: #1a7db7;
+-webkit-border-radius: 0px 5px 5px 0px;
+-moz-border-radius: 0px 5px 5px 0px;
+border-radius: 0px 5px 5px 0px;
+cursor: pointer;}
+</style>
+<div id='search-box'>
+<form action='/search' id='search-form' method='get' target='_top'>
+<input id='search-text' name='q' placeholder='Cari Anime,Drakor,Movie Lainnya Disini' type='text'/>
+<button id='search-button' type='submit'><span>Search</span></button>
+</form>
+</div>
+<div class='section' id='pengumuuuman' name='Widget Pengumuman'><div class='widget HTML' data-version='2' id='HTML5'>
+<div class='anon'>
+<script type='text/javascript'>
+//javascript quote in arrays db
+quote = new Array(5);
+quote[0] = &quot;<b>Notice 1 : </b>Translate Page for Better understanding &quot;;
+quote[1] = &quot;<b>Notice 2 : </b>Translate Page for Better understanding &quot;;
+quote[2] = &quot;<b>PROTEMPLATES.ORG : Translate Page for Better understanding</b>&quot;;
+quote[3] = &quot;<b>Notice 4 : </b>Translate Page for Better understanding&quot;;
+quote[4] = &quot;<b>Notice 5 : </b>Translate Page for Better understanding&quot;;
+//menentukan random index
+index = Math.floor(Math.random() * quote.length);
+//menampilkan quote
+document.write(&quot;\n&quot;);
+document.write(quote[index]);
+//db end arrays
+</script>
+</div>
+</div></div>
+<!-- Anime Acak -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+<div class='rvad'><h1><span>Anime Acak</span></h1><div class='iconf'><i class='fa fa-rss'/>
+</div></div>
+<script type='text/javascript'>/*<![CDATA[*/
+var fiturzo=0,
+fiturz=6,
+numchars=0,titleinarticle=new Array,relurls=new Array,showpostbody=new Array,_featuredimage=new Array;
+function _featuredpost(r,l){for(var e=r.split("<"),n=0;n<e.length;n++)-1!=e[n].indexOf(">")&&(e[n]=e[n].substring(e[n].indexOf(">")+1,e[n].length));return e=e.join(""),e=e.substring(0,l-1)}function reading_article(r){for(var l=0;l<r.feed.entry.length;l++){var e=r.feed.entry[l];titleinarticle[fiturzo]=e.title.$t,postcontent="","content"in e?postcontent=e.content.$t:"summary"in e&&(postcontent=e.summary.$t),showpostbody[fiturzo]=_featuredpost(postcontent,numchars),"media$thumbnail"in e?postimg=e.media$thumbnail.url:postimg="//1.bp.blogspot.com/-Qg5bi1ZtDdM/VZ5nHAyYBqI/AAAAAAAAChE/exGnasO4oyk/s640/arlinadesign.gif",_featuredimage[fiturzo]=postimg;for(var n=0;n<e.link.length;n++)if("alternate"==e.link[n].rel){relurls[fiturzo]=e.link[n].href;break}fiturzo++}}function contains(r,l){for(var e=0;e<r.length;e++)if(r[e]==l)return!0;return!1}function showarticle(){for(var r=new Array(0),l=new Array(0),e=new Array(0),n=new Array(0),t=0;t<relurls.length;t++)contains(r,relurls[t])||(r.length+=1,r[r.length-1]=relurls[t],l.length+=1,l[l.length-1]=titleinarticle[t],e.length+=1,e[e.length-1]=showpostbody[t],n.length+=1,n[n.length-1]=_featuredimage[t]);titleinarticle=l,relurls=r,showpostbody=e,_featuredimage=n;for(var t=0;t<titleinarticle.length;t++){var a=Math.floor((titleinarticle.length-1)*Math.random()),u=titleinarticle[t],i=relurls[t],o=showpostbody[t],s=_featuredimage[t];titleinarticle[t]=titleinarticle[a],relurls[t]=relurls[a],showpostbody[t]=showpostbody[a],_featuredimage[t]=_featuredimage[a],titleinarticle[a]=u,relurls[a]=i,showpostbody[a]=o,_featuredimage[a]=s}for(var g,m=0,d=Math.floor((titleinarticle.length-1)*Math.random()),c=d,h=document.URL;fiturz>m&&(relurls[d]==h||(g="<li>",g+="<a href='"+relurls[d]+"' rel='nofollow' title='"+titleinarticle[d]+"'><div class='zeeb'><img src='"+_featuredimage[d]+"' /></div></a>",g+="<div class='sl-rate2'><i class='fa fa-star rating'></i>Series</div><a class='title-article' href='"+relurls[d]+"'>"+titleinarticle[d]+"</a>",g+="<span class='show-itempost'>"+showpostbody[d]+"</span>",g+="</li>",document.write(g),m++,m!=fiturz))&&(d<titleinarticle.length-1?d++:d=0,d!=c););}
+/*]]>*/</script>
+<script src='/feeds/posts/default?alt=json-in-script&amp;callback=reading_article&amp;max-results=50' type='text/javascript'/>
+<div class='pitured'>
+<div id='kolor'><ul>
+<script type='text/javascript'>showarticle();</script>
+  </ul></div></div>
+<!-- Anime Acak -->
+<div class='rvad'><h1><span>Recomendation Action</span></h1><div class='iconf'><i class='fa fa-rss'/>
+</div></div>
+<script type='text/javascript'>/*<![CDATA[*/
+var fiturzo=0,
+fiturz=6,
+numchars=0,titleinarticle=new Array,relurls=new Array,showpostbody=new Array,_featuredimage=new Array;
+function _featuredpost(r,l){for(var e=r.split("<"),n=0;n<e.length;n++)-1!=e[n].indexOf(">")&&(e[n]=e[n].substring(e[n].indexOf(">")+1,e[n].length));return e=e.join(""),e=e.substring(0,l-1)}function reading_article(r){for(var l=0;l<r.feed.entry.length;l++){var e=r.feed.entry[l];titleinarticle[fiturzo]=e.title.$t,postcontent="","content"in e?postcontent=e.content.$t:"summary"in e&&(postcontent=e.summary.$t),showpostbody[fiturzo]=_featuredpost(postcontent,numchars),"media$thumbnail"in e?postimg=e.media$thumbnail.url:postimg="//1.bp.blogspot.com/-Qg5bi1ZtDdM/VZ5nHAyYBqI/AAAAAAAAChE/exGnasO4oyk/s640/arlinadesign.gif",_featuredimage[fiturzo]=postimg;for(var n=0;n<e.link.length;n++)if("alternate"==e.link[n].rel){relurls[fiturzo]=e.link[n].href;break}fiturzo++}}function contains(r,l){for(var e=0;e<r.length;e++)if(r[e]==l)return!0;return!1}function showarticle(){for(var r=new Array(0),l=new Array(0),e=new Array(0),n=new Array(0),t=0;t<relurls.length;t++)contains(r,relurls[t])||(r.length+=1,r[r.length-1]=relurls[t],l.length+=1,l[l.length-1]=titleinarticle[t],e.length+=1,e[e.length-1]=showpostbody[t],n.length+=1,n[n.length-1]=_featuredimage[t]);titleinarticle=l,relurls=r,showpostbody=e,_featuredimage=n;for(var t=0;t<titleinarticle.length;t++){var a=Math.floor((titleinarticle.length-1)*Math.random()),u=titleinarticle[t],i=relurls[t],o=showpostbody[t],s=_featuredimage[t];titleinarticle[t]=titleinarticle[a],relurls[t]=relurls[a],showpostbody[t]=showpostbody[a],_featuredimage[t]=_featuredimage[a],titleinarticle[a]=u,relurls[a]=i,showpostbody[a]=o,_featuredimage[a]=s}for(var g,m=0,d=Math.floor((titleinarticle.length-1)*Math.random()),c=d,h=document.URL;fiturz>m&&(relurls[d]==h||(g="<li>",g+="<a href='"+relurls[d]+"' rel='nofollow' title='"+titleinarticle[d]+"'><div class='zeeb'><img src='"+_featuredimage[d]+"' /></div></a>",g+="<div class='sl-rate2'><i class='fa fa-star rating'></i>TV</div><a class='title-article' href='"+relurls[d]+"'>"+titleinarticle[d]+"</a>",g+="<span class='show-itempost'>"+showpostbody[d]+"</span>",g+="</li>",document.write(g),m++,m!=fiturz))&&(d<titleinarticle.length-1?d++:d=0,d!=c););}
+/*]]>*/</script>
+<!-- Change "Docs" to your suitable labels to display-->
+  <script src='/feeds/posts/default/-/Docs?alt=json-in-script&amp;callback=reading_article&amp;max-results=50' type='text/javascript'/>
+  
+<div class='pitured'>
+<div id='kolor'><ul>
+<script type='text/javascript'>showarticle();</script>
+  </ul></div></div>
+  </b:if>
+<!--News Ticker-->
+<script type='text/javascript'>
+//<![CDATA[
+function loadCSS(j,f,i){var e=window.document.createElement("link"),h=f||window.document.getElementsByTagName("script")[0];e.rel="stylesheet",e.href=j,e.media="only x",h.parentNode.insertBefore(e,h),setTimeout(function(){e.media=i||"all"})}document.write('<script type="text/javascript" src="https://rawcdn.githack.com/Arleth98/2019/a8af104e/random-marquee.js"><\/script>');
+var relatedTitles=new Array,relatedTitlesNum=0,relatedUrls=new Array,currentposturl="",maxresults=8;
+//]]></script><script src='https://rawcdn.githack.com/Arleth98/2019/a8af104e/random-marquee.js' type='text/javascript'/>
+<script>
+//<![CDATA[
+(function(d){var g,c,f;g={speed:700,pause:4E3,showItems:1,mousePause:!0,height:0,animate:!0,margin:0,padding:0,startPaused:!1,autoAppend:!0};c={moveUp:function(a,b){return c.showNextItem(a,b,"up")},moveDown:function(a,b){return c.showNextItem(a,b,"down")},nextItemState:function(a,b){var e,c;c=a.element.children("ul.last-post-wrap");e=a.itemHeight;0<a.options.height&&(e=c.children("li.last-post-item:first").height());e+=a.options.margin+2*a.options.padding;return{height:e,options:a.options,el:a.element,obj:c,selector:"up"===b?"li.last-post-item:first":"li.last-post-item:last",dir:b}},showNextItem:function(a,b,e){var d;d=c.nextItemState(a,e);d.el.trigger("vticker.beforeTick");e=d.obj.children(d.selector).clone(!0);"down"===d.dir&&d.obj.css("top","-"+d.height+"px").prepend(e);b&&b.animate?a.animating||c.animateNextItem(d,a):c.nonAnimatedNextItem(d);"up"===d.dir&&a.options.autoAppend&&e.appendTo(d.obj);return d.el.trigger("vticker.afterTick")},animateNextItem:function(a,b){b.animating=!0;return a.obj.animate("up"===a.dir?{top:"-="+a.height+"px"}:{top:0},b.options.speed,function(){d(a.obj).children(a.selector).remove();d(a.obj).css("top","0px");return b.animating=!1})},nonAnimatedNextItem:function(a){a.obj.children(a.selector).remove();return a.obj.css("top","0px")},nextUsePause:function(){var a,b;b=d(this).data("state");a=b.options;if(!b.isPaused&&!c.hasSingleItem(b))return f.next.call(this,{animate:a.animate})},startInterval:function(){var a,b;b=d(this).data("state");a=b.options;return b.intervalId=setInterval(function(a){return function(){return c.nextUsePause.call(a)}}(this),a.pause)},stopInterval:function(){var a;if(a=d(this).data("state"))return a.intervalId&&clearInterval(a.intervalId),a.intervalId=void 0},restartInterval:function(){c.stopInterval.call(this);return c.startInterval.call(this)},getState:function(a,b){var c;if(!(c=d(b).data("state")))throw Error("vTicker: No state available from "+a);return c},isAnimatingOrSingleItem:function(a){return a.animating||this.hasSingleItem(a)},hasMultipleItems:function(a){return 1<a.itemCount},hasSingleItem:function(a){return!c.hasMultipleItems(a)},bindMousePausing:function(a){return function(a,e){return a.bind("mouseenter",function(){if(!e.isPaused)return e.pausedByCode=!0,c.stopInterval.call(this),f.pause.call(this,!0)}).bind("mouseleave",function(){if(!e.isPaused||e.pausedByCode)return e.pausedByCode=!1,f.pause.call(this,!1),c.startInterval.call(this)})}}(this),setItemLayout:function(a,b,c){var f;a.css({overflow:"hidden",position:"relative"}).children("ul").css({position:"absolute",margin:0,padding:0}).children("li.last-post-item").css({margin:c.margin,padding:c.padding});return isNaN(c.height)||0===c.height?(a.children("ul").children("li.last-post-item").each(function(){if(d(this).height()>b.itemHeight)return b.itemHeight=d(this).height()}),a.children("ul").children("li.last-post-item").each(function(){return d(this).height(b.itemHeight)}),f=c.margin+2*c.padding,a.height((b.itemHeight+f)*c.showItems+c.margin)):a.height(c.height)},defaultStateAttribs:function(a,b){return{itemCount:a.children("ul").children("li.last-post-item").length,itemHeight:0,itemMargin:0,element:a,animating:!1,options:b,isPaused:b.startPaused,pausedByCode:!1}}};f={init:function(a){var b,e;d(this).data("state")&&f.stop.call(this);b=jQuery.extend({},g);a=d.extend(b,a);b=d(this);e=c.defaultStateAttribs(b,a);d(this).data("state",e);c.setItemLayout(b,e,a);a.startPaused||c.startInterval.call(this);if(a.mousePause)return c.bindMousePausing(b,e)},pause:function(a){var b;b=c.getState("pause",this);if(!c.hasMultipleItems(b))return!1;b.isPaused=a;b=b.element;if(a)return d(this).addClass("paused"),b.trigger("vticker.pause");d(this).removeClass("paused");return b.trigger("vticker.resume")},next:function(a){var b;b=c.getState("next",this);if(c.isAnimatingOrSingleItem(b))return!1;c.restartInterval.call(this);return c.moveUp(b,a)},prev:function(a){var b;b=c.getState("prev",this);if(c.isAnimatingOrSingleItem(b))return!1;c.restartInterval.call(this);return c.moveDown(b,a)},stop:function(){c.getState("stop",this);return c.stopInterval.call(this)},remove:function(){var a;a=c.getState("remove",this);c.stopInterval.call(this);a=a.element;a.unbind();return a.remove()}};return d.fn.vTicker=function(a){return f[a]?f[a].apply(this,Array.prototype.slice.call(arguments,1)):"object"!==typeof a&&a?d.error("Method "+a+" does not exist on jQuery.vTicker"):f.init.apply(this,arguments)}})(jQuery);
+//]]>
+</script>
+<script src='/feeds/posts/default?alt=json-in-script&amp;callback=random_post&amp;max-results=8' type='text/javascript'/>
+<div id='main-wrapper'>
+<div id='contentanime'>
+<div class='clear'/></div>
+<aside id='sidebar-wrapper2'>
+<div class='sidebar2 section' id='sidebar2' name='Featured Post dan Newsticker'>
+<div class='widget HTML' data-version='1' id='HTML2'>
+<h2 class='title' style='display:none!important'>Newsticker</h2>
+<div class='widget-content'>
+<div id='-batazx'><h3>Rekomendasi</h3>
+<div id='rec-post' style='overflow: hidden; position: relative; height: 30px;'>
+<script type='text/javascript'>
+removeRelatedDuplicates(); printRelatedLabels();
+</script>
+<div class='clear'>
+<script type='text/javascript'>//<![CDATA[
+$(function() {
+  $('#rec-post').vTicker('init', {
+    speed: 600, 
+    mousePause: true,
+    showItems: 1,
+    height:30,
+    padding:4});
+});
+//]]></script></div></div></div>
+</div>
+<div class='clear'/>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+</span>
+</span>
+<div class='clear'/>
+</div></div></aside>
+<div class='clear'/>
+<div id='content-wrap'>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'><b:if cond='data:blog.pageType != &quot;item&quot;'>
+<div class='homepage-atas section' id='homepage-atas' name='A-Z List Home'><div class='widget LinkList' data-version='1' id='LinkList3'>
+<h2>A-Z List</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='Q'>#</a></li>
+<li><a href='#'>A</a></li>
+<li><a href='#'>B</a></li>
+<li><a href='#/search/label/C'>C</a></li>
+<li><a href='#/search/label/D'>D</a></li>
+<li><a href='#/search/label/E'>E</a></li>
+<li><a href='#/search/label/F'>F</a></li>
+<li><a href='#/search/label/G'>G</a></li>
+<li><a href='#/search/label/H'>H</a></li>
+<li><a href='#/search/label/I'>I</a></li>
+<li><a href='#/search/label/J'>J</a></li>
+<li><a href='#/search/label/K'>K</a></li>
+<li><a href='#/search/label/L'>L</a></li>
+<li><a href='#/search/label/M'>M</a></li>
+<li><a href='#/search/label/N'>N</a></li>
+<li><a href='#/search/label/O'>O</a></li>
+<li><a href='#/search/label/P'>P</a></li>
+<li><a href='#/search/label/Q'>Q</a></li>
+<li><a href='#/search/label/R'>R</a></li>
+<li><a href='#/search/label/S'>S</a></li>
+<li><a href='#/search/label/T'>T</a></li>
+<li><a href='#/search/label/U'>U</a></li>
+<li><a href='#/search/label/V'>V</a></li>
+<li><a href='#/search/label/W'>W</a></li>
+<li><a href='#/search/label/X'>X</a></li>
+<li><a href='#/search/label/Y'>Y</a></li>
+<li><a href='https://protemplates.in/search/label/Z'>Z</a></li>
+</ul>
+<div class='clear'/>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+</span>
+</span>
+<div class='clear'/>
+</div>
+</div></div>
+<div class='rvad'><h1><span>Masih Hangat</span></h1><div class='iconf'><i class='fa fa-rss'/> </div></div></b:if></b:if>
+<b:section class='main' id='main' showaddelement='no'>
+  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+      <b:widget-setting name='commentLabel'>Comments</b:widget-setting>
+      <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+      <b:widget-setting name='authorLabel'>By</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+      <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showAuthor'>false</b:widget-setting>
+      <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='timestampLabel'>a la/s</b:widget-setting>
+      <b:widget-setting name='reactionsLabel'/>
+      <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+      <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+      <b:widget-setting name='showLabels'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>false</b:widget-setting>
+      <b:widget-setting name='postLabelsLabel'>Tags</b:widget-setting>
+      <b:widget-setting name='showTimestamp'>false</b:widget-setting>
+      <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+      <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+      <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+      <b:widget-setting name='showReactions'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='top'>
+<div class='blog-posts hfeed'>
+<b:include data='top' name='status-message'/>
+<data:defaultAdStart/>
+<b:loop values='data:posts' var='post'>
+<b:include data='post' name='post'/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'><b:include data='post' name='threaded_comments'/></b:if>
+<b:if cond='data:blog.pageType == &quot;item&quot;'><b:include data='post' name='threaded_comments'/></b:if>
+<b:if cond='data:post.includeAd'>
+<b:if cond='data:post.isFirstPost'>
+<data:defaultAdEnd/>
+<b:else/>
+<data:adEnd/>
+</b:if>
+<div class='inline-ad'><data:adCode/></div>
+<data:adStart/>
+</b:if>
+<b:if cond='data:post.trackLatency'><data:post.latencyJs/></b:if>
+</b:loop>
+<data:adEnd/>
+<div class='clear'/></div>
+<!-- navigation -->
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'><b:if cond='data:blog.pageType != &quot;item&quot;'><!-- navigation -->
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <b:include name='nextprev'/>
+    <b:else/>
+    <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+        <b:include name='nextprev'/>
+    <b:else/>
+        <b:if cond='data:blog.homepageUrl != data:blog.url'>
+<!-- navigation -->
+<b:include name='nextprev'/>
+</b:if>
+    </b:if>
+    </b:if></b:if></b:if>
+<div class='clear'/>
+</b:includable>
+    <b:includable id='backlinkDeleteIcon' var='backlink'>
+  <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
+    <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
+      <img src='//www.blogger.com/img/icon_delete13.gif'/>
+    </a>
+  </span>
+</b:includable>
+    <b:includable id='backlinks' var='post'>
+  <a name='links'/><h4><data:post.backlinksLabel/></h4>
+  <b:if cond='data:post.numBacklinks != 0'>
+    <dl class='comments-block' id='comments-block'>
+      <b:loop values='data:post.backlinks' var='backlink'>
+        <div class='collapsed-backlink backlink-control'>
+          <dt class='comment-title'>
+            <span class='backlink-toggle-zippy'>&#160;</span>
+            <a expr:href='data:backlink.url' rel='nofollow'><data:backlink.title/></a>
+            <b:include data='backlink' name='backlinkDeleteIcon'/>
+          </dt>
+          <dd class='comment-body collapseable'>
+            <data:backlink.snippet/>
+          </dd>
+          <dd class='comment-footer collapseable'>
+            <span class='comment-author'><data:post.authorLabel/> <data:backlink.author/></span>
+            <span class='comment-timestamp'><data:post.timestampLabel/> <data:backlink.timestamp/></span>
+          </dd>
+        </div>
+      </b:loop>
+    </dl>
+  </b:if>
+  <p class='comment-footer'>
+    <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
+  </p>
+</b:includable>
+    <b:includable id='breadcrumb' var='posts'><b:if cond='data:blog.homepageUrl != data:blog.url'>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<div class='breadcrumbs'><span><data:blog.pageName/></span></div>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<!-- breadcrumb for the post page -->
+<b:loop values='data:posts' var='post'>
+<b:if cond='data:post.labels'>
+<div class='breadcrumbs'>
+<b:loop values='data:post.labels' var='label'>
+<span typeof='v:Breadcrumb'><a expr:href='data:label.url' property='v:title' rel='v:url'><data:label.name/></a></span>
+</b:loop>
+<span><data:post.title/></span>
+</div>
+<b:else/>
+<div class='breadcrumbs'><span>Unlabelled</span> <span><data:post.title/></span></div>
+</b:if>
+</b:loop>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;archive&quot;'>
+<!-- breadcrumb for the label archive page and search pages.. -->
+<div class='breadcrumbs'>
+<span>Archives for <data:blog.pageName/></span>
+</div>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<div class='breadcrumbs'>
+<b:if cond='data:blog.pageName == &quot;&quot;'>
+<span>All posts</span>
+<b:else/>
+<span>Posts filed under <data:blog.pageName/></span>
+</b:if>
+</div>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:if>
+</b:includable>
+    <b:includable id='comment-form' var='post'/>
+    <b:includable id='commentDeleteIcon' var='comment'/>
+    <b:includable id='comment_count_picker' var='post'>
+  <b:if cond='data:post.commentSource == 1'>
+    <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-post-url='data:post.url' expr:data-url='data:post.canonicalUrl'>
+    </span>
+  <b:else/>
+    <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
+      <data:post.commentLabelFull/>:
+    </a>
+  </b:if>
+</b:includable>
+    <b:includable id='comment_picker' var='post'/>
+    <b:includable id='comments' var='post'>
+</b:includable>
+    <b:includable id='feedLinks'/>
+    <b:includable id='feedLinksBody' var='links'/>
+    <b:includable id='iframe_comments' var='post'/>
+    <b:includable id='mobile-index-post' var='post'/>
+    <b:includable id='mobile-main' var='top'/>
+    <b:includable id='mobile-nextprev'/>
+    <b:includable id='mobile-post' var='post'/>
+    <b:includable id='nextprev'>
+
+ <div class='blog-pager' id='blog-pager'> <b:if cond='data:newerPageUrl'> <span id='page-newer'> <a class='page-newer' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>&#171; Newer Post</a> </span> </b:if> <b:if cond='data:olderPageUrl'> <span id='page-older'> <a class='page-older' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'> Older Post &#187;</a> </span> </b:if> <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a> <b:if cond='data:mobileLinkUrl'> <div class='blog-mobile-link'> <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a> </div> </b:if><div class='clear'/></div>
+</b:includable>
+    <b:includable id='post' var='post'>
+<article class='post hentry' itemprop='blogPost' itemscope='itemscope' itemtype='//schema.org/BlogPosting'>
+<b:if cond='data:post.firstImageUrl'><meta expr:content='data:post.firstImageUrl' itemprop='image'/></b:if>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<a expr:id='data:post.id'/><b:if cond='data:post.title'><h1 class='entry-title' itemprop='name'><b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if></h1></b:if>
+<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'><data:post.body/><div style='clear: both;'/></div>
+</b:if> <!-- End Tag Cond Static -->
+<b:if cond='data:blog.pageType != &quot;item&quot;'><b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+  <div class='thumbnail'><span class='skor-rate'><i class='fa fa-star' style='padding-right: 2px;'/><b:eval expr='data:post.labels[0].name'/></span><b:if cond='data:post.thumbnailUrl'><a expr:href='data:post.url'><img class='post-thumbnail' expr:alt='data:post.title' expr:height='data:height' expr:src='data:post.thumbnailUrl' expr:title='data:post.title' expr:width='data:width'/></a><b:else/><a expr:href='data:post.url'><img class='post-thumbnail' expr:alt='data:post.title' expr:height='data:height' expr:title='data:post.title' expr:width='data:width' src='//1.bp.blogspot.com/-8O3prZpJVN4/WcLqCSLDuHI/AAAAAAAAAI0/1icMJb76B3QBbAS3mmOOQuVIKMnLy_WAgCLcBGAs/s1600/no-image-min.jpg'/></a></b:if></div>
+<div class='article'>
+<a expr:id='data:post.id'/><b:if cond='data:post.title'><h2 class='entry-title' itemprop='name'><b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if></h2></b:if>
+<span class='vcard post-header' expr:id='&quot;hcard- &quot; + data:blog.title'>
+<div class='kolor'><i class='fa fa-user'/> <span class='fn' itemprop='author' itemscope='itemscope' itemtype='//schema.org/Person'>Posted by <data:post.author/></span> </div>
+<div class='kolor'><i class='fa fa-clock-o'/> <a expr:href='data:post.url' expr:title='&quot;Permalink to &quot; + data:post.title' rel='bookmark'>
+<abbr class='updated published timeago' expr:title='data:post.timestampISO8601' itemprop='datePublished'>Released on <data:post.timestamp/></abbr></a></div>
+<div class='kolor'><i class='fa fa-tags'/> <span class='fn' itemprop='author' itemscope='itemscope' itemtype='//schema.org/Person'>Genres <b:loop values='data:post.labels' var='label'><a class='genred' expr:href='data:label.url' property='v:title' rel='v:url'><data:label.name/></a></b:loop></span>
+</div>
+</span>
+</div>
+</b:if>
+</b:if> <!-- End Tag Cond Home -->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<a expr:id='data:post.id'/>
+<script>var irvahomo = &quot;<data:post.timestamp/>&quot;;</script>
+<script>var namagw = &quot;<data:post.author/>&quot;;</script>
+<div class='jj-cover' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'>
+  <div class='JK-cover'><span class='sscore'><b:eval expr='data:post.labels[0].name'/></span><div class='coverImage'>
+  <div class='coverx'>
+ <b:if cond='data:post.firstImageUrl'>
+      <img class='firstimage' expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
+   <b:else/>
+      <img class='firstimage ilang' expr:alt='data:post.title' src='http://3.bp.blogspot.com/-zP87C2q9yog/UVopoHY30SI/AAAAAAAAE5k/AIyPvrpGLn8/s70/picture_not_available.png'/>
+   </b:if>
+  </div>
+   <b:if cond='data:post.firstImageUrl'>
+      <img class='firstimage' expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
+   <b:else/>
+      <img class='firstimage ilang' expr:alt='data:post.title' src='http://3.bp.blogspot.com/-zP87C2q9yog/UVopoHY30SI/AAAAAAAAE5k/AIyPvrpGLn8/s70/picture_not_available.png'/>
+   </b:if>
+  </div>
+</div>
+  <div class='cover-kecil'>
+    <div class='gambarnya'/>
+<div class='ttl'>
+  <div class='infonya'/>
+   <div class='judulnya'>
+<h1><data:post.title/></h1>
+ <div class='JK-Category'>
+<div class='logites'>
+<b:loop values='data:post.labels' var='label'>
+<a expr:href='data:label.url + &quot;?max-results=5&quot;' expr:title='data:label.name' itemprop='url'><span itemprop='name headline'><data:label.name/></span></a> </b:loop>
+</div>
+<div class='bottomnav'>
+<div class='l'>
+  <span class='typ'/>
+  <span class='ssn'><a href='#disqus-title' rel='tag'>Add Comment</a></span>
+  </div>
+  </div>
+</div>
+</div>
+  </div>
+  </div>
+  </div>
+<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'>
+<data:post.body/>
+<div style='clear: both;'/>
+</div>
+<div style='clear:both'/>
+<div id='pesan-penutup'>
+<p> - Tekan <b> Download</b> untuk memuculkan link <br/> - Gunakan <b> Winrar/Winzip</b> unntuk ekstrak Anime! <a href='https://www.rarlab.com/' target='_blank'><b>Download Disini</b></a><br/> - Subtitle Tidak Muncul? bisa menggunakan <b> MX PLAYER </b> atau <b>VLC Media Player</b><br/> - Apabila <b> Google Drive</b> limit, gunakan link alternatif yang awet seperti <b>Dewafiles</b><br/> - Apabila <b> link</b> mati, harap lapor di komentar.
+</p>
+</div>
+<div style='clear:both'/>
+  <span class='bapaq'>Keyword:</span>
+<div class='tagser'><b:if cond='data:post.title'><div class='tags' itemprop='name'><b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if>, download  <b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if>, download anime <b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if>, anime  <b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if>, download anime batch mp4 , mkv , 3gp sub indo , download anime sub indo , download anime sub indo  <b:if cond='data:post.link'><a expr:href='data:post.link'><data:post.title/></a><b:else/><b:if cond='data:post.url'><b:if cond='data:blog.url != data:post.url'><a expr:href='data:post.url'><data:post.title/></a><b:else/><data:post.title/></b:if><b:else/><data:post.title/></b:if></b:if></div></b:if></div>
+
+<div class='socialshare'>
+<a class='sfb' expr:href='&quot;//www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='nofollow' target='_blank' title='Share ke Facebook'><span class='icons icons-facebook-alt'/> Facebook</a>
+<a class='stw' expr:href='&quot;//twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank' title='Share ke Twitter'> <span class='icons icons-twitter'/> Twitter</a>
+<a class='sgp' expr:href='&quot;//plus.google.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank' title='Share ke Google+'><span class='icons icons-googleplus'/> Google+</a>
+</div>
+<!-- Related Post Grid by igniel.com -->
+<b:if cond='data:view.isPost'>
+ <h3 class='title'><span>Anime Lainnya :</span></h3>
+<div id='ignielRelated'>
+<script>//<![CDATA[
+      var jumlah = 6;
+      eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('d a=["\\y","\\x\\1f\\f\\k\\h","\\f\\e\\q\\C\\h\\E","\\w","\\k\\q\\A\\e\\1Y\\1d\\P","\\x\\z\\U\\x\\h\\n\\k\\q\\C","","\\1l\\F\\k\\q","\\e\\q\\h\\n\\1E","\\P\\e\\e\\A","\\1H\\h","\\h\\k\\h\\f\\e","\\S\\F\\q\\h\\e\\q\\h","\\x\\z\\v\\v\\g\\n\\1E","\\v\\e\\A\\k\\g\\1H\\h\\E\\z\\v\\U\\q\\g\\k\\f","\\z\\n\\f","\\A\\g\\h\\g\\2n\\k\\v\\g\\C\\e\\D\\1f\\q\\C\\2q\\U\\g\\x\\e\\1M\\1z\\2p\\k\\1t\\1w\\1d\\1C\\1i\\2k\\2j\\2e\\C\\F\\b\\b\\b\\b\\1I\\1n\\Z\\E\\V\\Z\\C\\b\\b\\b\\b\\V\\b\\b\\b\\b\\1w\\O\\b\\1r\\b\\b\\b\\O\\W\\A\\1b\\2f\\e\\b\\b\\b\\b\\b\\1A\\1I\\O\\1n\\1t\\W\\1r\\O\\b\\1l\\U\\1z\\Z\\D\\C\\b\\b\\b\\b\\2h\\V\\f\\V\\W\\1t\\W\\1r\\v\\1T\\1d\\F\\n\\1M\\2g\\2b\\b\\b\\1B\\1X\\b\\1W\\1V\\1j\\1d\\1K\\1G\\1J\\b\\b\\b\\b\\b\\V\\f\\1K\\1J\\1k\\1n\\z\\W\\v\\O\\O","\\f\\k\\q\\1k","\\n\\e\\f","\\g\\f\\h\\e\\n\\q\\g\\h\\e","\\E\\n\\e\\P","\\n\\g\\q\\A\\F\\v","\\P\\f\\F\\F\\n","\\Z\\1C\\1B","\\y\\f\\k\\w","\\y\\A\\k\\1j\\K\\S\\f\\g\\x\\x\\I\\p\\h\\E\\z\\v\\U\\p\\w\\y\\g\\K\\E\\n\\e\\P\\I\\p","\\p\\K\\h\\k\\h\\f\\e\\I\\p","\\p\\w\\y\\k\\v\\C\\K\\x\\n\\S\\I\\p","\\D\\1i\\1b\\2a\\1b\\X\\E\\1b\\1G\\1A\\X\\1f\\X\\1k\\X\\q\\F\\X\\q\\z","\\n\\e\\1f\\f\\g\\S\\e","\\p\\K\\g\\f\\h\\I\\p","\\p\\D\\w\\y\\D\\g\\w\\y\\D\\A\\k\\1j\\w","\\y\\g\\K\\E\\n\\e\\P\\I\\p","\\p\\K\\S\\f\\g\\x\\x\\I\\p\\1l\\z\\A\\z\\f\\p\\w","\\y\\D\\g\\w","\\y\\D\\f\\k\\w","\\1i\\n\\k\\h\\e"];d Q=0,l=J H(),r=J H(),B=J H();1c 2l(t,T){d i=t[a[1]](a[0]);N(d j=0;j<i[a[2]];j++){u(i[j][a[4]](a[3])!=-1){i[j]=i[j][a[5]](i[j][a[4]](a[3])+1,i[j][a[2]])}};i=i[a[7]](a[6]);i=i[a[5]](0,T-1);1q i}1c 2d(T){N(d i=0;i<T[a[9]][a[8]][a[2]];i++){d t=T[a[9]][a[8]][i];l[Q]=t[a[11]][a[10]];1g=a[6];u(a[12]1h t){1g=t[a[12]][a[10]]}1s{u(a[13]1h t){1g=t[a[13]][a[10]]}};u(a[14]1h t){1m=t[a[14]][a[15]]}1s{1m=a[16]};B[Q]=1m;N(d j=0;j<t[a[17]][a[2]];j++){u(t[a[17]][j][a[18]]==a[19]){r[Q]=t[a[17]][j][a[20]];1o}};Q++}}1c 1L(1p,i){N(d j=0;j<1p[a[2]];j++){u(1p[j]==i){1q 1Q}};1q 1P}1c 1R(){d L=J H(0);d R=J H(0);d 1N=J H(0);d Y=J H(0);N(d m=0;m<r[a[2]];m++){u(!1L(L,r[m])){L[a[2]]+=1;L[L[a[2]]-1]=r[m];R[a[2]]+=1;R[R[a[2]]-1]=l[m];1N[a[2]]+=1;Y[a[2]]+=1;Y[Y[a[2]]-1]=B[m]}};l=R;r=L;B=Y;N(d m=0;m<l[a[2]];m++){d G=1a[a[22]]((l[a[2]]-1)*1a[a[21]]());d 1O=l[m];d 1F=r[m];d 1v=B[m];l[m]=l[G];r[m]=r[G];B[m]=B[G];l[G]=1O;r[G]=1F;B[G]=1v};d 1e=0;d o=1a[a[22]]((l[a[2]]-1)*1a[a[21]]());d 1D=o;d M;d 1y=1u[a[23]];2i(1e<1x){u(r[o]!=1y){M=a[24];M+=a[25]+r[o]+a[26]+l[o]+a[27]+B[o][a[29]](/\\/s[0-9]+(\\-c)?/,a[28])+a[2o]+l[o]+a[26]+l[o]+a[2c];M+=a[2m]+r[o]+a[2r]+l[o]+a[1Z];M+=a[1S];1u[a[1U]](M);1e++;u(1e==1x){1o}};u(o<l[a[2]]-1){o++}1s{o=0};u(o==1D){1o}}}',62,152,'||||||||||_0x91f7|x41||var|x65|x6C|x61|x74|_0x46aax8|_0x46aax9|x69|judul|_0x46aax12|x72|_0x46aax18|x27|x6E|urls||_0x46aax6|if|x6D|x3E|x73|x3C|x75|x64|gambar|x67|x2F|x68|x6F|_0x46aax13|Array|x3D|new|x20|_0x46aaxe|_0x46aax1a|for|x43|x66|rel|_0x46aaxf|x63|_0x46aax7|x62|x45|x51|x2D|_0x46aax11|x55|||||||||||Math|x31|function|x4F|_0x46aax17|x70|postcontent|in|x77|x76|x6B|x6A|postimg|x53|break|_0x46aaxc|return|x49|else|x56|document|_0x46aax16|x42|jumlah|_0x46aax1b|x34|x33|x4C|x52|_0x46aax19|x79|_0x46aax15|x32|x24|x4E|x54|x46|contains|x36|_0x46aax10|_0x46aax14|false|true|ignielRelatedGrid|35|x57|36|x37|x58|x2B|x78|34|||||||||||x39|x48|31|relpostimgcuplik|x47|x50|x38|x44|while|x4B|x30|filter|32|x3A|30|x2C|x3B|33'.split('|'),0,{}));
+      //]]></script>
+    <b:if cond='data:post.labels'>
+      <b:loop values='data:post.labels' var='label'>
+        <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=relpostimgcuplik&amp;max-results=25&quot;'/>
+      </b:loop>
+      <ul>
+        <script>ignielRelatedGrid();</script>
+      </ul>
+      <b:else/>
+      There is no other posts in this category.
+    </b:if>
+  </div>
+<div class='clear'/>
+  </b:if></b:if>
+<div class='clear'/>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+<script>/*<![CDATA[*/
+function openKomenTab(evt,tabNya){var i,komentarTab,komentarButton;komentarTab=document.getElementsByClassName("komentar-tabs");for(i=0;i<komentarTab.length;i++){komentarTab[i].style.cssText="transition:.3s;max-height:0; overflow:hidden;opacity:0;transform:scale(0)";} komentarButton=document.getElementsByClassName("komentar-button");for(i=0;i<komentarButton.length;i++){komentarButton[i].className=komentarButton[i].className.replace(" active","");} document.getElementById(tabNya).style.cssText="transition:.3s;max-height:none; overflow:hidden;opacity:1; transform:scale(1)";evt.currentTarget.className+=" active";}
+/*]]>*/
+</script>
+  <div class='disqus-title' id='disqus-title'>Buka Komentar<span class='disqus-loader' id='disqus-loader' onclick='loadDisqus()'><i class='fa fa-toggle-off'/></span><span id='disqus-showhide' onclick='toggleDisqus(&apos;disqus-comments&apos;)'><i class='fa fa-toggle-on'/></span></div>
+<div id='disqus-comments'>
+<div class='comments' id='comments'>
+<script type='text/javascript'>
+   var disqus_shortname = &#39;wahyudzn&#39;; // GANTI DENGAN DISQUS MILIK KAMU
+var disqus_blogger_current_url = &quot;<data:blog.canonicalUrl/>&quot;;
+if (!disqus_blogger_current_url.length) {
+disqus_blogger_current_url = &quot;<data:blog.url/>&quot;;
+}
+var disqus_blogger_homepage_url = &quot;<data:blog.homepageUrl/>&quot;;
+var disqus_blogger_canonical_homepage_url = &quot;<data:blog.canonicalHomepageUrl/>&quot;;
+</script>
+</div>
+</div>
+
+</b:if>
+</article>
+<script type='text/javascript'>//<![CDATA[
+function commentToggle(o){$(".com-tab").addClass("off-comtab"),$(o).removeClass("off-comtab"),$(".com-page").hide(),$(o+"_page").show()}//]]></script>
+<div id='thd_com'><div class='com-page' id='blogcom_page'>
+<div class='comments' id='comments'/>
+<script async='async' src='' type='text/javascript'/><script type='text/javascript'>   
+
+var Items = {};
+var Msgs = {};
+var Config = {&#39;maxThreadDepth&#39;:&#39;0&#39;};
+
+//<![CDATA[
+Config.maxThreadDepth = 2; 
+var Cur_Cform_Hdr='.comment_form';var Cur_Cform_Url=$('#comment-editor').attr('src');function trim(a){var b=' \n\r\t\f\x5b\x5d\x7c\x7d\x3c\x3e\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';for(var i=0;i<a.length;i++){if(b.indexOf(a.charAt(i))!=-1){a=a.substring(0,i);break}}return a}$('.comment_wrap .comment_body p').html(function(i,h){temp=h.toLowerCase();index=temp.indexOf('@<a href="#c');if(index!=-1){index_tail=temp.indexOf('</a>',index);if(index_tail!=-1){h=h.substring(0,index)+h.substring(index_tail+4)}}return h});function Valid_Par_Id(a){r=a.indexOf('c');if(r!=-1)a=a.substring(r+1);return a}function Cform_Ins_ParID(a){a='&parentID='+a+'#%7B';n_cform_url=Cur_Cform_Url.replace(/#%7B/,a);return n_cform_url}function Reset_Comment_Form(){html=$(Cur_Cform_Hdr).html();$(Cur_Cform_Hdr).html('');Cur_Cform_Hdr='.comment_form';$(Cur_Cform_Hdr).html(html);$('#comment-editor').attr('src',Cur_Cform_Url)}function Display_Reply_Form(e){par_id=$(e).attr('id');par_id=Valid_Par_Id(par_id);html=$(Cur_Cform_Hdr).html();if(Cur_Cform_Hdr=='.comment_form'){reset_html='<a href="#origin_cform" onclick="Reset_Comment_Form()">'+Msgs.addComment+'</a><a name="origin_cform"/>';$(Cur_Cform_Hdr).html(reset_html)}else{$(Cur_Cform_Hdr).html('')}Cur_Cform_Hdr='#r_f_c'+par_id;$(Cur_Cform_Hdr).html(html);$('#comment-editor').attr('src',Cform_Ins_ParID(par_id))}cur_url=window.location.href;search_formid='#comment-form_';search_index=cur_url.indexOf(search_formid);if(search_index!=-1){ret_id=cur_url.substring(search_index+search_formid.length);Display_Reply_Form('#rc'+ret_id)}for(var i=0;i<Items.length;i++){if('parentId'in Items[i]){var par_id=Items[i].parentId;var par_level=parseInt($('#c'+par_id+':first').attr('data-level'));$('#c'+par_id+' .comment_child:first').html(function(a,b){var c=Items[i].id;if(par_level>=Config.maxThreadDepth){$('#c'+c+':first .comment_reply').remove()}var d=$('#c'+c+':first').html();d='<div class="comment_wrap" id="c'+c+'" data-level="'+(par_level+1)+'">'+d+'</div>';$('#c'+c).remove();return(b+d)})}}var avatar=$("#comments");avatar.find('.comment_avatar img').each(function(){var a=$(this).attr('src');$(this).show().attr('src',a.replace(/\/s[0-9]+(\-c)?\//,"/s50-c/"))});
+//]]>
+  </script>
+<div class='clear'/></div>
+<div class='clear'/></div>
+</b:includable>
+    <b:includable id='postQuickEdit' var='post'/>
+    <b:includable id='shareButtons' var='post'/>
+    <b:includable id='status-message'><b:if cond='data:navMessage'><div class='status-msg-wrap'><data:navMessage/><div style='clear: both;'/></div></b:if></b:includable>
+    <b:includable id='threaded-comment-form' var='post'>
+<div class='comment-form'>
+<a id='comment-form'/>
+<b:if cond='data:mobile'>
+<p><data:blogCommentMessage/></p>
+<data:blogTeamBlogMessage/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'><a expr:href='&quot;//www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;pageID=&quot; + data:post.id' id='comment-editor-src'/></b:if>
+<b:if cond='data:blog.pageType == &quot;item&quot;'><a expr:href='&quot;//www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:post.id' id='comment-editor-src'/></b:if>
+<iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+<b:else/>
+<p><data:blogCommentMessage/></p>
+<data:blogTeamBlogMessage/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'><a expr:href='&quot;//www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;pageID=&quot; + data:post.id' id='comment-editor-src'/></b:if><b:if cond='data:blog.pageType == &quot;item&quot;'><a expr:href='&quot;//www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:post.id' id='comment-editor-src'/></b:if>
+<iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+</b:if>
+<data:post.friendConnectJs/>
+<data:post.cmtfpIframe/>
+<script type='text/javascript'>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);</script>
+</div>
+</b:includable>
+    <b:includable id='threaded_comment_js' var='post'/>
+    <b:includable id='threaded_comments' var='post'>
+<script type='text/javascript'>//<![CDATA[
+function commentToggle(o){$(".com-tab").addClass("off-comtab"),$(o).removeClass("off-comtab"),$(".com-page").hide(),$(o+"_page").show()}//]]></script>
+<div id='thd_com'><div class='com-page' id='blogcom_page'>
+<div class='comments' id='comments'><b:if cond='data:post.allowComments'><h4 class='comment_h4'> <i class='fa fa-comments'/> <b:if cond='data:post.numComments == 0'> <span itemprop='interactionCount'>0</span> Comments for &quot;<data:blog.pageName/>&quot;</b:if> <b:if cond='data:post.numComments == 1'> <span itemprop='interactionCount'>1</span> Comments for &quot;<data:blog.pageName/>&quot; </b:if> <b:if cond='data:post.numComments &gt; 1'> <span itemprop='interactionCount'><data:post.numComments/></span> Comments for &quot;<data:blog.pageName/>&quot; </b:if> </h4><div id='comment_block'><b:loop values='data:post.comments' var='comment'><div data-level='0' expr:class='data:comment.adminClass' expr:id='data:comment.anchorName'><b:if cond='data:comment.isDeleted'><span class='deleted-comment'><data:comment.body/> - <a class='comment_hapus' expr:href='&quot;//www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id' expr:title='data:top.deleteCommentMsg'>Hapus</a></span><b:else/>
+<b:if cond='data:post.adminClass == data:comment.adminClass'>&lt;div class=&#39;comment_inner comment_admin&#39;&gt; <b:else/>&lt;div class=&#39;comment_inner&#39;&gt; </b:if><div class='comment_avatar'><img alt='avatar' expr:src='data:comment.authorAvatarSrc' expr:title='data:comment.author'/></div>
+<div class='comment_body'><div class='cm_head'><b:if cond='data:comment.authorUrl'><a class='cm_user' expr:href='data:comment.authorUrl' expr:title='data:comment.author' rel='nofollow' target='_blank'><data:comment.author/></a><b:else/><b><data:comment.author/></b></b:if><b:if cond='data:comment.author == data:post.author'><i class='fa fa-user'/></b:if> <a expr:href='data:comment.url' rel='nofollow' title='Permalink'><span class='comment_date'><data:comment.timestamp/></span></a></div><p><data:comment.body/></p></div><div class='comment_opsi'> <a class='comment_reply' expr:href='&quot;#r_&quot;+data:comment.anchorName' expr:id='&quot;r&quot;+data:comment.anchorName' onclick='javascript:Display_Reply_Form(this)' title='Balas'>Reply</a> &#183; <a class='comment-delete' expr:href='&quot;//www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id' expr:title='data:top.deleteCommentMsg'>Delete</a></div><div class='clear'/>&lt;/div&gt; <div class='clear'/><div class='comment_child'/><div class='comment_reply_form' expr:id='&quot;r_f_&quot;+data:comment.anchorName'/></b:if></div></b:loop></div><div class='clear'/><div class='comment_form'><b:if cond='data:post.embedCommentForm'><b:if cond='data:post.allowNewComments'><b:include data='post' name='threaded-comment-form'/><b:else/><data:post.noNewCommentsText/></b:if><b:else/><b:if cond='data:post.allowComments'><a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick' expr:title='data:postCommentMsg'><data:postCommentMsg/></a></b:if></b:if></div><div class='clear'/>
+<b:if cond='data:post.commentPagingRequired'><div class='clear'/><span class='paging-control-container'><a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>&#160; <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:post.olderLinkText/></a>&#160; <data:post.commentRangeText/>&#160; <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:post.newerLinkText/></a>&#160; <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a></span></b:if></b:if></div>
+<script async='async' expr:src='data:post.commentSrc' type='text/javascript'/><script type='text/javascript'>   
+<b:if cond='data:post.numComments != 0'>
+var Items = <data:post.commentJso/>;
+var Msgs = <data:post.commentMsgs/>;
+var Config = <data:post.commentConfig/>;
+<b:else/>
+var Items = {};
+var Msgs = {};
+var Config = {&#39;maxThreadDepth&#39;:&#39;0&#39;};
+</b:if>
+//<![CDATA[
+Config.maxThreadDepth = 2; 
+var Cur_Cform_Hdr='.comment_form';var Cur_Cform_Url=$('#comment-editor').attr('src');function trim(a){var b=' \n\r\t\f\x5b\x5d\x7c\x7d\x3c\x3e\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';for(var i=0;i<a.length;i++){if(b.indexOf(a.charAt(i))!=-1){a=a.substring(0,i);break}}return a}$('.comment_wrap .comment_body p').html(function(i,h){temp=h.toLowerCase();index=temp.indexOf('@<a href="#c');if(index!=-1){index_tail=temp.indexOf('</a>',index);if(index_tail!=-1){h=h.substring(0,index)+h.substring(index_tail+4)}}return h});function Valid_Par_Id(a){r=a.indexOf('c');if(r!=-1)a=a.substring(r+1);return a}function Cform_Ins_ParID(a){a='&parentID='+a+'#%7B';n_cform_url=Cur_Cform_Url.replace(/#%7B/,a);return n_cform_url}function Reset_Comment_Form(){html=$(Cur_Cform_Hdr).html();$(Cur_Cform_Hdr).html('');Cur_Cform_Hdr='.comment_form';$(Cur_Cform_Hdr).html(html);$('#comment-editor').attr('src',Cur_Cform_Url)}function Display_Reply_Form(e){par_id=$(e).attr('id');par_id=Valid_Par_Id(par_id);html=$(Cur_Cform_Hdr).html();if(Cur_Cform_Hdr=='.comment_form'){reset_html='<a href="#origin_cform" onclick="Reset_Comment_Form()">'+Msgs.addComment+'</a><a name="origin_cform"/>';$(Cur_Cform_Hdr).html(reset_html)}else{$(Cur_Cform_Hdr).html('')}Cur_Cform_Hdr='#r_f_c'+par_id;$(Cur_Cform_Hdr).html(html);$('#comment-editor').attr('src',Cform_Ins_ParID(par_id))}cur_url=window.location.href;search_formid='#comment-form_';search_index=cur_url.indexOf(search_formid);if(search_index!=-1){ret_id=cur_url.substring(search_index+search_formid.length);Display_Reply_Form('#rc'+ret_id)}for(var i=0;i<Items.length;i++){if('parentId'in Items[i]){var par_id=Items[i].parentId;var par_level=parseInt($('#c'+par_id+':first').attr('data-level'));$('#c'+par_id+' .comment_child:first').html(function(a,b){var c=Items[i].id;if(par_level>=Config.maxThreadDepth){$('#c'+c+':first .comment_reply').remove()}var d=$('#c'+c+':first').html();d='<div class="comment_wrap" id="c'+c+'" data-level="'+(par_level+1)+'">'+d+'</div>';$('#c'+c).remove();return(b+d)})}}var avatar=$("#comments");avatar.find('.comment_avatar img').each(function(){var a=$(this).attr('src');$(this).show().attr('src',a.replace(/\/s[0-9]+(\-c)?\//,"/s50-c/"))});
+//]]>
+</script>
+<div class='clear'/></div>
+<div class='clear'/></div>
+</b:includable>
+  </b:widget>
+  <b:widget id='HTML1' locked='false' title='Streaming Movie' type='HTML' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>&lt;script&gt;
+document.write(&quot;&lt;script src=\&quot;/feeds/posts/default/-/Docs?orderby=updated&amp;amp;alt=json-in-script&amp;amp;callback=rcentbytag\&quot;&gt;&lt;\/script&gt;&quot;);
+&lt;/script&gt;</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+      <b:include name='quickedit'/></b:if>
+</b:includable>
+  </b:widget>
+</b:section></div></div>
+<div id='sticky-sidebar'>
+<aside id='sidebar-wrapper'>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+  </b:if>
+<b:section class='sidebar' id='sidebar' preferred='yes'>
+  <b:widget id='Label3' locked='false' title='Kategori List' type='Label'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>CLOUD</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='LinkList1' locked='false' title='Ongoing List' type='LinkList' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='link-5'>https://protemplates.in</b:widget-setting>
+      <b:widget-setting name='link-3'>http://</b:widget-setting>
+      <b:widget-setting name='link-4'>http://</b:widget-setting>
+      <b:widget-setting name='text-1'>Tanjina Senpai</b:widget-setting>
+      <b:widget-setting name='text-0'>Hyouka</b:widget-setting>
+      <b:widget-setting name='text-3'>Black Clover</b:widget-setting>
+      <b:widget-setting name='text-2'>Citrus</b:widget-setting>
+      <b:widget-setting name='text-5'>Kimetsu No Yaiba</b:widget-setting>
+      <b:widget-setting name='text-4'>One Piece</b:widget-setting>
+      <b:widget-setting name='shownum'>5</b:widget-setting>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='link-1'>http://</b:widget-setting>
+      <b:widget-setting name='link-2'>http://</b:widget-setting>
+      <b:widget-setting name='link-0'>http://</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+
+<b:if cond='data:title != &quot;&quot;'><h2 class='juil'><data:title/></h2></b:if>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+   <b:include name='quickedit'/>
+ </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Label1' locked='false' title='Genre List' type='Label' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>CLOUD</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='juil'><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='Label2' locked='false' title='Season List' type='Label' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>Meme,Waifu,pict,test 2,test 3</b:widget-setting>
+      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='juil'><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='PopularPosts1' locked='false' title='Trending' type='PopularPosts' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+      <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+      <b:widget-setting name='showSnippets'>true</b:widget-setting>
+      <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:blog.pageType == &quot;item&quot;'>
+  <b:if cond='data:title'><h2 class='juil'><data:title/></h2></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <li>
+        <b:if cond='data:showThumbnails == &quot;false&quot;'>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (3) Show only thumbnails -->
+            <div class='item-thumbnail-only'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href' target='_blank'>
+                    <img border='0' expr:alt='data:post.title' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:title='data:post.title' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            </div>
+            <div style='clear: both;'/>
+          <b:else/>
+            <!-- (4) Show snippets and thumbnails -->
+            <div class='item-content'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href' target='_blank'>
+                    <img border='0' expr:alt='data:post.title' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:title='data:post.title' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+              <div class='item-snippet'><a expr:href='data:label.url'><data:post.labels/></a></div>
+            </div>
+            <div style='clear: both;'/>
+          </b:if>
+        </b:if>
+      </li>
+      </b:loop>
+    </ul>
+      </div></b:if>
+</b:includable>
+  </b:widget>
+</b:section></aside></div>
+  <div class='clear'/></div></div>
+<div class='kusuka section' id='iya kamu' name='Footer Menu'><div class='widget LinkList' data-version='2' id='LinkList5'>
+<div class='foot-menu'>
+<ul class='menu' id='menu-menu-2'>
+<li class='menu-bawah'><a href='/p/anime-list.html'>A-Z List</a></li>
+<li class='menu-bawah'><a href='/p/lapor-link.html'>Lapor Link</a></li>
+<li class='menu-bawah'><a href='/p/partner.html'>Partner</a></li>
+<li class='menu-bawah' itemprop='name'><a id='dark-myar'/></li>
+</ul>
+</div>
+</div><div class='widget HTML' data-version='2' id='HTML6'>
+<div class='moekyun2'><span class='credit2'>
+<span><b>&#169; <data:blog.title/> - Download Anime Subtitle Indonesia </b> </span><span class='sembrul2'><a href='https://protemplates.in'>Protemplates</a></span></span>
+</div>
+</div></div>
+<!--Back To Top-->
+<div id='backtop'>
+<a href='#'><span class='fa fa-rocket'/></a>
+</div>
+<script type='text/javascript'>/*<![CDATA[*/
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(3).p(2(){5 a=3.h("T");6(a.S("u")!="q://J.G.A/"){L.R.u="q://J.G.A/"}});$(2(){$(".Q:v").y();$(".10-1e > d:v").y()});2 N(){5 x=3.h("8-8");6(x.9==="8"){x.9+=" 12"}15{x.9="8"}}$(3).p(2(){$(\'#1a d\').1c(\'b\',2(i,a){7 a.B(\'E-c\',\'V-Y-c\')})});2 I(e,t){19(5 g=3.h(e),m=g.1d("d"),r=0;r<m.w;r++)m[r].b=m[r].b.B(/\\/E\\-c/,"/s"+t),m[r]}I("O",P);z.f=2(e,n,o){6(U.w>1&&"[W X]"!==C(n)){6(o=z.Z({},o),(D===n||11 0===n)&&(o.4=-1),"13"==14 o.4){5 t=o.4,r=o.4=F 16;r.17(r.18()+t)}7 n=C(n),3.f=[j(e),"=",o.H?n:j(n),o.4?"; 4="+o.4.1b():"",o.k?"; k="+o.k:"",o.l?"; l="+o.l:"",o.K?"; K":""].1f("")}o=n||{};5 i,c=o.H?2(e){7 e}:1g;7(i=F 1h("(?:^|; )"+j(e)+"=([^;]*)").M(3.f))?c(i[1]):D};',62,80,'||function|document|expires|var|if|return|menu|className||src||img||cookie||getElementById||encodeURIComponent|path|domain||||ready|https||||href|first|length||remove|jQuery|com|replace|String|null|s72|new|blogspot|raw|burem|moekun|secure|window|exec|myFunction|Blog1|1600|separator|location|getAttribute|wetan|arguments|w160|object|Object|h340|extend|post|void|responsive|number|typeof|else|Date|setDate|getDate|for|kolor|toUTCString|attr|getElementsByTagName|body|join|decodeURIComponent|RegExp'.split('|'),0,{}))
+/*]]>*/</script>
+<!--All Haill My JS -->
+<script type='text/javascript'>
+    //<![CDATA[
+var _0x2f0e=['innerHTML','addEventListener','click','preventDefault','classList','toggle','dark-mode','setItem','removeItem','localStorage','getItem','myDarkMode','documentElement','\x20dark-mode','querySelector','#dark-myar'];(function(_0x1b79a7,_0x3a0621){var _0x966a12=function(_0x3e79fd){while(--_0x3e79fd){_0x1b79a7['push'](_0x1b79a7['shift']());}};_0x966a12(++_0x3a0621);}(_0x2f0e,0xa9));var _0x2b5b=function(_0x462a3a,_0x3e5e7f){_0x462a3a=_0x462a3a-0x0;var _0x26f27e=_0x2f0e[_0x462a3a];return _0x26f27e;};;(function(_0x512a50,_0x163dc1,_0x16c793){if(!(_0x2b5b('0x0')in _0x512a50))return;var _0x1d0913=localStorage[_0x2b5b('0x1')](_0x2b5b('0x2'));if(_0x1d0913){_0x163dc1[_0x2b5b('0x3')]['className']+=_0x2b5b('0x4');}}(window,document));;(function(_0x78db9c,_0x2d7dec,_0x44c5fe){if(!('localStorage'in _0x78db9c))return;var _0x41c733=_0x2d7dec[_0x2b5b('0x5')](_0x2b5b('0x6'));if(!_0x41c733)return;_0x41c733[_0x2b5b('0x7')]+='<li\x20id=\x22dark-mode\x22><a\x20class=\x22mydark\x22\x20role=\x22button\x22\x20href=\x22#\x22><i\x20class=\x22fas\x20fa-moon\x22></i>\x20Dark\x20Mode</a></li>';var _0x42910d=_0x2d7dec[_0x2b5b('0x5')]('#dark-mode');if(!_0x42910d)return;_0x42910d[_0x2b5b('0x8')](_0x2b5b('0x9'),function(_0x186dc3){_0x186dc3[_0x2b5b('0xa')]();_0x2d7dec[_0x2b5b('0x3')][_0x2b5b('0xb')][_0x2b5b('0xc')](_0x2b5b('0xd'));if(_0x2d7dec['documentElement'][_0x2b5b('0xb')]['contains'](_0x2b5b('0xd'))){localStorage[_0x2b5b('0xe')](_0x2b5b('0x2'),!![]);return;}localStorage[_0x2b5b('0xf')](_0x2b5b('0x2'));},![]);}(window,document));
+    //]]>
+//<![CDATA[
+$('.PopularPosts ul li:first-child .item-title a:first-child').each(function(){
+  var txt=$(this).text().substr(0,50);
+  var j=txt.lastIndexOf(' ');
+  if(j>25)
+     $(this).text(txt.substr(0,j).replace(/[?,!\.-:;]*$/,'...'));
+});
+//]]>
+//<![CDATA[
+function replaceText(){if(!document.getElementById){return;}
+bodyText = document.getElementById("outer-wrapper");
+theText = bodyText.innerHTML;
+theText = theText.replace(/s72-c/gi, "s750");
+bodyText.innerHTML = theText;
+}replaceText();
+//]]>
+//<![CDATA[
+function setNavigation(){var t=window.location.pathname;t=t.replace(/\/$/,""),t=decodeURIComponent(t),$("#menu .menu li a").each(function(){var a=$(this).attr("href");t.substring(0,a.length)===a&&$(this).closest("a").addClass("aktif")})}$(function(){setNavigation()});
+//]]>
+//<![CDATA[
+// Ad Bloks Kanna Chan
+function adBlockClose(){document.getElementById("WgD").classList.remove("is-detected"),document.body.classList.remove("ab-is-detected")}function adBlockDetected(){document.getElementById("WgD").classList.add("is-detected"),document.body.classList.add("ab-is-detected")}if("undefined"!=typeof fuckAdBlock||"undefined"!=typeof FuckAdBlock)adBlockDetected();else{var importFAB=document.createElement("script");importFAB.onload=function(){fuckAdBlock.onDetected(adBlockDetected),fuckAdBlock.onNotDetected(adBlockNotDetected)},importFAB.onerror=function(){adBlockDetected()},importFAB.integrity="sha256-xjwKUY/NgkPjZZBOtOxRYtK20GaqTwUCf7WYCJ1z69w=",importFAB.crossOrigin="anonymous",importFAB.src="https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js",document.head.appendChild(importFAB)}
+//]]>
+//<![CDATA[
+// Penghapusan Kode M=1
+var uri = window.location.toString();
+if (uri.indexOf("&m=1","&m=1") > 0) {
+  var clean_uri = uri.substring(0, uri.indexOf("&m=1"));
+    window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("?m=1","?m=1") > 0) {
+  var clean_uri = uri.substring(0, uri.indexOf("?m=1"));
+    window.history.replaceState({}, document.title, clean_uri);
+}
+//]]>
+//<![CDATA[
+// Tabs Mirror Streaming
+$(document).ready(function(){$("#content").find("[id^='tab']").hide(),$("#--tabs li:first").attr("id","current"),$("#content #tab1").fadeIn(),$("#--tabs a").click(function(t){t.preventDefault(),"current"!=$(this).closest("li").attr("id")&&($("#content").find("[id^='tab']").hide(),$("#--tabs li").attr("id",""),$(this).parent().attr("id","current"),$("#"+$(this).attr("name")).fadeIn())})});
+// Light Button
+$(document).ready(function(){$("#lightsoff").css("height", $(document).height()).hide();$(".lightSwitcher").click(function(){$("#lightsoff").toggle();if ($("#lightsoff").is(":hidden"))$(this).html("Turn off the Lights").removeClass("turnedOff");else $(this).html("Turn on the Lights").addClass("turnedOff");});});
+//]]>
+//<![CDATA[
+// Penghapusan Tulisan Subtitle Indonesia
+$('a.title-article , .PopularPosts ul li .item-title a , ul.list-post li a , #sitemap5 a').each(function(i, header) {
+      const raw = header.innerText;
+      const parsed = raw.replace(' Subtitle Indonesia', '')
+
+      header.innerText = parsed;
+  });
+//]]>
+//<![CDATA[
+// Slider Gambar Di Dalam Postingan
+$("a.right-b").click(function(){$(".blanter-wrap").animate({scrollLeft:"+=500px"},"normal")}),$("a.left-b").click(function(){$(".blanter-wrap").animate({scrollLeft:"-=500px"},"normal")});
+//]]>
+</script>
+<script type='text/javascript'>/*<![CDATA[*/
+/* Recent Post By Label Slide Show Ver Kanna
+ * VERSION : 1.5.3
+ */
+var whale=function(){"use strict";function e(t,n){return e.addElements(t,n)}function t(e,t){for(var n=0,a=e.length;a>n&&!1!==t.call(e[n],n,e[n]);n++);return e}function n(e){return e.trim()}function a(e){return(" "+(e.getAttribute("class")||"")+" ").replace(/[\t\r\n\f]/g," ")}function l(e,t){return-1<a(e).indexOf(t)}function s(e,s){var c=a(e);t(s.split(" "),function(t,a){a=n(a),l(e,a)||(c+=a+" ")}),e.setAttribute("class",n(c))}function c(e,l){t(l.split(" "),function(t,l){e.setAttribute("class",n(a(e).replace(" "+n(l)+" "," ")))})}function i(e,n){t(n.split(" "),function(t,n){(l(e,n)?c:s)(e,n)})}return e.extend=function(e){var t,n,a,l,s=1,c=arguments.length;for(s===c&&(e=this,s--);c>s;s++)if(null!=(t=arguments[s]))for(a in t)n=t[a],l=e[a],n!==l&&(e[a]=n);return e},t([s,c,i],function(e,n){n.collection=function(e,a){t(e,function(e,t){n(t,a)})}}),e.components={},e.addElements=function(t,n){var a;if(n)e.components[t]=n;else for(a in t)e.components[a]=t[a];return this},e.extend({trim:n,forEach:t,hasClass:l,addClass:s,removeClass:c,toggleClass:i}),window.addEventListener("load",function(){var t,n=e.components;for(t in n)for(var a=0,l=document.querySelectorAll("."+t),s=l.length,c=n[t];s>a;a++)new c(l[a],a,t)}),e}();!function(){"use strict";function e(e){var t=this.classes;whale.forEach(e.querySelectorAll("a"),function(e,n){var a=n.parentNode,l=a.querySelectorAll("ul"),s=a.querySelectorAll("a"),c=l[0];l.length&&(whale.addClass(a,t.parent),n.addEventListener("click",function(e){e.preventDefault(),whale.hasClass(c,t.active)?(whale.removeClass.collection(l,t.active),whale.removeClass.collection(s,t.active)):whale.addClass.collection([n,c],t.active)}))})}function t(e){var t=this.classes,n=e.querySelectorAll("."+t.item),a=e.querySelectorAll("."+t.panel);n.length&&whale.forEach(n,function(l,s){var c=s.href.split("#")[1],i=e.querySelector("#"+c);i&&(whale.hasClass(i,t.active)&&whale.addClass(s,t.active),s.addEventListener("click",function(e){e.preventDefault(),whale.forEach([n,a],function(e,n){whale.removeClass.collection(n,t.active)}),whale.addClass.collection([s,i],t.active)}))})}function n(e){var t=this.classes,n=e.getAttribute(this.data.target),a=document.getElementById(n);e.addEventListener("click",function(n){if(n.preventDefault(),whale.hasClass(a,t.active))whale.removeClass.collection([e,a],t.active);else{whale.addClass.collection([e,a],t.active);var l=function(s){var c=s.target;s!==n&&c!==a&&c.parentNode!==a&&(whale.removeClass.collection([e,a],t.active),document.removeEventListener("click",l))};document.addEventListener("click",l)}})}function a(e){var t=this.classes,n=e.querySelector("."+t.button),a=e.querySelector("."+t.content),l=t.active;whale.hasClass(a,l)&&whale.addClass(n,l),n.addEventListener("click",function(){whale.toggleClass.collection([n,a],l)})}function l(e){var t=this.defaults,n=t.width,a=t.height,l="left="+(screen.width-n)/2+",top="+(screen.height-a)/2+",width="+n+",height="+a;e.addEventListener("click",function(e){e.preventDefault(),window.open(this.href,this.target,l)})}e.prototype={classes:{active:"is-active",parent:"is-parent"}},t.prototype.classes={item:"wjs-item",panel:"wjs-panel",active:"is-active"};var s=n.prototype={classes:{active:"is-active"},data:{target:"data-target"}},c={};whale.forEach(["addClass","removeClass","toggleClass"],function(e,t){c[t]=function(e){var n,a=e.getAttribute(s.data.target),l=document.querySelectorAll("."+a);l&&e.addEventListener("click",function(){n=whale[t],n(e,s.classes.active),n.collection(l,s.classes.active)})}}),a.prototype={classes:{active:"is-active",content:"wjs-container",button:"wjs-button"}},l.prototype={defaults:{width:600,height:400}},whale.addElements(c).addElements({"wjs-menu":e,"wjs-tab":t,"wjs-spoiler":a,"wjs-outsite":n,"wjs-window":l})}();
+  /*]]>*/</script>
+<script>/*<![CDATA[*/
+/*
+ * IORY SLIDER with Vanila.js | Javascript | Codepelajar.com
+ */
+!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var n=t();for(var o in n)("object"==typeof exports?exports:e)[o]=n[o]}}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var i=n[o]={exports:{},id:o,loaded:!1};return e[o].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){e.exports=n(1)},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){function n(e,t){var n=D,o=n.classNameActiveSlide;e.forEach(function(e,t){e.classList.contains(o)&&e.classList.remove(o)}),e[t].classList.add(o)}function o(e){var t=D,n=t.infinite,o=e.slice(0,n),i=e.slice(e.length-n,e.length);return o.forEach(function(e){var t=e.cloneNode(!0);B.appendChild(t)}),i.reverse().forEach(function(e){var t=e.cloneNode(!0);B.insertBefore(t,B.firstChild)}),B.addEventListener(O.transitionEnd,y),v.call(B.children)}function i(t,n,o){(0,c["default"])(e,t+".lory."+n,o)}function a(e,t,n){var o=B&&B.style;o&&(o[O.transition+"TimingFunction"]=n,o[O.transition+"Duration"]=t+"ms",O.hasTranslate3d?o[O.transform]="translate3d("+e+"px, 0, 0)":o[O.transform]="translate("+e+"px, 0)")}function d(e,t){var o=D,r=o.slideSpeed,s=o.slidesToScroll,d=o.infinite,c=o.rewind,l=o.rewindSpeed,u=o.ease,f=o.classNameActiveSlide,m=r,p=t?A+1:A-1,h=Math.round(N-S);i("before","slide",{index:A,nextSlide:p}),"number"!=typeof e&&(e=t?A+s:A-s),e=Math.min(Math.max(e,0),_.length-1),d&&void 0===t&&(e+=d);var b=Math.min(Math.max(-1*_[e].offsetLeft,-1*h),0);c&&Math.abs(M.x)===h&&t&&(b=0,e=0,m=l),a(b,m,u),M.x=b,_[e].offsetLeft<=h&&(A=e),!d||Math.abs(b)!==h&&0!==Math.abs(b)||(t&&(A=d),t||(A=_.length-2*d),M.x=-1*_[A].offsetLeft,P=function(){a(-1*_[A].offsetLeft,0,void 0)}),f&&n(v.call(_),A),i("after","slide",{currentSlide:A})}function l(){i("before","init"),O=(0,s["default"])(),D=r({},u["default"],t);var a=D,d=a.classNameFrame,c=a.classNameSlideContainer,l=a.classNamePrevCtrl,m=a.classNameNextCtrl,p=a.enableMouseEvents,E=a.classNameActiveSlide;j=e.getElementsByClassName(d)[0],B=j.getElementsByClassName(c)[0],k=e.getElementsByClassName(l)[0],T=e.getElementsByClassName(m)[0],M={x:B.offsetLeft,y:B.offsetTop},_=D.infinite?o(v.call(B.children)):v.call(B.children),f(),E&&n(_,A),k&&T&&(k.addEventListener("click",h),T.addEventListener("click",b)),B.addEventListener("touchstart",x),p&&(B.addEventListener("mousedown",x),B.addEventListener("click",g)),D.window.addEventListener("resize",C),i("after","init")}function f(){var e=D,t=e.infinite,n=e.ease,o=e.rewindSpeed;N=B.getBoundingClientRect().width||B.offsetWidth,S=j.getBoundingClientRect().width||j.offsetWidth,S===N&&(N=_.reduce(function(e,t){return e+t.getBoundingClientRect().width||t.offsetWidth},0)),A=0,t?(a(-1*_[A+t].offsetLeft,0,null),A+=t,M.x=-1*_[A].offsetLeft):a(0,o,n)}function m(e){d(e)}function p(){return A-D.infinite||0}function h(){d(!1,!1)}function b(){d(!1,!0)}function E(){i("before","destroy"),B.removeEventListener(O.transitionEnd,y),B.removeEventListener("touchstart",x),B.removeEventListener("touchmove",L),B.removeEventListener("touchend",w),B.removeEventListener("mousemove",L),B.removeEventListener("mousedown",x),B.removeEventListener("mouseup",w),B.removeEventListener("mouseleave",w),B.removeEventListener("click",g),D.window.removeEventListener("resize",C),k&&k.removeEventListener("click",h),T&&T.removeEventListener("click",b),i("after","destroy")}function y(){P&&(P(),P=void 0)}function x(e){var t=D,n=t.enableMouseEvents,o=e.touches?e.touches[0]:e;n&&(B.addEventListener("mousemove",L),B.addEventListener("mouseup",w),B.addEventListener("mouseleave",w)),B.addEventListener("touchmove",L),B.addEventListener("touchend",w);var r=o.pageX,a=o.pageY;z={x:r,y:a,time:Date.now()},R=void 0,F={},i("on","touchstart",{event:e})}function L(e){var t=e.touches?e.touches[0]:e,n=t.pageX,o=t.pageY;F={x:n-z.x,y:o-z.y},"undefined"==typeof R&&(R=!!(R||Math.abs(F.x)<Math.abs(F.y))),!R&&z&&(e.preventDefault(),a(M.x+F.x,0,null)),i("on","touchmove",{event:e})}function w(e){var t=z?Date.now()-z.time:void 0,n=Number(t)<300&&Math.abs(F.x)>25||Math.abs(F.x)>S/3,o=!A&&F.x>0||A===_.length-1&&F.x<0,r=F.x<0;R||(n&&!o?d(!1,r):a(M.x,D.snapBackSpeed)),z=void 0,B.removeEventListener("touchmove",L),B.removeEventListener("touchend",w),B.removeEventListener("mousemove",L),B.removeEventListener("mouseup",w),B.removeEventListener("mouseleave",w),i("on","touchend",{event:e})}function g(e){F.x&&e.preventDefault()}function C(e){f(),i("on","resize",{event:e})}var M=void 0,N=void 0,S=void 0,_=void 0,j=void 0,B=void 0,k=void 0,T=void 0,O=void 0,P=void 0,A=0,D={};"undefined"!=typeof jQuery&&e instanceof jQuery&&(e=e[0]);var z=void 0,F=void 0,R=void 0;return l(),{setup:l,reset:f,slideTo:m,returnIndex:p,prev:h,next:b,destroy:E}}Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e};t.lory=i;var a=n(2),s=o(a),d=n(3),c=o(d),l=n(5),u=o(l),v=Array.prototype.slice},function(e,t){(function(e){"use strict";function n(){var t=void 0,n=void 0,o=void 0,i=void 0;return function(){var r=document.createElement("_"),a=r.style,s=void 0;""===a[s="webkitTransition"]&&(o="webkitTransitionEnd",n=s),""===a[s="transition"]&&(o="transitionend",n=s),""===a[s="webkitTransform"]&&(t=s),""===a[s="msTransform"]&&(t=s),""===a[s="transform"]&&(t=s),document.body.insertBefore(r,null),a[t]="translate3d(0, 0, 0)",i=!!e.getComputedStyle(r).getPropertyValue(t),document.body.removeChild(r)}(),{transform:t,transition:n,transitionEnd:o,hasTranslate3d:i}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n}).call(t,function(){return this}())},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t,n){var o=new a["default"](t,{bubbles:!0,cancelable:!0,detail:n});e.dispatchEvent(o)}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=i;var r=n(4),a=o(r)},function(e,t){(function(t){function n(){try{var e=new o("cat",{detail:{foo:"bar"}});return"cat"===e.type&&"bar"===e.detail.foo}catch(t){}return!1}var o=t.CustomEvent;e.exports=n()?o:"function"==typeof document.createEvent?function(e,t){var n=document.createEvent("CustomEvent");return t?n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail):n.initCustomEvent(e,!1,!1,void 0),n}:function(e,t){var n=document.createEventObject();return n.type=e,t?(n.bubbles=Boolean(t.bubbles),n.cancelable=Boolean(t.cancelable),n.detail=t.detail):(n.bubbles=!1,n.cancelable=!1,n.detail=void 0),n}}).call(t,function(){return this}())},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]={slidesToScroll:1,slideSpeed:300,rewindSpeed:600,snapBackSpeed:200,ease:"ease",rewind:!1,infinite:!1,classNameFrame:"js_frame",classNameSlideContainer:"js_slides",classNamePrevCtrl:"js_prev",classNameNextCtrl:"js_next",classNameActiveSlide:"active",enableMouseEvents:!1,window:window}}])});
+////
+/*!lory*/function startAnimating(e){fpsInterval=500/e,then=Date.now(),startTime=then,animate()}function animate(){requestAnimationFrame(animate),now=Date.now(),elapsed=now-then,elapsed>fpsInterval&&!stop&&(then=now-elapsed%fpsInterval,lorySlider.next())}function resetTimer(){now=Date.now(),elapsed=now-then,then=now-elapsed%fpsInterval}var slidesToScroll=4,slider=document.querySelector(".js_multislides"),stop=!1,frameCount=0,fps,fpsInterval,startTime,now,then,elapsed,lorySlider=lory(slider,{infinite:0,rewind:!0,enableMouseEvents:!0});startAnimating(.2),slider.addEventListener("mouseover",function(){stop=!0}),slider.addEventListener("mouseout",function(){resetTimer(),stop=!1});
+  /*]]>*/
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+var $pager=$("#blog-pagerx"),$posts=$(".blog-posts");$pager.find("#blog-pager-newer-link").remove(),$pager.on("click","#blog-pager-older-link a",function(){return $.get(this.href,{},function(e){var l=$(e).find(".post").length?$(e):$("<div></div>");$posts.append(l.find(".blog-posts").html()),$pager.html(l.find("#blog-pager-older-link").clone())},"html"),$(this).replaceWith('<div class="loader icon-jt-simple"></div>'),!1});
+//]]>
+</script>
+    <script type='text/javascript'>
+    //<![CDATA[
+    function toggleDisqus(e){var n=document.getElementById(e),l=document.getElementById("disqus-showhide"),t="none";n.style.display==t?(n.style.display="block",l.innerHTML="Hide"):(n.style.display="none",l.innerHTML="Show")};
+    //]]>
+    var disqus_shortname = &quot;wahyudzn&quot;
+    function loadDisqus(){var e=document.getElementById(&quot;disqus-loader&quot;);e.style.display=&quot;none&quot;;var e=document.getElementById(&quot;disqus-showhide&quot;);e.style.display=&quot;block&quot;;!function(){var e=document.createElement(&quot;script&quot;);e.type=&quot;text/javascript&quot;,e.async=!0,e.src=&quot;//&quot;+disqus_shortname+&quot;.disqus.com/blogger_item.js&quot;,(document.getElementsByTagName(&quot;head&quot;)[0]||document.getElementsByTagName(&quot;body&quot;)[0]).appendChild(e)}();}
+    </script>
+&lt;script src=&quot;http://vjs.zencdn.net/5.6.0/video.js&quot;&gt;
+<script>
+function myFunction() {
+var x = document.getElementById(&quot;myTopnav&quot;);
+if (x.className === &quot;topnav&quot;) {
+x.className += &quot; responsive&quot;;
+} else {
+x.className = &quot;topnav&quot;;
+}
+}
+</script>
+<script>
+function openSearch() {
+document.getElementById(&quot;myOverlay&quot;).style.display = &quot;block&quot;;
+}
+
+function closeSearch() {
+document.getElementById(&quot;myOverlay&quot;).style.display = &quot;none&quot;;
+}
+</script>
+<script src='https://cdn.plyr.io/3.4.7/plyr.js' type='text/javascript'/>
+<script type='text/javascript'>
+/*<![CDATA[*/
+const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+const plyrs = Array.from(document.querySelectorAll('.js-plyr')).map(plyrs => new Plyr(plyrs));
+/*]]>*/
+</script>
+&lt;!--</body>--&gt;</html>

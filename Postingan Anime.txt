@@ -1,0 +1,38 @@
+<div style="text-align: justify;">
+<b>Judul Anime </b>Silahkan isi kalimat pembuka disini<br />
+<br />
+<h2>Info Anime</h2>
+<div class="datanime">
+<li><b>Title</b>: judul</li>
+<li><b>Japanese</b>: ?????</li>
+<li><b>Type</b>: TV</li>
+<li><b>Status</b>: Complete</li>
+<li><b>Episode</b>: 12&nbsp;</li>
+<li><b>Aired</b>: Jul 6, 2018&nbsp;</li>
+<li><b>Studios</b>: J.C.Staff</li>
+<li><b>Durasi</b>: 23 min per ep</li>
+<li><b>Skor</b>: 6.9</li>
+</div>
+</div>
+<br />
+<br />
+<div style="text-align: justify;">
+<h2>Sinopsis :</h2>
+<div>
+Isi sinopsis anime disini</div>
+</div>
+<br />
+<br />
+<div class="dlbod">
+<div class="smokeddl">
+<div class="smokettl">&nbsp;judul anime Subtitle Indonesia</div>
+<div class="smokeurl">
+<strong>360P</strong>&nbsp;<a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Sharer</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Drive</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><span data-blogger-escaped-style="text-align: start;">Mega</span></div>
+<div class="smokeurl">
+<strong>480P</strong>&nbsp;<a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Sharer</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Drive</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><span data-blogger-escaped-style="text-align: start;">Mega</span></div>
+<div class="smokeurl">
+<strong>720P</strong>&nbsp;<a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Sharer</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Drive</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><span data-blogger-escaped-style="text-align: start;">Mega</span></div>
+<div class="smokeurl">
+<strong>1080P</strong>&nbsp;<a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Sharer</a><span data-blogger-escaped-style="text-align: start;">&nbsp;|&nbsp;</span><a href="http:/masukanlinkdownload" rel="nofollow" target="_blank">Google Drive</a><span data-blogger-escaped-style="text-align: start;">&nbsp;| Mega</span></div>
+</div>
+</div>
